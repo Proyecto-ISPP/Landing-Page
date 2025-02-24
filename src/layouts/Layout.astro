@@ -1,6 +1,6 @@
 ---
-import '../styles/global.css';
-import logo from '../assets/logo.png';
+import "../styles/global.css";
+import logo from "../assets/logo.png";
 
 interface Props {
   title: string;
@@ -9,7 +9,7 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -28,6 +28,9 @@ const { title } = Astro.props;
           </div>
           <div class="hidden md:flex space-x-6">
             <a href="/" class="text-gray-600 hover:text-cyan-600">Home</a>
+            <a href="/precios" class="text-gray-600 hover:text-cyan-600"
+              >Precios</a
+            >
             <a href="/about" class="text-gray-600 hover:text-cyan-600">About</a>
           </div>
         </div>
@@ -50,13 +53,19 @@ const { title } = Astro.props;
             <h3 class="text-xl font-bold mb-4">Quick Links</h3>
             <ul class="space-y-2">
               <li><a href="/" class="hover:text-indigo-400">Home</a></li>
+              <li>
+                <a href="/precios" class="hover:text-indigo-400">Precios</a>
+              </li>
               <li><a href="/about" class="hover:text-indigo-400">About</a></li>
             </ul>
           </div>
           <div>
             <h3 class="text-xl font-bold mb-4">Follow Us</h3>
             <div class="flex space-x-4">
-              <a href="https://www.instagram.com/fisiofindapp?igsh=MThoYTdjYWp1NXN6ZA==" class="hover:text-indigo-400">Instagram</a>
+              <a
+                href="https://www.instagram.com/fisiofindapp?igsh=MThoYTdjYWp1NXN6ZA=="
+                class="hover:text-indigo-400">Instagram</a
+              >
             </div>
           </div>
         </div>

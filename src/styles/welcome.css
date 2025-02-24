@@ -1,0 +1,4 @@
+.anchor-offset {
+    padding-top: 100px; /* Ajusta este valor según sea necesario */
+    margin-top: -100px; /* Debe ser el mismo valor que padding-top */
+  }

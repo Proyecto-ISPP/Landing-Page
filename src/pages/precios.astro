@@ -1,0 +1,213 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/precios.css";
+import antonio_transparent from "../assets/members/antonio_transparent.png";
+import capote_transparent from "../assets/members/capote_transparent.png";
+import guadalupe_transparent from "../assets/members/guadalupe_transparent.png";
+import rubio_transparent from "../assets/members/rubio_transparent.png";
+---
+
+<Layout>
+  <section class="pricing-section">
+    <h1 class="large-title">Escoge el mejor plan según tus necesidades</h1>
+
+    <div class="pricing-cards mt-16">
+      <div class="card fisio-blue">
+        <h3>Fisio Blue</h3>
+        <p class="price">17,99€ <span>/ mes</span></p>
+        <ul>
+          <li>📹 Videoconsultas con todas las herramientas</li>
+          <li>🔎 Seguimiento del paciente</li>
+          <li>💬 Chat integrado</li>
+          <li>🎥 Subir y compartir vídeos (hasta 15)</li>
+          <li>⚙️ Soporte técnico limitado</li>
+        </ul>
+      </div>
+
+      <div class="card fisio-gold">
+        <div class="popular-badge">¡Más popular!</div>
+        <h3>Fisio Gold</h3>
+        <p class="price">24,99€ <span>/ mes</span></p>
+        <ul>
+          <li>🤝 Todas las ventajas de Fisio Blue</li>
+          <li>🔥 Mayor alcance</li>
+          <li>✅ Tick de verificación</li>
+          <li>🎥 Subir y compartir vídeos (hasta 30)</li>
+          <li>💡 Soporte técnico personalizado</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="compare-button-container">
+      <a class="btn compare-button" href="javascript:void(0);">
+        Comparar planes
+      </a>
+    </div>
+  </section>
+
+  <!-- NUEVO DIV DE SOPORTE -->
+  <div class="support-highlight">
+    <div class="support-images">
+      <div class="image-card shape1">
+        <img
+          src={antonio_transparent.src}
+          alt="Miembro del equipo de soporte"
+        />
+      </div>
+      <div class="image-card shape2">
+        <img
+          src={guadalupe_transparent.src}
+          alt="Miembro del equipo de soporte"
+        />
+      </div>
+      <div class="image-card shape3">
+        <img src={rubio_transparent.src} alt="Miembro del equipo de soporte" />
+      </div>
+      <div class="image-card shape4">
+        <img src={capote_transparent.src} alt="Miembro del equipo de soporte" />
+      </div>
+    </div>
+
+    <div class="support-text">
+      <h2>
+        Descubre todo el potencial de nuestra herramienta<br />
+        con el respaldo de un equipo excepcional
+      </h2>
+      <p>
+        No estás solo en este viaje. Nuestro equipo de soporte está listo para
+        ayudarte en cada paso, desde la configuración inicial hasta el
+        aprovechamiento de todas las funciones. Si surge cualquier duda, estamos
+        aquí para solucionarla.
+      </p>
+      <a href="/#contacto" class="btn">Contáctanos</a>
+    </div>
+  </div>
+
+  <table class="full-colored-table" id="tabla-comparativa">
+    <colgroup>
+      <col class="col-caracteristicas" />
+      <col class="col-fisio-blue" />
+      <col class="col-fisio-gold" />
+    </colgroup>
+
+    <thead>
+      <tr>
+        <th class="th-caracteristicas"></th>
+        <th class="th-fisio-blue">
+          Fisio Blue
+          <div class="small-price">17,99€/mes</div>
+        </th>
+        <th class="th-fisio-gold">
+          Fisio Gold
+          <div class="small-price">24,99€/mes</div>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <th><strong>Comunicación con pacientes</strong></th>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="sub-item">
+        <th>Chat integrado</th>
+        <td>✔</td>
+        <td>✔</td>
+      </tr>
+      <tr class="sub-item">
+        <th>Subir y compartir vídeos</th>
+        <td>15/mes</td>
+        <td>30/mes</td>
+      </tr>
+
+      <tr>
+        <th><strong>Videoconsulta y seguimiento</strong></th>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="sub-item">
+        <th>Videoconsultas avanzadas</th>
+        <td>✔</td>
+        <td>✔</td>
+      </tr>
+      <tr class="sub-item">
+        <th>Seguimiento del paciente</th>
+        <td>✔</td>
+        <td>✔ + Mayor alcance</td>
+      </tr>
+
+      <tr>
+        <th><strong>Soporte técnico</strong></th>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="sub-item">
+        <th>Tipo de soporte</th>
+        <td>Limitado</td>
+        <td>Personalizado</td>
+      </tr>
+      <tr class="sub-item">
+        <th>Tiempo de respuesta</th>
+        <td>En horario laboral</td>
+        <td>Prioritario</td>
+      </tr>
+
+      <tr>
+        <th><strong>Visibilidad y ventajas</strong></th>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="sub-item">
+        <th>Tick de verificación</th>
+        <td>✖</td>
+        <td>✔</td>
+      </tr>
+      <tr class="sub-item">
+        <th>Mayor alcance</th>
+        <td>✖</td>
+        <td>✔</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", function () {
+      const compareButton = document.querySelector(".compare-button");
+      const targetSection = document.querySelector("#tabla-comparativa");
+
+      if (compareButton && targetSection) {
+        compareButton.addEventListener("click", function (event) {
+          event.preventDefault(); // Evita el salto inmediato
+          smoothScroll(targetSection);
+        });
+      }
+
+      function smoothScroll(target) {
+        const targetPosition =
+          target.getBoundingClientRect().top + window.scrollY;
+        const startPosition = window.scrollY;
+        const distance = targetPosition - startPosition;
+        const duration = 800; // Duración del scroll en ms
+        let start = null;
+
+        function animation(currentTime) {
+          if (!start) start = currentTime;
+          const timeElapsed = currentTime - start;
+          const run = ease(timeElapsed, startPosition, distance, duration);
+          window.scrollTo(0, run);
+          if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+
+        function ease(t, b, c, d) {
+          t /= d / 2;
+          if (t < 1) return (c / 2) * t * t + b;
+          t--;
+          return (-c / 2) * (t * (t - 2) - 1) + b;
+        }
+
+        requestAnimationFrame(animation);
+      }
+    });
+  </script>
+</Layout>
