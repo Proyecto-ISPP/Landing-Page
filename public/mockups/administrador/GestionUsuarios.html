@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Projects - FisioFind</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/Ionicons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/css/Login-Form-Basic-icons.css">
+    <link rel="stylesheet" href="../assets/css/css/pikaday.min.css">
+    <link rel="stylesheet" href="../assets/css/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/css/Login-Form-Basic-icons.css">
+    <link rel="stylesheet" href="../assets/css/pikaday.min.css">
+    <link rel="stylesheet" href="../assets/css/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/css/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/css/css/Custom-Upload-File.css">
+</head>
+
+<body><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .hero-section {
+            background: url('https://via.placeholder.com/1600x800') no-repeat center center;
+            background-size: cover;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+        .hero-section p {
+            font-size: 1.25rem;
+            margin-top: 20px;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+        .navbar {
+            margin-bottom: 0;
+            padding: 15px;
+            background-color: #007bff;
+        }
+        .navbar .navbar-brand {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .navbar .navbar-nav .nav-link {
+            color: white;
+            margin-left: 20px;
+        }
+        .navbar .navbar-nav .nav-link:hover {
+            color: #ffd700;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabecera -->
+    <header class="d-flex justify-content-between align-items-center bg-primary text-white p-3 sticky-top">
+        <div class="fs-4 fw-bold"><a href="../Inicio.html" class="text-white text-decoration-none">FisioFind</a></div>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link text-white" href="../vistasPaciente/Buscar.html">Buscar</a></li>
+                <li class="nav-item d-none d-md-block"><a class="nav-link text-white" href="../Herramientas.html">Herramientas</a></li>
+                <li class="nav-item d-none d-md-block"><a class="nav-link text-white" href="#">Pacientes</a></li>
+            </ul>
+        </nav>
+        <div class="fs-4">🔵</div>
+    </header>
+
+    <!-- Listado de usuarios -->
+    <div class="container my-5">
+        <div class="card">
+            <div class="card-header">
+                Listado de Usuarios
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Correo Electrónico</th>
+                            <th>Rol</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Usuario 1 -->
+                        <tr>
+                            <td>1</td>
+                            <td>Juan Pérez</td>
+                            <td>juan.perez@example.com</td>
+                            <td>Paciente</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal" onclick="loadUserData(1, 'Juan Pérez', 'juan.perez@example.com', 'Paciente')">Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="deleteUser(1)">Eliminar</button>
+                            </td>
+                        </tr>
+                        <!-- Usuario 2 -->
+                        <tr>
+                            <td>2</td>
+                            <td>Ana López</td>
+                            <td>ana.lopez@example.com</td>
+                            <td>Administrador</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal" onclick="loadUserData(2, 'Ana López', 'ana.lopez@example.com', 'Administrador')">Editar</button>
+                                <button class="btn btn-danger btn-sm" onclick="deleteUser(2)">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Modal para editar usuario -->
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editModalLabel">Editar Usuario</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editUserForm">
+                            <div class="mb-3">
+                                <label for="editName" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="editName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editEmail" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="editEmail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editRole" class="form-label">Rol</label>
+                                <select class="form-control" id="editRole">
+                                    <option>Paciente</option>
+                                    <option>Administrador</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mensaje de confirmación -->
+        <div id="confirmation-message" class="alert alert-success mt-4" style="display:none;">
+            Usuario actualizado/eliminado correctamente.
+        </div>
+    </div>
+
+    <!-- Incluir los scripts necesarios -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Función para cargar los datos del usuario en el modal de edición
+        function loadUserData(id, name, email, role) {
+            document.getElementById('editName').value = name;
+            document.getElementById('editEmail').value = email;
+            document.getElementById('editRole').value = role;
+        }
+
+        // Simulación de la acción de editar
+        document.getElementById('editUserForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Aquí iría la lógica para actualizar los datos del usuario en el backend
+            document.getElementById('confirmation-message').style.display = 'block';
+        });
+
+        // Simulación de la acción de eliminar
+        function deleteUser(userId) {
+            // Aquí iría la lógica para eliminar al usuario en el backend
+            document.getElementById('confirmation-message').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
+
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/js/buscar_colegiado.js"></script>
+    <script src="../assets/js/js/completar_form.js"></script>
+    <script src="../assets/js/pikaday.min.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/js/Custom-Upload-File-upload_file.js"></script>
+</body>
+
+</html>

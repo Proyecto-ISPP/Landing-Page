@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CV - FisioFind</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/Ionicons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/css/Login-Form-Basic-icons.css">
+    <link rel="stylesheet" href="../assets/css/css/pikaday.min.css">
+    <link rel="stylesheet" href="../assets/css/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/css/Login-Form-Basic-icons.css">
+    <link rel="stylesheet" href="../assets/css/pikaday.min.css">
+    <link rel="stylesheet" href="../assets/css/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/css/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/css/css/Custom-Upload-File.css">
+</head>
+
+<body><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .calendar {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .calendar-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .calendar-header h2 {
+            font-size: 2rem;
+        }
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .calendar-table th, .calendar-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .calendar-table th {
+            background-color: #007bff;
+            color: white;
+        }
+        .calendar-table td {
+            cursor: pointer;
+        }
+        .calendar-table td:hover {
+            background-color: #f0f0f0;
+        }
+        .calendar-table td.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .calendar-table td.occupied {
+            background-color: #f39c12;
+            color: white;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <!-- Navbar -->
+  <header>
+    <div class="fs-4 fw-bold">FisioFind</div>
+<nav class="navbar navbar-expand-lg fixed-top portfolio-navbar gradient navbar-dark">
+    <div class="container">
+        <!-- Logo -->
+        <picture>
+            <img src="../assets/img/avatars/Captura-removebg-preview.png" width="60" height="55" />
+        </picture>
+        <a class="navbar-brand logo" href="#"><strong>Fisio Find</strong></a>
+
+        <!-- Botón de navegación para móviles -->
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="visually-hidden">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Enlaces de navegación -->
+        <div id="navbarNav" class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html" style="color: rgb(255, 255, 255);">INICIO</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="../vistasPaciente/Buscar.html" style="color: rgb(255, 255, 255);">BUSCAR</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Calendario.html" style="color: rgb(255, 255, 255);">CALENDARIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../vistasPaciente/Historial.html" style="color: rgb(255, 255, 255);">HISTORIAL</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../vistasPaciente/Ejercicios.html" style="color: rgb(255, 255, 255);">EJERCICIOS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../vistasPaciente/ReservaCita.html" style="color: rgb(255, 255, 255);">CITA</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+        <div class="fs-4">🔵</div>
+    </header>
+
+    <main class="container mt-4">
+        <!-- Calendario -->
+        <div class="calendar">
+            <div class="calendar-header">
+                <div class="nav-buttons">
+                    <button id="prevMonth" class="btn btn-primary">« Anterior</button>
+                    <h2 id="monthTitle">Enero 2025</h2>
+                    <button id="nextMonth" class="btn btn-primary">Siguiente »</button>
+                </div>
+            </div>
+            <table class="calendar-table">
+                <thead>
+                    <tr>
+                        <th>Dom</th>
+                        <th>Lun</th>
+                        <th>Mar</th>
+                        <th>Mié</th>
+                        <th>Jue</th>
+                        <th>Vie</th>
+                        <th>Sáb</th>
+                    </tr>
+                </thead>
+                <tbody id="calendarBody">
+                    <!-- El calendario se generará aquí -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Modal para acciones -->
+    <div class="modal fade" id="actionModal" tabindex="-1" aria-labelledby="actionModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="actionModalLabel">Acciones del día</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <button id="videoCallBtn" class="btn btn-success w-100 mb-2">Realizar videollamada</button>
+                    <button id="historyBtn" class="btn btn-info w-100">Consultar historial</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentDate = new Date();
+
+        // Lista de días ocupados (esto puede ser dinámico)
+        const occupiedDays = [5, 12, 19, 26];  // Ejemplo: los días 5, 12, 19 y 26 están ocupados
+
+        function renderCalendar() {
+            const monthTitle = document.getElementById("monthTitle");
+            const calendarBody = document.getElementById("calendarBody");
+
+            // Establecer el título del mes y año
+            const monthNames = [
+                "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+            ];
+            monthTitle.textContent = `${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+
+            // Calcular el primer día del mes
+            const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+            const lastDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+            const daysInMonth = lastDayOfMonth.getDate();
+            const firstDayOfWeek = firstDayOfMonth.getDay();
+
+            // Limpiar el cuerpo de la tabla
+            calendarBody.innerHTML = "";
+
+            // Crear las filas de la tabla (semanas)
+            let row = document.createElement("tr");
+
+            // Agregar celdas vacías hasta llegar al primer día del mes
+            for (let i = 0; i < firstDayOfWeek; i++) {
+                const emptyCell = document.createElement("td");
+                row.appendChild(emptyCell);
+            }
+
+            // Agregar los días del mes
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayCell = document.createElement("td");
+                dayCell.textContent = day;
+
+                // Marcar los días ocupados
+                if (occupiedDays.includes(day)) {
+                    dayCell.classList.add("occupied");
+                    dayCell.onclick = () => openActionModal(day);
+                }
+
+                // Resaltar el día actual
+                if (
+                    day === currentDate.getDate() &&
+                    currentDate.getMonth() === new Date().getMonth() &&
+                    currentDate.getFullYear() === new Date().getFullYear()
+                ) {
+                    dayCell.classList.add("active");
+                }
+
+                row.appendChild(dayCell);
+
+                // Si la semana está llena (7 días), crear una nueva fila
+                if (row.children.length === 7) {
+                    calendarBody.appendChild(row);
+                    row = document.createElement("tr");
+                }
+            }
+
+            // Si la última fila no está completa, agregarla al calendario
+            if (row.children.length > 0) {
+                calendarBody.appendChild(row);
+            }
+        }
+
+        function openActionModal(day) {
+            const modal = new bootstrap.Modal(document.getElementById('actionModal'));
+            document.getElementById("actionModalLabel").textContent = `Acciones para el día ${day}`;
+            
+            // Opciones del modal
+            document.getElementById("videoCallBtn").onclick = () => {
+             // Redirigir a la página de videollamada
+             window.location.href = "../videollamada.html";
+            };
+
+            document.getElementById("historyBtn").onclick = () => {
+                alert(`Consultando historial para el día ${day}`);
+            };
+
+            modal.show();
+        }
+
+        document.getElementById("prevMonth").addEventListener("click", () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+        });
+
+        document.getElementById("nextMonth").addEventListener("click", () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+        });
+
+        // Renderizar el calendario al cargar la página
+        renderCalendar();
+    </script>
+</body>
+</html>
+
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/js/buscar_colegiado.js"></script>
+    <script src="../assets/js/js/completar_form.js"></script>
+    <script src="../assets/js/pikaday.min.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/js/Custom-Upload-File-upload_file.js"></script>
+</body>
+
+</html>
