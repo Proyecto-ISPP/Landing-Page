@@ -1,0 +1,376 @@
+/* =========================
+   RESET / BASE
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+}
+
+/* =========================
+   ESTILOS GENERALES
+========================= */
+h2 {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* =========================
+   SECCIÓN DE PLANES
+========================= */
+.pricing-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.price {
+  font-size: 1.4rem;
+  margin: 1rem 0;
+}
+
+.price span {
+  font-size: 1rem;
+  color: #666;
+}
+
+.card ul {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+  text-align: left;
+  margin-left: 1.5rem; /* Ajusta la indentación a tu gusto */
+}
+
+.card ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #0070f3;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #005bb5;
+}
+
+/* Bordes de las cards y colores distintivos */
+.fisio-blue {
+  border-top: 8px solid #0070f3;
+}
+
+.fisio-blue .price {
+  color: #0070f3;
+}
+
+.fisio-gold {
+  border-top: 8px solid goldenrod;
+}
+
+.fisio-gold .price {
+  color: goldenrod;
+}
+
+.popular-badge {
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: goldenrod;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 16px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-transform: uppercase;
+}
+
+.compare-button-container {
+  margin-top: 1rem;
+}
+
+/* =========================
+   TABLA COMPARATIVA PRINCIPAL
+   (full-colored-table)
+========================= */
+.full-colored-table {
+  width: 90%;
+  max-width: 1000px;
+  margin: 1rem auto;
+  border-collapse: collapse;
+  box-shadow: 0 10px 24px rgba(0,0,0,.1);
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  table-layout: auto;
+  margin-top: 2rem;
+}
+
+/* Celdas (th, td) */
+.full-colored-table th,
+.full-colored-table td {
+  padding: 0.75rem;
+  vertical-align: middle;
+  text-align: left;
+  border: none; /* Ajustado a "sin bordes" para un diseño más limpio */
+  width: 30%;
+}
+
+/* Columnas con <colgroup> */
+.col-caracteristicas {
+  background-color: #fff; 
+  width: 30%;
+}
+
+.col-fisio-blue {
+  background-color: #E6F0FF; /* azul clarito */
+}
+
+.col-fisio-gold {
+  background-color: #FFF9E6; /* dorado clarito */
+}
+
+/* Cabeceras de la tabla */
+.th-fisio-blue {
+  background-color: #0070f3; 
+  color: #fff;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.th-fisio-gold {
+  background-color: goldenrod; 
+  color: #fff;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.th-caracteristicas {
+  background-color: #f1f3f5; 
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Precio en letra más pequeña debajo del nombre */
+.small-price {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+}
+
+/* Alinear texto en las columnas 2 y 3 */
+.full-colored-table tr > th:nth-child(2),
+.full-colored-table tr > td:nth-child(2),
+.full-colored-table tr > th:nth-child(3),
+.full-colored-table tr > td:nth-child(3) {
+  text-align: center;
+}
+
+/* Filas de categorías y sub-items */
+.sub-item {
+  font-weight: normal;
+  padding-left: 1rem;
+  font-size: 0.95rem;
+  color: #444;
+  white-space: nowrap; /* Evita saltos de línea si lo prefieres */
+}
+
+.sub-item th {
+  padding-left: 1.5rem;
+}
+
+/* =========================
+   OPCIONAL: ESTILOS PARA
+   OTRA TABLA DE COMPARACIÓN
+   (.compare-plans-section / .compare-table)
+   Si no lo usas, puedes eliminarlo.
+========================= */
+.compare-plans-section {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.compare-table thead th,
+.compare-table tbody td,
+.compare-table tbody th {
+  border-bottom: 1px solid #ddd;
+  padding: 0.75rem;
+  vertical-align: middle;
+}
+
+.compare-table thead th {
+  background-color: #f1f3f5;
+  font-weight: bold;
+  text-align: center;
+}
+
+.category-col {
+  /* sin color de fondo */
+}
+
+.fisio-blue-col {
+  background-color: #E6F0FF;
+}
+
+.fisio-gold-col {
+  background-color: #FFF9E6;
+}
+
+.category-row th {
+  background-color: #f7f8fa !important;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.category-row td {
+  background-color: #f7f8fa !important;
+}
+
+/* Contenedor principal con fondo clarito y dos columnas:
+   - 1ª columna: imágenes
+   - 2ª columna: texto */
+   .support-highlight {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background-color: #e6fbfa; /* Ajusta al color azul clarito que desees */
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px; /* Ajusta según tu diseño */
+    margin-bottom: 5rem;
+  }
+  
+  /* Contenedor de las 4 fotos en dos filas (2 columnas x 2 filas) */
+  .support-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columnas */
+    gap: 1rem;
+  }
+  
+  /* Cada “tarjetita” con fondo naranja */
+  .image-card {
+    background-color: #ffe7d8; /* Fondo naranja suave */
+    border-radius: 16px;       /* Bordes redondeados */
+    padding: 1rem;            /* Menos padding = tarjeta más pequeña */
+    display: inline-flex;      /* Se ajusta al contenido */
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+  }
+  
+  /* Ajustes de la imagen:
+     - Un ancho máximo para reducir su tamaño (p.e., 120px)
+     - Border-radius moderado para esquinas suaves */
+  .image-card img {
+    display: block;
+    width: 120px;       /* Ajusta para hacer la foto más o menos grande */
+    height: auto;       /* Mantén la proporción */
+    object-fit: cover;  /* Recorta si la imagen es muy grande */
+    border-radius: 8px; /* Suaviza las esquinas de la imagen */
+  }
+  
+  /* Texto a la derecha */
+  .support-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+  
+  .support-text h2 {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .support-text p {
+    margin: 0 0 1.5rem;
+    line-height: 1.5;
+  }
+  
+  /* Botón */
+  .btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: #0070f3;
+    color: #fff;
+    border: 2px solid #0070f3;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #005bb5;
+    border-color: #005bb5;
+  }
+  
+
+  .image-card:nth-child(1) {
+    border-radius: 100px;
+  }
+  .image-card:nth-child(2) {
+    border-radius: 60px 10px 60px 10px;
+  }
+  .image-card:nth-child(3) {
+    border-radius: 60px 10px 60px 10px;
+  }
+  .image-card:nth-child(4) {
+    border-radius: 100px;
+  }
+
+  .large-title {
+    font-size: 2.5rem; /* Ajusta el tamaño según sea necesario */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  
