@@ -1,19 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../styles/precios.css";
-import antonio_transparent from "../assets/members/antonio_transparent.png";
-import capote_transparent from "../assets/members/capote_transparent.png";
-import guadalupe_transparent from "../assets/members/guadalupe_transparent.png";
-import rubio_transparent from "../assets/members/rubio_transparent.png";
+import team from "../assets/support/collage.png";
+import '../styles/global.css';
+import blue from '../assets/blue.png';
+import gold from '../assets/gold.png';
 ---
 
-<Layout>
+<Layout title="Precios | Fisio Find">
   <section class="pricing-section">
-    <h1 class="large-title">Escoge el mejor plan según tus necesidades</h1>
+    <h1 class="large-title" style="color: #012c6d;">Escoge el mejor plan según tus necesidades</h1>
 
     <div class="pricing-cards mt-16">
       <div class="card fisio-blue">
-        <h3>Fisio Blue</h3>
+        <div class="flex justify-center items-center mb-4">
+          <img
+            src={blue.src}
+            alt="Fisio Blue"
+            class="w-9 h-9 mb-1 object-contain"
+          />
+          <h3 class="text-lg">
+            Fisio Blue
+          </h3>
+        </div>
         <p class="price">17,99€ <span>/ mes</span></p>
         <ul>
           <li>📹 Videoconsultas con todas las herramientas</li>
@@ -26,7 +35,16 @@ import rubio_transparent from "../assets/members/rubio_transparent.png";
 
       <div class="card fisio-gold">
         <div class="popular-badge">¡Más popular!</div>
-        <h3>Fisio Gold</h3>
+        <div class="flex justify-center items-center mb-4 mt-2">
+          <img
+            src={gold.src}
+            alt="Fisio Gold"
+            class="w-5 h-5 mr-2 mb-1 object-contain"
+          />
+          <h3 class="text-lg">
+            Fisio Gold
+          </h3>
+        </div>
         <p class="price">24,99€ <span>/ mes</span></p>
         <ul>
           <li>🤝 Todas las ventajas de Fisio Blue</li>
@@ -39,49 +57,48 @@ import rubio_transparent from "../assets/members/rubio_transparent.png";
     </div>
 
     <div class="compare-button-container">
-      <a class="btn compare-button" href="javascript:void(0);">
+      <a class="px-8 py-3 text-base font-medium rounded-lg text-white bg-cyan-600 hover:bg-cyan-700 transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 compare-button" href="javascript:void(0);">
         Comparar planes
       </a>
     </div>
   </section>
 
   <!-- NUEVO DIV DE SOPORTE -->
-  <div class="support-highlight">
-    <div class="support-images">
-      <div class="image-card shape1">
-        <img
-          src={antonio_transparent.src}
-          alt="Miembro del equipo de soporte"
-        />
-      </div>
-      <div class="image-card shape2">
-        <img
-          src={guadalupe_transparent.src}
-          alt="Miembro del equipo de soporte"
-        />
-      </div>
-      <div class="image-card shape3">
-        <img src={rubio_transparent.src} alt="Miembro del equipo de soporte" />
-      </div>
-      <div class="image-card shape4">
-        <img src={capote_transparent.src} alt="Miembro del equipo de soporte" />
-      </div>
+  <div class="bg-[#E9FCFD] py-10 px-4 max-w-screen-lg justify-self-center mt-11 mb-12">
+  <!-- Contenedor con ancho máximo y centrado -->
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8">
+    
+    <!-- Imagen (arriba en móviles, izquierda en pantallas medianas/grandes) -->
+    <div class="md:w-1/2 flex justify-center md:justify-end">
+      <img
+        src={team.src}
+        alt="Equipo de soporte"
+        class="max-w-sm w-full h-auto object-cover rounded"
+      />
     </div>
 
-    <div class="support-text">
-      <h2>
-        Descubre todo el potencial de nuestra herramienta<br />
-        con el respaldo de un equipo excepcional
+    <!-- Texto (debajo de la imagen en móviles, a la derecha en pantallas grandes) -->
+    <div class="md:w-1/2 text-center md:text-left">
+      <h2 class="text-3xl font-semibold mb-4 text-left" style="color: #012c6d;">
+        Descubre todo el potencial con el respaldo de un equipo excepcional
       </h2>
-      <p>
+      <p class="text-gray-800 mb-6 leading-relaxed">
         No estás solo en este viaje. Nuestro equipo de soporte está listo para
         ayudarte en cada paso, desde la configuración inicial hasta el
         aprovechamiento de todas las funciones. Si surge cualquier duda, estamos
         aquí para solucionarla.
       </p>
-      <a href="/#contacto" class="btn">Contáctanos</a>
+      <a
+        href="/#contacto"
+        class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded shadow transition-colors duration-200"
+      >
+        Contáctanos
+      </a>
     </div>
   </div>
+</div>
+
+    <h1 class="large-title" style="color: #012c6d;">Compara las características de los planes</h1>  
 
   <table class="full-colored-table" id="tabla-comparativa">
     <colgroup>
