@@ -1,30 +1,47 @@
 ---
-import hero from "../assets/hero-img.webp";
-import "../styles/welcome.css";
+import hero from '../assets/hero.png';
+import basic from '../assets/fondo.png';
+import '../styles/global.css';
 ---
 
-<div class="relative min-h-screen">
-  <!-- Hero Section -->
-  <div class="relative h-screen">
-    <div class="absolute inset-0">
-      <img
-        src={hero.src}
-        alt="Seville Cityscape"
-        class="w-full h-full object-cover"
-      />
-      <div class="absolute inset-0 bg-black opacity-50"></div>
-    </div>
-    <div
-      class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4"
-    >
-      <h1 class="text-5xl md:text-6xl font-bold mb-4">
-        Fisio Find le da la bienvenida
-      </h1>
-      <p class="text-xl md:text-2xl mb-8">
-        A la plataforma de consulta online pensada para ti.
-      </p>
-    </div>
+<div class="relative h-screen">
+  <div class="absolute inset-0">
+    <img
+      src={hero.src}
+      alt="Fondo"
+      class="w-full h-full object-cover"
+    />
   </div>
+
+  <div class="relative z-10 flex flex-col justify-start items-center h-full text-center px-4 pt-16 md:pt-32">
+    
+    <h2 class="text-sm md:text-base text-gray-600 uppercase mb-6 font-bold">
+      Para profesionales fisioterapeutas
+    </h2>
+
+    <!-- Contenedor para el texto dinámico -->
+    <div class="mb-8 max-w-xl mx-auto" style="min-height: 72px;">
+      <h1
+        id="dynamic-fade-text"
+        style="color: #012c6d;"
+        class="text-4xl md:text-5xl font-bold transition-opacity duration-500 opacity-100"
+      >
+        Conecta con más pacientes en línea
+      </h1>
+    </div>
+
+    <p class="text-lg md:text-xl max-w-xl mx-auto">
+      ¿Quieres saber más? Haz clic en el botón de abajo.
+    </p>
+
+    <a
+      href="/mockups/index.html"
+      target="_blank"
+      class="px-8 py-3 text-base font-medium rounded-lg text-white bg-cyan-600 hover:bg-cyan-700 transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 mt-8">
+      Probar Demo
+    </a>
+  </div>
+</div>
 
   <!-- Information Section -->
   <div class="py-16 bg-white">
@@ -161,4 +178,36 @@ import "../styles/welcome.css";
       </section>
     </div>
   </div>
+  <script is:inline>
+  // Lista de frases que se irán rotando
+  const phrases = [
+    'Gestiona tu agenda fácilmente',
+    'Muestra y destaca con tu experiencia',
+    'Aumenta tu reputación online',
+  ];
+
+  let index = 0;
+  const fadeText = document.getElementById('dynamic-fade-text');
+  
+  // Duración de la animación de fade (en ms)
+  const fadeDuration = 500;
+  // Tiempo que permanece cada frase antes de cambiar (en ms)
+  const intervalDuration = 3000;
+
+  setInterval(() => {
+    // 1. Fade out
+    fadeText.classList.remove('opacity-100');
+    fadeText.classList.add('opacity-0');
+
+    setTimeout(() => {
+      // 2. Cambiamos la frase
+      index = (index + 1) % phrases.length;
+      fadeText.textContent = phrases[index];
+
+      // 3. Fade in
+      fadeText.classList.remove('opacity-0');
+      fadeText.classList.add('opacity-100');
+    }, fadeDuration);
+  }, intervalDuration);
+</script>
 </div>

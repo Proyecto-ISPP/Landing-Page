@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Projects - FisioFind</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/Ionicons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/css/Login-Form-Basic-icons.css">
+    <link rel="stylesheet" href="../assets/css/css/pikaday.min.css">
+    <link rel="stylesheet" href="../assets/css/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/css/Login-Form-Basic-icons.css">
+    <link rel="stylesheet" href="../assets/css/pikaday.min.css">
+    <link rel="stylesheet" href="../assets/css/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/css/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/css/css/Custom-Upload-File.css">
+</head>
+
+<body><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Cita</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+    
+        .hero-section {
+            background: url('https://via.placeholder.com/1600x800') no-repeat center center;
+            background-size: cover;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+        .hero-section p {
+            font-size: 1.25rem;
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        .confirmation-message {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            display: none;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+  <header>
+    <div class="fs-4 fw-bold">FisioFind</div>
+<nav class="navbar navbar-expand-lg fixed-top portfolio-navbar gradient navbar-dark">
+    <div class="container">
+        <!-- Logo -->
+        <picture>
+            <img src="../assets/img/avatars/Captura-removebg-preview.png" width="60" height="55" />
+        </picture>
+        <a class="navbar-brand logo" href="#"><strong>Fisio Find</strong></a>
+
+        <!-- Botón de navegación para móviles -->
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="visually-hidden">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Enlaces de navegación -->
+        <div id="navbarNav" class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html" style="color: rgb(255, 255, 255);">INICIO</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="../vistasPaciente/Buscar.html" style="color: rgb(255, 255, 255);">BUSCAR</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../vistasPaciente/Calendario.html" style="color: rgb(255, 255, 255);">CALENDARIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../vistasPaciente/Historial.html" style="color: rgb(255, 255, 255);">HISTORIAL</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../vistasPaciente/Ejercicios.html" style="color: rgb(255, 255, 255);">EJERCICIOS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../vistasPaciente/ReservaCita.html" style="color: rgb(255, 255, 255);">CITA</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+        <div class="fs-4">🔵</div>
+    </header>
+
+    <!-- Formulario de Reserva de Cita -->
+    <div class="container my-5">
+        <div class="card">
+            <div class="card-header">
+                <h3>Reserva de Cita</h3>
+            </div>
+            <div class="card-body">
+                <form id="reservationForm">
+                    <!-- Selección de Fisioterapeuta -->
+                    <div class="mb-3">
+                        <label for="physiotherapist" class="form-label">Selecciona un Fisioterapeuta</label>
+                        <select class="form-select" id="physiotherapist" required>
+                            <option value="">Elige un fisioterapeuta</option>
+                            <option value="Juan Pérez">Juan Pérez</option>
+                            <option value="María Gómez">María Gómez</option>
+                            <option value="Carlos Sánchez">Carlos Sánchez</option>
+                        </select>
+                    </div>
+
+                    <!-- Selección de Servicio -->
+                    <div class="mb-3">
+                        <label for="service" class="form-label">Selecciona un Servicio</label>
+                        <select class="form-select" id="service" required>
+                            <option value="">Elige un servicio</option>
+                            <option value="Rehabilitación Deportiva">Rehabilitación Deportiva</option>
+                            <option value="Fisioterapia Respiratoria">Fisioterapia Respiratoria</option>
+                            <option value="Tratamiento Ortopédico">Tratamiento Ortopédico</option>
+                        </select>
+                    </div>
+
+                    <!-- Selección de Fecha -->
+                    <div class="mb-3">
+                        <label for="date" class="form-label">Selecciona una Fecha</label>
+                        <input type="date" class="form-control" id="date" required>
+                    </div>
+
+                    <!-- Selección de Horario -->
+                    <div class="mb-3">
+                        <label for="time" class="form-label">Selecciona un Horario</label>
+                        <select class="form-select" id="time" required>
+                            <option value="">Elige un horario</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="2:00 PM">2:00 PM</option>
+                            <option value="4:00 PM">4:00 PM</option>
+                        </select>
+                    </div>
+
+                    <!-- Precio -->
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Precio</label>
+                        <input type="text" class="form-control" id="price" value="50€" readonly>
+                    </div>
+
+                    <!-- Botón para Confirmar -->
+                    <button type="submit" class="btn btn-primary">Confirmar Reserva</button>
+                </form>
+
+                <!-- Mensaje de Confirmación -->
+                <div id="confirmation-message" class="confirmation-message">
+                    Cita reservada con éxito.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Función para manejar la reserva
+        document.getElementById('reservationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Aquí puedes agregar código para enviar la reserva al servidor y procesar la información
+  
+            window.location.href = "../vistasPaciente/Cuestionario.html";
+            // Mostrar el mensaje de confirmación
+            document.getElementById('confirmation-message').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
+
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/js/buscar_colegiado.js"></script>
+    <script src="../assets/js/js/completar_form.js"></script>
+    <script src="../assets/js/pikaday.min.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/js/Custom-Upload-File-upload_file.js"></script>
+</body>
+
+</html>

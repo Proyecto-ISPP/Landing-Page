@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Projects - FisioFind</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/Ionicons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/css/Login-Form-Basic-icons.css">
+    <link rel="stylesheet" href="../assets/css/css/pikaday.min.css">
+    <link rel="stylesheet" href="../assets/css/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/css/Login-Form-Basic-icons.css">
+    <link rel="stylesheet" href="../assets/css/pikaday.min.css">
+    <link rel="stylesheet" href="../assets/css/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/css/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/css/css/Custom-Upload-File.css">
+</head>
+
+<body><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagos y Facturación - FisioFind</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <header>
+        <div class="fs-4 fw-bold">FisioFind</div>
+        <nav class="navbar navbar-expand-lg fixed-top portfolio-navbar gradient navbar-dark">
+            <div class="container">
+                <picture>
+                    <img src="../assets/img/avatars/Captura-removebg-preview.png" width="60" height="55" />
+                </picture>
+                <a class="navbar-brand logo" href="#"><strong>Fisio Find</strong></a>
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="visually-hidden">Toggle navigation</span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="navbarNav" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">INICIO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../vistasPaciente/Buscar.html">BUSCAR</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Calendario.html">CALENDARIO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../vistasPaciente/Historial.html">HISTORIAL</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../vistasPaciente/Ejercicios.html">EJERCICIOS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../vistasPaciente/ReservaCita.html">CITA</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="fs-4">🔵</div>
+    </header>
+
+    <div class="container mt-5">
+        <h2 class="text-center">Pagos y Facturación</h2>
+        <form id="pagoForm">
+            <div class="mb-3">
+                <label for="servicio" class="form-label">Seleccione un servicio</label>
+                <select class="form-select" id="servicio" required>
+                    <option value="Consulta">Consulta - $50</option>
+                    <option value="Terapia">Terapia Física - $70</option>
+                    <option value="Rehabilitación">Rehabilitación - $100</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="metodoPago" class="form-label">Seleccione el método de pago</label>
+                <select class="form-select" id="metodoPago" required>
+                    <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+                    <option value="PayPal">PayPal</option>
+                    <option value="Transferencia Bancaria">Transferencia Bancaria</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Pagar</button>
+        </form>
+
+        <div id="mensajeConfirmacion" class="mt-3 text-success" style="display: none;">
+            <strong>Pago realizado con éxito. Su factura ha sido generada.</strong><br>
+            <span id="detallePago"></span>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("pagoForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Obtener valores seleccionados
+            const servicioSeleccionado = document.getElementById("servicio").value;
+            const metodoPagoSeleccionado = document.getElementById("metodoPago").value;
+            const mensaje = `Ha seleccionado el servicio: <strong>${servicioSeleccionado}</strong> con el método de pago: <strong>${metodoPagoSeleccionado}</strong>.`;
+
+            // Mostrar el mensaje de confirmación
+            document.getElementById("detallePago").innerHTML = mensaje;
+            document.getElementById("mensajeConfirmacion").style.display = "block";
+
+            // Redirigir después de mostrar el mensaje
+            setTimeout(() => {
+                window.location.href = "../vistasPaciente/Calendario.html";
+            }, 3000);
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/js/buscar_colegiado.js"></script>
+    <script src="../assets/js/js/completar_form.js"></script>
+    <script src="../assets/js/pikaday.min.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/js/Custom-Upload-File-upload_file.js"></script>
+</body>
+
+</html>
