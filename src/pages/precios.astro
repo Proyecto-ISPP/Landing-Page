@@ -2,14 +2,16 @@
 import Layout from "../layouts/Layout.astro";
 import "../styles/precios.css";
 import team from "../assets/support/collage.png";
-import '../styles/global.css';
-import blue from '../assets/blue.png';
-import gold from '../assets/gold.png';
+import "../styles/global.css";
+import blue from "../assets/blue.png";
+import gold from "../assets/gold.png";
 ---
 
 <Layout title="Precios | Fisio Find">
   <section class="pricing-section">
-    <h1 class="large-title" style="color: #012c6d;">Escoge el mejor plan según tus necesidades</h1>
+    <h1 class="large-title" style="color: #012c6d;">
+      Escoge el mejor plan según tus necesidades
+    </h1>
 
     <div class="pricing-cards mt-16">
       <div class="card fisio-blue">
@@ -19,9 +21,7 @@ import gold from '../assets/gold.png';
             alt="Fisio Blue"
             class="w-9 h-9 mb-1 object-contain"
           />
-          <h3 class="text-lg">
-            Fisio Blue
-          </h3>
+          <h3 class="text-lg">Fisio Blue</h3>
         </div>
         <p class="price">17,99€ <span>/ mes</span></p>
         <ul>
@@ -41,9 +41,7 @@ import gold from '../assets/gold.png';
             alt="Fisio Gold"
             class="w-5 h-5 mr-2 mb-1 object-contain"
           />
-          <h3 class="text-lg">
-            Fisio Gold
-          </h3>
+          <h3 class="text-lg">Fisio Gold</h3>
         </div>
         <p class="price">24,99€ <span>/ mes</span></p>
         <ul>
@@ -57,136 +55,148 @@ import gold from '../assets/gold.png';
     </div>
 
     <div class="compare-button-container">
-      <a class="px-8 py-3 text-base font-medium rounded-lg text-white bg-cyan-600 hover:bg-cyan-700 transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 compare-button" href="javascript:void(0);">
+      <a
+        class="px-8 py-3 text-base font-medium rounded-lg text-white bg-cyan-600 hover:bg-cyan-700 transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 compare-button"
+        href="javascript:void(0);"
+      >
         Comparar planes
       </a>
     </div>
   </section>
 
   <!-- NUEVO DIV DE SOPORTE -->
-  <div class="bg-[#E9FCFD] py-10 px-4 max-w-screen-lg justify-self-center mt-11 mb-12">
-  <!-- Contenedor con ancho máximo y centrado -->
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8">
-    
-    <!-- Imagen (arriba en móviles, izquierda en pantallas medianas/grandes) -->
-    <div class="md:w-1/2 flex justify-center md:justify-end">
-      <img
-        src={team.src}
-        alt="Equipo de soporte"
-        class="max-w-sm w-full h-auto object-cover rounded"
-      />
-    </div>
+  <div
+    class="bg-[#E9FCFD] py-10 px-4 max-w-screen-lg justify-self-center mt-11 mb-12"
+  >
+    <!-- Contenedor con ancho máximo y centrado -->
+    <div
+      class="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8"
+    >
+      <!-- Imagen (arriba en móviles, izquierda en pantallas medianas/grandes) -->
+      <div class="md:w-1/2 flex justify-center md:justify-end">
+        <img
+          src={team.src}
+          alt="Equipo de soporte"
+          class="max-w-sm w-full h-auto object-cover rounded"
+        />
+      </div>
 
-    <!-- Texto (debajo de la imagen en móviles, a la derecha en pantallas grandes) -->
-    <div class="md:w-1/2 text-center md:text-left">
-      <h2 class="text-3xl font-semibold mb-4 text-left" style="color: #012c6d;">
-        Descubre todo el potencial con el respaldo de un equipo excepcional
-      </h2>
-      <p class="text-gray-800 mb-6 leading-relaxed">
-        No estás solo en este viaje. Nuestro equipo de soporte está listo para
-        ayudarte en cada paso, desde la configuración inicial hasta el
-        aprovechamiento de todas las funciones. Si surge cualquier duda, estamos
-        aquí para solucionarla.
-      </p>
-      <a
-        href="/#contacto"
-        class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded shadow transition-colors duration-200"
-      >
-        Contáctanos
-      </a>
+      <!-- Texto (debajo de la imagen en móviles, a la derecha en pantallas grandes) -->
+      <div class="md:w-1/2 text-center md:text-left">
+        <h2
+          class="text-3xl font-semibold mb-4 text-left"
+          style="color: #012c6d;"
+        >
+          Descubre todo el potencial con el respaldo de un equipo excepcional
+        </h2>
+        <p class="text-gray-800 mb-6 leading-relaxed">
+          No estás solo en este viaje. Nuestro equipo de soporte está listo para
+          ayudarte en cada paso, desde la configuración inicial hasta el
+          aprovechamiento de todas las funciones. Si surge cualquier duda,
+          estamos aquí para solucionarla.
+        </p>
+        <a
+          href="/#contacto"
+          class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded shadow transition-colors duration-200"
+        >
+          Contáctanos
+        </a>
+      </div>
     </div>
   </div>
-</div>
+  <section id="tabla-comparativa">
+    <h1 class="large-title" style="color: #012c6d;">
+      Compara las características de los planes
+    </h1>
 
-    <h1 class="large-title" style="color: #012c6d;">Compara las características de los planes</h1>  
+    <table class="full-colored-table" id="tabla-comparativa">
+      <colgroup>
+        <col class="col-caracteristicas" />
+        <col class="col-fisio-blue" />
+        <col class="col-fisio-gold" />
+      </colgroup>
 
-  <table class="full-colored-table" id="tabla-comparativa">
-    <colgroup>
-      <col class="col-caracteristicas" />
-      <col class="col-fisio-blue" />
-      <col class="col-fisio-gold" />
-    </colgroup>
+      <thead>
+        <tr>
+          <th class="th-caracteristicas"></th>
+          <th class="th-fisio-blue">
+            Fisio Blue
+            <div class="small-price">17,99€/mes</div>
+          </th>
+          <th class="th-fisio-gold">
+            Fisio Gold
+            <div class="small-price">24,99€/mes</div>
+          </th>
+        </tr>
+      </thead>
 
-    <thead>
-      <tr>
-        <th class="th-caracteristicas"></th>
-        <th class="th-fisio-blue">
-          Fisio Blue
-          <div class="small-price">17,99€/mes</div>
-        </th>
-        <th class="th-fisio-gold">
-          Fisio Gold
-          <div class="small-price">24,99€/mes</div>
-        </th>
-      </tr>
-    </thead>
+      <tbody>
+        <tr>
+          <th><strong>Comunicación con pacientes</strong></th>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="sub-item">
+          <th>Chat integrado</th>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr class="sub-item">
+          <th>Subir y compartir vídeos</th>
+          <td>15/mes</td>
+          <td>30/mes</td>
+        </tr>
 
-    <tbody>
-      <tr>
-        <th><strong>Comunicación con pacientes</strong></th>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr class="sub-item">
-        <th>Chat integrado</th>
-        <td>✔</td>
-        <td>✔</td>
-      </tr>
-      <tr class="sub-item">
-        <th>Subir y compartir vídeos</th>
-        <td>15/mes</td>
-        <td>30/mes</td>
-      </tr>
+        <tr>
+          <th><strong>Videoconsulta y seguimiento</strong></th>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="sub-item">
+          <th>Videoconsultas avanzadas</th>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr class="sub-item">
+          <th>Seguimiento del paciente</th>
+          <td>✔</td>
+          <td>✔ + Mayor alcance</td>
+        </tr>
 
-      <tr>
-        <th><strong>Videoconsulta y seguimiento</strong></th>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr class="sub-item">
-        <th>Videoconsultas avanzadas</th>
-        <td>✔</td>
-        <td>✔</td>
-      </tr>
-      <tr class="sub-item">
-        <th>Seguimiento del paciente</th>
-        <td>✔</td>
-        <td>✔ + Mayor alcance</td>
-      </tr>
+        <tr>
+          <th><strong>Soporte técnico</strong></th>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="sub-item">
+          <th>Tipo de soporte</th>
+          <td>Limitado</td>
+          <td>Personalizado</td>
+        </tr>
+        <tr class="sub-item">
+          <th>Tiempo de respuesta</th>
+          <td>En horario laboral</td>
+          <td>Prioritario</td>
+        </tr>
 
-      <tr>
-        <th><strong>Soporte técnico</strong></th>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr class="sub-item">
-        <th>Tipo de soporte</th>
-        <td>Limitado</td>
-        <td>Personalizado</td>
-      </tr>
-      <tr class="sub-item">
-        <th>Tiempo de respuesta</th>
-        <td>En horario laboral</td>
-        <td>Prioritario</td>
-      </tr>
-
-      <tr>
-        <th><strong>Visibilidad y ventajas</strong></th>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr class="sub-item">
-        <th>Tick de verificación</th>
-        <td>✖</td>
-        <td>✔</td>
-      </tr>
-      <tr class="sub-item">
-        <th>Mayor alcance</th>
-        <td>✖</td>
-        <td>✔</td>
-      </tr>
-    </tbody>
-  </table>
+        <tr>
+          <th><strong>Visibilidad y ventajas</strong></th>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="sub-item">
+          <th>Tick de verificación</th>
+          <td>✖</td>
+          <td>✔</td>
+        </tr>
+        <tr class="sub-item">
+          <th>Mayor alcance</th>
+          <td>✖</td>
+          <td>✔</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
   <script is:inline>
     document.addEventListener("DOMContentLoaded", function () {
