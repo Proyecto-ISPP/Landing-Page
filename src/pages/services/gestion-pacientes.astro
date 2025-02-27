@@ -1,0 +1,73 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Gestión de Pacientes | Fisio Find">
+  <div class="min-h-screen">
+    <!-- Hero Section with a different style -->
+
+    <div class="bg-[#ebfcfa] py-20" style="color: #012c6d;">
+      <div class="container mx-auto px-4 text-center">
+        <span class="bg-[#cbfcfa] text-gray-700 px-4 py-1 rounded-full text-sm font-medium mb-6 inline-block">Gestión Simplificada</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-6">Gestión de Pacientes</h1>
+        <p class="text-center text-xl md:text-2xl max-w-3xl mx-auto">Sistema integral para el seguimiento y administración de tus pacientes</p>
+      </div>
+    </div>
+
+    <!-- Features Grid with different layout -->
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="bg-white rounded-xl shadow-lg p-8 border-t-4 border-[#7ce4e1] transition-all duration-300 hover:shadow-xl">
+          <div class="bg-[#e5fdfb] w-16 h-16 rounded-xl flex items-center justify-center mb-6 transform -translate-y-12">
+            <i class="fas fa-calendar-check text-[#7ce4e1] text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Gestión de Citas</h3>
+          <p class="text-gray-600 leading-relaxed">Organiza y gestiona las citas de tus pacientes de manera eficiente y sin conflictos.</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 border-t-4 border-[#7ce4e1] transition-all duration-300 hover:shadow-xl">
+          <div class="bg-[#e5fdfb] w-16 h-16 rounded-xl flex items-center justify-center mb-6 transform -translate-y-12">
+            <i class="fas fa-chart-line text-[#7ce4e1] text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Seguimiento de Progreso</h3>
+          <p class="text-gray-600 leading-relaxed">Monitoriza la evolución de tus pacientes y mantén un registro detallado de sus avances.</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 border-t-4 border-[#7ce4e1] transition-all duration-300 hover:shadow-xl">
+          <div class="bg-[#e5fdfb] w-16 h-16 rounded-xl flex items-center justify-center mb-6 transform -translate-y-12">
+            <i class="fas fa-notes-medical text-[#7ce4e1] text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Historial Clínico</h3>
+          <p class="text-gray-600 leading-relaxed">Mantén registros médicos organizados y accesibles de forma segura en todo momento.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto px-4">
+    <!-- Additional Feature Section -->
+      <div class="mt-2 bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="p-8 md:p-12">
+            <h2 class="text-3xl font-bold mb-6">Optimiza tu Tiempo</h2>
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-[#7ce4e1] mr-2"></i>
+                <span>Automatización de recordatorios de citas</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-[#7ce4e1] mr-2"></i>
+                <span>Gestión de historiales clínicos digitalizados</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-[#7ce4e1] mr-2"></i>
+                <span>Seguimiento de tratamientos en tiempo real</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-[#ebfcfa] p-8 md:p-12 flex items-center justify-center">
+            <img src="/mockups/dashboard-preview.png" alt="Dashboard Preview" class="rounded-lg shadow-lg max-w-md w-full" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
