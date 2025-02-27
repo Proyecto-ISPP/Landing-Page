@@ -380,4 +380,35 @@ h2 {
     margin-top: 2rem;
   }
 
+  tabla-comparativa {
+    /* Asegurarnos de que no se corte el contenido */
+    overflow-x: auto; 
+    /* si usas display:block para la tabla, 
+       asegúrate de darle un min-width apropiado */
+    width: 100%;
+  }
   
+  .full-colored-table table {
+    /* Así evitamos que se encoja; si le pones un min-width
+       mayor al ancho del contenedor, se mostrará scroll */
+    min-width: 600px; 
+    /* Ajusta según cuántas columnas tengas */
+  }
+
+  .tabla-responsive-wrapper {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  @media (max-width: 640px) {
+    .full-colored-table th,
+    .full-colored-table td {
+      font-size: 0.65rem; /* reduce el texto */
+      padding: 0.5rem;   /* reduce la separación */
+    }
+  
+    /* Puedes hacer la tabla un poco más compacta */
+    .full-colored-table {
+      border-spacing: 0.4rem;
+    }
+  }
