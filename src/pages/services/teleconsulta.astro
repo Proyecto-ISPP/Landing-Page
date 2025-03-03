@@ -1,0 +1,294 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Teleconsulta Virtual | Fisio Find">
+  <div class="min-h-screen bg-white">
+    <!-- Hero Section --> 
+    <div class="bg-[#ebfcfa] py-20" style="color: #012c6d;">
+      <div class="container mx-auto px-4 text-center">
+        <span
+          class="bg-[#cbfcfa] text-gray-700 px-4 py-1 rounded-full text-sm font-medium mb-6 inline-block"
+          >Consultas como nunca antes</span
+        >
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-6">
+          Una herramienta digital completa y siempre accesible
+        </h1>
+        <p class="text-center text-xl md:text-2xl max-w-3xl mx-auto">
+          Solo necesitas un dispositivo con conexión a Internet. Simple, ¿no?
+        </p>
+      </div>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-[#fff8f0] rounded-lg p-6 shadow-md">
+          <div class="mb-4">
+            <div
+              class="bg-[#cbfcfa] w-16 h-16 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-search text-gray-700 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Videollamadas</h3>
+            <p class="text-gray-700">
+              Realiza consultas virtuales de alta calidad con tus pacientes.
+              Incluye temporizador inteligente y acceso directo desde tu agenda
+              para una gestión eficiente de las sesiones.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-[#fff8f0] rounded-lg p-6 shadow-md">
+          <div class="mb-4">
+            <div
+              class="bg-[#cbfcfa] w-16 h-16 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-laptop-medical text-gray-700 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Herramientas</h3>
+            <p class="text-gray-700">
+              Accede a un completo conjunto de herramientas profesionales:
+              modelo anatómico 3D, cuestionarios personalizables y gestión del
+              historial clínico en tiempo real.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-[#fff8f0] rounded-lg p-6 shadow-md">
+          <div class="mb-4">
+            <div
+              class="bg-[#cbfcfa] w-16 h-16 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-comments text-gray-700 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Chat</h3>
+            <p class="text-gray-700">
+              Mantén una comunicación fluida durante las consultas con chat en
+              tiempo real, compartición segura de archivos y mensajería privada
+              integrada.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Video Calls Section -->
+    <div class="bg-white py-16">
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-12"
+        >
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold mb-6">
+              Videollamadas profesionales para una atención personalizada
+            </h2>
+            <div class="space-y-4">
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-video text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Control de tiempo inteligente</h3>
+                    <p class="text-gray-600 mt-1">
+                      Temporizador visible durante la consulta y finalización
+                      controlada después del 75% del tiempo programado.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-desktop text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Alta calidad garantizada</h3>
+                    <p class="text-gray-600 mt-1">
+                      Videollamadas HD con ajustes de audio y video, compatible
+                      con todos los dispositivos.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-calendar-check text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Gestión desde tu agenda</h3>
+                    <p class="text-gray-600 mt-1">
+                      Inicia consultas directamente desde tu calendario de citas
+                      con un solo clic.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <img
+              src="/src/assets/services/videocall-preview.png"
+              alt="Video Call Preview"
+              class="rounded-lg shadow-lg w-full"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Chat Section -->
+    <div class="py-16">
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row-reverse items-center justify-between gap-12"
+        >
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold mb-6">
+              Chat integrado para una comunicación fluida
+            </h2>
+            <div class="space-y-4">
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-comments text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Mensajería en tiempo real</h3>
+                    <p class="text-gray-600 mt-1">
+                      Chat privado durante la videollamada con notificaciones
+                      instantáneas.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-file-upload text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Compartir archivos</h3>
+                    <p class="text-gray-600 mt-1">
+                      Envío seguro de documentos, imágenes y enlaces relevantes
+                      para el tratamiento.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-shield-alt text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Comunicación segura</h3>
+                    <p class="text-gray-600 mt-1">
+                      El registro del chat de la videollamada será eliminado una
+                      vez que finalice la sesión.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <img
+              src="/src/assets/services/chat-preview.png"
+              alt="Chat Preview"
+              class="rounded-lg shadow-lg w-full"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Tools Section -->
+    <div class="bg-white py-16">
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-12"
+        >
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold mb-6">
+              Herramientas profesionales a tu alcance
+            </h2>
+            <div class="space-y-4">
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-cube text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">
+                      Modelo anatómico 3D interactivo
+                    </h3>
+                    <p class="text-gray-600 mt-1">
+                      Visualización clara y manipulación del modelo para
+                      explicar patologías y tratamientos.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-clipboard-list text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Cuestionarios personalizables</h3>
+                    <p class="text-gray-600 mt-1">
+                      Crea y adapta test, mapas de dolor y escalas de evaluación
+                      según tus necesidades.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-folder-open text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Historial clínico digital</h3>
+                    <p class="text-gray-600 mt-1">
+                      Acceso y actualización en tiempo real del historial médico
+                      durante la consulta.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <img
+              src="/src/assets/services/tools-preview.png"
+              alt="Tools Preview"
+              class="rounded-lg shadow-lg w-full"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Continue with Testimonial Section and CTA Section -->
+    <!-- <div class="bg-[#ebfcfa] py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
+          <div class="flex flex-col items-center text-center">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Doctor" class="w-20 h-20 rounded-full mb-4"/>
+            <p class="text-gray-600 italic mb-4">"La agenda de FisioFind nos gestiona las citas y facilita la vida de nuestros pacientes. Ya tenemos opiniones en la red pero lo que más me gusta es que llegue un mensaje pidiendo su valoración, pues realmente mucha gente se ha fijado en generar opiniones. Esto implica que la gente que te busca tiene información respecto de lo que estás haciendo."</p>
+            <div>
+              <p class="font-semibold">Dr. Carlos Martínez</p>
+              <p class="text-sm text-gray-500">Centro de Fisioterapia Avanzada</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- CTA Section -->
+    <div class="bg-white py-16">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-8">
+          Facilita y mejora la comunicación con tus pacientes
+        </h2>
+        <p class="text-xl mb-8 max-w-3xl mx-auto">
+          Una única plataforma para fortalecer la relación y aumentar la
+          fidelidad de tus pacientes
+        </p>
+        <div class="flex justify-center gap-4">
+          <a
+            href="/precios"
+            class="bg-[#7ce4e1] hover:bg-[#5ad8d4] text-gray-800 font-semibold py-3 px-8 rounded-lg transition-colors"
+          >
+            Obtén más información
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

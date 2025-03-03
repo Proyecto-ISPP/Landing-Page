@@ -1,0 +1,202 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Gestión de Pacientes | Fisio Find">
+  <div class="min-h-screen bg-white">
+    <!-- Hero Section -->
+    <div class="bg-[#ebfcfa] py-20" style="color: #012c6d;">
+      <div class="container mx-auto px-4 text-center">
+        <span class="bg-[#cbfcfa] text-gray-700 px-4 py-1 rounded-full text-sm font-medium mb-6 inline-block">Gestión Simplificada</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-6">Gestión Integral de Pacientes</h1>
+        <p class="text-center text-xl md:text-2xl max-w-3xl mx-auto">Sistema completo para el seguimiento y administración eficiente de tus pacientes</p>
+      </div>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-[#fff8f0] rounded-lg p-6 shadow-md">
+          <div class="mb-4">
+            <div class="bg-[#cbfcfa] w-16 h-16 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-users text-gray-700 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Centro de Seguimiento</h3>
+            <p class="text-gray-700">
+              Panel centralizado para monitorear el progreso de todos tus pacientes activos, con informes detallados y comunicación integrada.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-[#fff8f0] rounded-lg p-6 shadow-md">
+          <div class="mb-4">
+            <div class="bg-[#cbfcfa] w-16 h-16 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-bell text-gray-700 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Recordatorios Inteligentes</h3>
+            <p class="text-gray-700">
+              Sistema personalizado de recordatorios para mantener a tus pacientes comprometidos con sus ejercicios y tratamientos.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-[#fff8f0] rounded-lg p-6 shadow-md">
+          <div class="mb-4">
+            <div class="bg-[#cbfcfa] w-16 h-16 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-file-medical text-gray-700 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Gestión de Archivos</h3>
+            <p class="text-gray-700">
+              Almacenamiento seguro y organizado de archivos clínicos, con acceso inmediato a radiografías, ecografías y otros documentos médicos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Patient Monitoring Section (Left) -->
+    <div class="bg-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold mb-6">Centro de Seguimiento de Pacientes</h2>
+            <div class="space-y-4">
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-chart-line text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Monitoreo en tiempo real</h3>
+                    <p class="text-gray-600 mt-1">Seguimiento detallado del progreso, cumplimiento y evolución de cada paciente.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-file-alt text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Informes completos</h3>
+                    <p class="text-gray-600 mt-1">Generación de informes con gráficos y estadísticas de evolución del tratamiento.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-search text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Búsqueda avanzada</h3>
+                    <p class="text-gray-600 mt-1">Filtros inteligentes para gestionar eficazmente tu cartera de pacientes.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <img src="/src/assets/services/monitoring-center.png" alt="Patient Monitoring Preview" class="rounded-lg shadow-lg w-full" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exercise Reminders Section (Right) -->
+    <div class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row-reverse items-center justify-between gap-12">
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold mb-6">Sistema de Recordatorios Inteligentes</h2>
+            <div class="space-y-4">
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-clock text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Recordatorios personalizados</h3>
+                    <p class="text-gray-600 mt-1">Configura frecuencia y contenido de los avisos según las necesidades de cada paciente.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-check-circle text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Seguimiento de cumplimiento</h3>
+                    <p class="text-gray-600 mt-1">Monitoreo en tiempo real de ejercicios completados y pendientes.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-sync text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Reenvíos automáticos</h3>
+                    <p class="text-gray-600 mt-1">Sistema inteligente de recordatorios adicionales para mayor adherencia al tratamiento.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <img src="/src/assets/services/reminders-system.png" alt="Reminders System Preview" class="rounded-lg shadow-lg w-full" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clinical Files Section (Left) -->
+    <div class="bg-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold mb-6">Gestión Segura de Archivos Clínicos</h2>
+            <div class="space-y-4">
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-cloud-upload-alt text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Carga y organización</h3>
+                    <p class="text-gray-600 mt-1">Sistema intuitivo para subir y organizar imágenes médicas y documentos clínicos.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-shield-alt text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Almacenamiento seguro</h3>
+                    <p class="text-gray-600 mt-1">Protección de datos con cifrado avanzado y cumplimiento de normativas.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-history text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Control de versiones</h3>
+                    <p class="text-gray-600 mt-1">Seguimiento completo del historial de archivos y sus actualizaciones.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <img src="/src/assets/services/clinical-files.png" alt="Clinical Files Management Preview" class="rounded-lg shadow-lg w-full" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="py-16">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-8">Optimiza la gestión de tus pacientes</h2>
+        <p class="text-xl mb-8 max-w-3xl mx-auto">Una solución integral para el seguimiento y control de tus pacientes</p>
+        <div class="flex justify-center gap-4">
+          <a href="/precios" class="bg-[#7ce4e1] hover:bg-[#5ad8d4] text-gray-800 font-semibold py-3 px-8 rounded-lg transition-colors">
+            Solicita más información
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

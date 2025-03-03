@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Servicios | Fisio Find">
+  <div class="min-h-screen bg-gray-50">
+    <!-- Hero Section -->
+    <div class="bg-cyan-600 text-white py-16">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl font-bold text-center mb-4">Nuestros Servicios</h1>
+        <p class="text-center text-xl">Descubre todas las posibilidades que FisioFind ofrece</p>
+      </div>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Teleconsulta -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <div class="text-cyan-600 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Teleconsulta</h3>
+          <p class="text-gray-600">Consultas online con profesionales cualificados desde la comodidad de tu hogar.</p>
+        </div>
+
+        <!-- Seguimiento Personalizado -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <div class="text-cyan-600 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Seguimiento Personalizado</h3>
+          <p class="text-gray-600">Plan de tratamiento individualizado con seguimiento continuo de tu progreso.</p>
+        </div>
+
+        <!-- Ejercicios Guiados -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <div class="text-cyan-600 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Ejercicios Guiados</h3>
+          <p class="text-gray-600">Acceso a videos y guías de ejercicios personalizados para tu recuperación.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

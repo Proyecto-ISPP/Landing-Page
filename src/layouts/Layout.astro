@@ -7,6 +7,33 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+const services = [
+  {
+    title: "Teleconsulta Virtual",
+    description: "Consultas online con fisioterapeutas",
+    href: "/services/teleconsulta",
+    icon: "fa-video",
+  },
+  {
+    title: "Gestión de Pacientes",
+    description: "Sistema integral de seguimiento",
+    href: "/services/gestion-pacientes",
+    icon: "fa-users",
+  },
+  {
+    title: "Herramientas",
+    description: "Biblioteca de ejercicios y rutinas",
+    href: "/services/toolbox",
+    icon: "fa-dumbbell",
+  },
+  {
+    title: "Valoraciones Online",
+    description: "Evaluación y diagnóstico virtual",
+    href: "/services/valoraciones",
+    icon: "fa-clipboard-list",
+  },
+];
 ---
 
 <!doctype html>
@@ -17,6 +44,10 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href={logo.src} />
     <meta name="generator" content={Astro.generator} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <title>{title}</title>
   </head>
   <body class="min-h-screen bg-gray-50">
@@ -31,24 +62,70 @@ const { title } = Astro.props;
               Fisio Find
             </a>
           </div>
-
-          <!-- Navbar Desktop (md en adelante) -->
-          <div class="hidden md:flex space-x-6">
+          <div class="hidden md:flex space-x-6 items-center">
             <a href="/" class="text-gray-600 hover:text-cyan-600">Inicio</a>
             <a
               href="/mockups/index.html"
               class="text-gray-600 hover:text-cyan-600"
             >
               Demo
-              <span
-                class="ml-2 inline-block bg-cyan-100 text-cyan-700 text-xs font-semibold px-1 py-0.5 rounded"
-              >
-                ¡NUEVO!
-              </span>
             </a>
             <a href="/precios" class="text-gray-600 hover:text-cyan-600"
               >Precios</a
             >
+            <!-- Services Dropdown -->
+            <div class="relative group">
+              <button
+                class="flex items-center space-x-2 text-gray-600 hover:text-cyan-600"
+              >
+                <span>Servicios</span>
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path>
+                </svg>
+                <span
+                  class="ml-2 inline-block bg-cyan-100 text-cyan-700 text-xs font-semibold px-1 py-0.5 rounded"
+                >
+                  ¡NUEVO!
+                </span>
+              </button>
+
+              <!-- Dropdown Menu -->
+              <div
+                class="absolute left-0 mt-2 w-80 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform group-hover:translate-y-0 translate-y-1 hover:delay-300"
+              >
+                <div class="p-4">
+                  {
+                    services.map((service) => (
+                      <a
+                        href={service.href}
+                        class="flex items-center p-3 rounded-lg hover:bg-gray-50"
+                      >
+                        <i class={`fas ${service.icon} text-cyan-600 w-5`} />
+                        <div class="ml-3">
+                          <p class="text-sm font-medium text-gray-900">
+                            {service.title}
+                          </p>
+                          <p class="mt-1 text-xs text-gray-500">
+                            {service.description}
+                          </p>
+                        </div>
+                      </a>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+
+            <a href="/help" class="text-gray-600 hover:text-cyan-600">Ayuda</a>
             <a href="/about" class="text-gray-600 hover:text-cyan-600"
               >Acerca de</a
             >
