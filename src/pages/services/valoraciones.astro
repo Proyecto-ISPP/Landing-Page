@@ -1,0 +1,365 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Valoraciones Online | Fisio Find">
+  <div class="min-h-screen bg-white">
+    <!-- Hero Section -->
+    <div class="bg-[#ebfcfa] py-20" style="color: #012c6d;">
+      <div class="container mx-auto px-4 text-center">
+        <span
+          class="bg-[#cbfcfa] text-gray-700 px-4 py-1 rounded-full text-sm font-medium mb-6 inline-block"
+          >Transparencia y Confianza</span
+        >
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-6">
+          Valoraciones Online
+        </h1>
+        <p class="text-center text-xl md:text-2xl max-w-3xl mx-auto">
+          Sistema completo de evaluación y reputación para fisioterapeutas
+        </p>
+      </div>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-[#fff8f0] rounded-lg p-6 shadow-md">
+          <div class="mb-4">
+            <div
+              class="bg-[#cbfcfa] w-16 h-16 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-star text-gray-700 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Valoraciones Verificadas</h3>
+            <p class="text-gray-700">
+              Accede a opiniones reales de fisioterapeutas que utilizan la
+              plataforma, con información clara sobre su estado de suscripción.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-[#fff8f0] rounded-lg p-6 shadow-md">
+          <div class="mb-4">
+            <div
+              class="bg-[#cbfcfa] w-16 h-16 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-search text-gray-700 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Búsqueda Avanzada</h3>
+            <p class="text-gray-700">
+              Encuentra al fisioterapeuta ideal ordenando los resultados según
+              las valoraciones recibidas de otros usuarios.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-[#fff8f0] rounded-lg p-6 shadow-md">
+          <div class="mb-4">
+            <div
+              class="bg-[#cbfcfa] w-16 h-16 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-comment text-gray-700 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Sistema de Comentarios</h3>
+            <p class="text-gray-700">
+              Construye tu reputación profesional a través de un sistema
+              transparente de valoraciones y comentarios de pacientes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ratings and Reviews Section (Right) -->
+    <div class="bg-white py-16">
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row-reverse items-center justify-between gap-12"
+        >
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold mb-6">Valoraciones y Comentarios</h2>
+            <div class="space-y-4">
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-star text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">
+                      Sistema de estrellas y comentarios
+                    </h3>
+                    <p class="text-gray-600 mt-1">
+                      Los pacientes pueden valorar tu servicio y dejar
+                      comentarios detallados sobre su experiencia.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-reply text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Respuestas a valoraciones</h3>
+                    <p class="text-gray-600 mt-1">
+                      Interactúa con tus pacientes respondiendo a sus
+                      comentarios para aclarar o agradecer.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-shield-alt text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Protección contra abusos</h3>
+                    <p class="text-gray-600 mt-1">
+                      Sistema de seguridad para evitar valoraciones fraudulentas
+                      y comentarios inapropiados.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <img
+              src="/src/assets/services/ratings-reviews.png"
+              alt="Ratings and Reviews Preview"
+              class="rounded-lg shadow-lg w-full"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Advanced Search Section (Left) -->
+    <div class="py-16">
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-12"
+        >
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold mb-6">
+              Búsqueda Avanzada por Valoraciones
+            </h2>
+            <div class="space-y-4">
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-sort text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Ordenación por puntuación</h3>
+                    <p class="text-gray-600 mt-1">
+                      Encuentra fisioterapeutas ordenados según sus
+                      valoraciones, de mayor a menor puntuación.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-filter text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Filtros personalizados</h3>
+                    <p class="text-gray-600 mt-1">
+                      Combina criterios de búsqueda con valoraciones para
+                      encontrar al profesional ideal.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-eye text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Visibilidad mejorada</h3>
+                    <p class="text-gray-600 mt-1">
+                      Mayor exposición para profesionales con buenas
+                      valoraciones, aumentando las posibilidades de ser
+                      contactado.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <img
+              src="/src/assets/services/advanced-search.png"
+              alt="Advanced Search Preview"
+              class="rounded-lg shadow-lg w-full"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Verified Reviews Section (Right) -->
+    <div class="bg-white py-16">
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row-reverse items-center justify-between gap-12"
+        >
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold mb-6">
+              Valoraciones de Fisioterapeutas Verificadas
+            </h2>
+            <div class="space-y-4">
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-check-circle text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Opiniones verificadas</h3>
+                    <p class="text-gray-600 mt-1">
+                      Accede a experiencias reales de fisioterapeutas que
+                      utilizan la plataforma.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-user-check text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Información de suscripción</h3>
+                    <p class="text-gray-600 mt-1">
+                      Identifica fácilmente si el autor de la valoración es un
+                      usuario activo de la plataforma.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-l-4 border-[#7ce4e1] pl-4 py-2">
+                <div class="flex items-start">
+                  <i class="fas fa-mobile-alt text-[#7ce4e1] mt-1 mr-3"></i>
+                  <div>
+                    <h3 class="font-semibold">Acceso multidispositivo</h3>
+                    <p class="text-gray-600 mt-1">
+                      Consulta las valoraciones desde cualquier dispositivo con
+                      la misma calidad de información.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <img
+              src="/src/assets/services/verified-reviews.png"
+              alt="Verified Reviews Preview"
+              class="rounded-lg shadow-lg w-full"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Example Reviews Section -->
+    <!-- <div class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">
+          Lo que dicen nuestros fisioterapeutas
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-[#cbfcfa] rounded-full flex items-center justify-center mr-4"
+              >
+                <span class="text-gray-700 font-bold">JM</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Juan Martínez</h4>
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              "El sistema de valoraciones ha aumentado mi visibilidad y la
+              confianza de mis pacientes. Las reseñas positivas han impulsado mi
+              consulta significativamente."
+            </p>
+          </div>
+
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-[#cbfcfa] rounded-full flex items-center justify-center mr-4"
+              >
+                <span class="text-gray-700 font-bold">LR</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Laura Rodríguez</h4>
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              "La transparencia del sistema de valoraciones me permite construir
+              una reputación sólida. Los pacientes valoran poder ver opiniones
+              verificadas antes de elegirme."
+            </p>
+          </div>
+
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-[#cbfcfa] rounded-full flex items-center justify-center mr-4"
+              >
+                <span class="text-gray-700 font-bold">CS</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Carlos Sánchez</h4>
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              "Poder responder a las valoraciones me permite mantener una
+              comunicación abierta con mis pacientes y demostrar mi compromiso
+              con la calidad del servicio."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- CTA Section -->
+    <div class="py-16">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-8">
+          Construye tu reputación profesional con el sistema de valoraciones
+        </h2>
+        <p class="text-xl mb-8 max-w-3xl mx-auto">
+          Haz que tus pacientes sepan que estás comprometido con la calidad de tus servicios.
+        </p>
+        <div class="flex justify-center gap-4">
+          <a
+            href="/precios"
+            class="bg-[#7ce4e1] hover:bg-[#5ad8d4] text-gray-800 font-semibold py-3 px-8 rounded-lg transition-colors"
+          >
+            Obtén más información
+          </a>
+        </div>
+      </div>
+    </div>
+  </div></Layout
+>
