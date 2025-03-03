@@ -1,10 +1,13 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import videoCallPreview from "../../assets/services/videocall-preview.png";
+import chatPreview from "../../assets/services/chat-preview.png";
+import toolsPreview from "../../assets/services/tools-preview.png";
 ---
 
 <Layout title="Teleconsulta Virtual | Fisio Find">
   <div class="min-h-screen bg-white">
-    <!-- Hero Section --> 
+    <!-- Hero Section -->
     <div class="bg-[#ebfcfa] py-20" style="color: #012c6d;">
       <div class="container mx-auto px-4 text-center">
         <span
@@ -126,7 +129,7 @@ import Layout from "../../layouts/Layout.astro";
           </div>
           <div class="md:w-1/2">
             <img
-              src="/src/assets/services/videocall-preview.png"
+              src={videoCallPreview.src}
               alt="Video Call Preview"
               class="rounded-lg shadow-lg w-full"
             />
@@ -185,7 +188,7 @@ import Layout from "../../layouts/Layout.astro";
           </div>
           <div class="md:w-1/2">
             <img
-              src="/src/assets/services/chat-preview.png"
+              src={chatPreview.src}
               alt="Chat Preview"
               class="rounded-lg shadow-lg w-full"
             />
@@ -246,7 +249,7 @@ import Layout from "../../layouts/Layout.astro";
           </div>
           <div class="md:w-1/2">
             <img
-              src="/src/assets/services/tools-preview.png"
+              src={toolsPreview.src}
               alt="Tools Preview"
               class="rounded-lg shadow-lg w-full"
             />
