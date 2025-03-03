@@ -37,9 +37,10 @@ const services = [
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <!-- Para que el diseño sea responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href={logo.src} />
     <meta name="generator" content={Astro.generator} />
@@ -50,16 +51,19 @@ const services = [
     <title>{title}</title>
   </head>
   <body class="min-h-screen bg-gray-50">
+    <!-- HEADER -->
     <header class="fixed w-full bg-white shadow-sm z-50">
       <nav class="container mx-auto px-4 py-3">
         <div class="flex justify-between items-center">
+          <!-- Logo + nombre -->
           <div class="flex items-center gap-2">
             <img src={logo.src} alt="Fisio Find Logo" class="h-8 w-8" />
-            <a href="/" class="text-2xl font-bold text-cyan-600">Fisio Find</a>
+            <a href="/" class="text-2xl font-bold text-cyan-600">
+              Fisio Find
+            </a>
           </div>
           <div class="hidden md:flex space-x-6 items-center">
             <a href="/" class="text-gray-600 hover:text-cyan-600">Inicio</a>
-
             <a
               href="/mockups/index.html"
               class="text-gray-600 hover:text-cyan-600"
@@ -69,7 +73,6 @@ const services = [
             <a href="/precios" class="text-gray-600 hover:text-cyan-600"
               >Precios</a
             >
-
             <!-- Services Dropdown -->
             <div class="relative group">
               <button
@@ -127,14 +130,57 @@ const services = [
               >Acerca de</a
             >
           </div>
+
+          <!-- Botón Hamburguesa (sólo en mobile) -->
+          <button
+            id="menu-btn"
+            class="md:hidden focus:outline-none text-gray-600 hover:text-cyan-600"
+            aria-label="Abrir menú"
+          >
+            <!-- Icono hamburguesa -->
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M4 5h16v2H4zm0 6h16v2H4zm0 6h16v2H4z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Menú móvil (oculto por defecto) -->
+        <div
+          id="mobile-menu"
+          class="md:hidden hidden flex-col space-y-2 mt-2"
+          role="menu"
+        >
+          <a href="/" class="block py-1 text-gray-600 hover:text-cyan-600"
+            >Inicio</a
+          >
+          <a
+            href="/mockups/index.html"
+            class="block py-1 text-gray-600 hover:text-cyan-600"
+          >
+            Demo
+            <span
+              class="ml-2 inline-block bg-cyan-100 text-cyan-700 text-xs font-semibold px-1 py-0.5 rounded"
+              >¡NUEVO!</span
+            >
+          </a>
+          <a
+            href="/precios"
+            class="block py-1 text-gray-600 hover:text-cyan-600">Precios</a
+          >
+          <a href="/about" class="block py-1 text-gray-600 hover:text-cyan-600"
+            >Acerca de</a
+          >
         </div>
       </nav>
     </header>
 
+    <!-- Contenido principal -->
     <main class="pt-16">
       <slot />
     </main>
 
+    <!-- FOOTER -->
     <footer class="bg-gray-800 text-white py-8 mt-12">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -156,12 +202,14 @@ const services = [
             </ul>
           </div>
           <div>
-            <h3 class="text-xl font-bold mb-4">!Síguenos!</h3>
+            <h3 class="text-xl font-bold mb-4">¡Síguenos!</h3>
             <div class="flex space-x-4">
               <a
                 href="https://www.instagram.com/fisiofindapp?igsh=MThoYTdjYWp1NXN6ZA=="
-                class="hover:text-indigo-400">Instagram</a
+                class="hover:text-indigo-400"
               >
+                Instagram
+              </a>
             </div>
           </div>
         </div>
@@ -170,5 +218,18 @@ const services = [
         </div>
       </div>
     </footer>
+
+    <!-- Script para alternar menú móvil -->
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuBtn.addEventListener("click", () => {
+          // Alterna la clase 'hidden' para mostrar/ocultar
+          mobileMenu.classList.toggle("hidden");
+        });
+      });
+    </script>
   </body>
 </html>
