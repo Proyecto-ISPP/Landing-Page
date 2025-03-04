@@ -1,0 +1,376 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+import bookingSystem from "../assets/agenda/booking-system.png";
+import calendarSystem from "../assets/agenda/calendar-system.png";
+import managementSystem from "../assets/agenda/management-system.png";
+import notificationSystem from "../assets/agenda/notification-system.png";
+---
+
+<Layout title="Agenda y Gestión de Citas | Fisio Find">
+  <!-- Hero Section with Interactive Demo -->
+  <div class="relative bg-gradient-to-b from-[#ebfcfa] to-white py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6" style="color: #012c6d;">
+          Sistema Integral de Gestión de Citas
+        </h1>
+        <p class="text-xl text-gray-700 mb-12">
+          Una solución completa para gestionar tu agenda, pacientes y citas de
+          forma eficiente
+        </p>
+      </div>
+
+      <!-- Interactive Preview Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+        <div
+          class="bg-white p-6 rounded-xl shadow-lg transform hover:-translate-y-1 transition-all"
+        >
+          <div
+            class="w-12 h-12 bg-[#cbfcfa] rounded-full flex items-center justify-center mb-4"
+          >
+            <i class="fas fa-calendar-check text-gray-700 text-xl"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Reserva de Citas</h3>
+          <p class="text-gray-600">
+            Sistema intuitivo para que tus pacientes reserven citas en tiempo
+            real
+          </p>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow-lg transform hover:-translate-y-1 transition-all"
+        >
+          <div
+            class="w-12 h-12 bg-[#cbfcfa] rounded-full flex items-center justify-center mb-4"
+          >
+            <i class="fas fa-tasks text-gray-700 text-xl"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Gestión de Citas</h3>
+          <p class="text-gray-600">
+            Control total sobre tu agenda con opciones de aceptar, rechazar o
+            modificar
+          </p>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow-lg transform hover:-translate-y-1 transition-all"
+        >
+          <div
+            class="w-12 h-12 bg-[#cbfcfa] rounded-full flex items-center justify-center mb-4"
+          >
+            <i class="fas fa-clock text-gray-700 text-xl"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Calendario Inteligente</h3>
+          <p class="text-gray-600">
+            Visualización clara de tu agenda con actualizaciones en tiempo real
+          </p>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow-lg transform hover:-translate-y-1 transition-all"
+        >
+          <div
+            class="w-12 h-12 bg-[#cbfcfa] rounded-full flex items-center justify-center mb-4"
+          >
+            <i class="fas fa-bell text-gray-700 text-xl"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Notificaciones</h3>
+          <p class="text-gray-600">
+            Sistema automático de recordatorios para ti y tus pacientes
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Features Section -->
+  <div class="py-20">
+    <div class="container mx-auto px-4">
+      <!-- Booking System -->
+      <div class="mb-20">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <div class="lg:w-1/2">
+            <div class="bg-[#f8f9fa] p-6 rounded-2xl shadow-lg">
+              <div class="aspect-[4/3] flex items-center justify-center">
+                <img 
+                  src={bookingSystem.src} 
+                  alt="Sistema de Reservas"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-1/2">
+            <h2
+              class="text-3xl font-bold mb-6 text-center"
+              style="color: #012c6d;"
+            >
+              Sistema de Reservas Intuitivo
+            </h2>
+            <div class="space-y-4">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-check text-gray-700"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-1">Selección de Especialista</h3>
+                  <p class="text-gray-600">
+                    Los pacientes pueden elegir al fisioterapeuta según
+                    especialidad y valoraciones
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-calendar-alt text-gray-700"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-1">
+                    Disponibilidad en Tiempo Real
+                  </h3>
+                  <p class="text-gray-600">
+                    Calendario actualizado que muestra los horarios disponibles
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-mobile-alt text-gray-700"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-1">Acceso Multiplataforma</h3>
+                  <p class="text-gray-600">
+                    Reserva de citas desde cualquier dispositivo
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Appointment Management -->
+      <div class="mb-20">
+        <div class="flex flex-col lg:flex-row-reverse items-center gap-12">
+          <div class="lg:w-1/2">
+            <div class="bg-[#f8f9fa] p-8 rounded-2xl shadow-lg aspect-video flex items-center justify-center">
+              <img 
+                src={managementSystem.src} 
+                alt="Sistema de Gestión"
+                class="w-full h-auto max-h-[300px] object-contain rounded-lg shadow-md"
+              />
+            </div>
+          </div>
+          <div class="lg:w-1/2">
+            <h2
+              class="text-3xl font-bold mb-6 text-center"
+              style="color: #012c6d;"
+            >
+              Control Total de tu Agenda
+            </h2>
+            <div class="space-y-4">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-tasks text-gray-700"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-1">Gestión Centralizada</h3>
+                  <p class="text-gray-600">
+                    Panel de control para aceptar, rechazar o modificar citas
+                    fácilmente
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-history text-gray-700"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-1">Historial Completo</h3>
+                  <p class="text-gray-600">
+                    Registro detallado de todas las modificaciones y estados de
+                    citas
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-shield-alt text-gray-700"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-1">Seguridad y Control</h3>
+                  <p class="text-gray-600">
+                    Gestión segura con confirmaciones y protección de datos
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calendar System -->
+      <div class="mb-20">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <div class="lg:w-1/2">
+            <div class="bg-[#f8f9fa] p-8 rounded-2xl shadow-lg aspect-video flex items-center justify-center">
+              <img 
+                src={calendarSystem.src} 
+                alt="Sistema de Calendario"
+                class="w-full h-auto max-h-[300px] object-contain rounded-lg shadow-md"
+              />
+            </div>
+          </div>
+          <div class="lg:w-1/2">
+            <h2
+              class="text-3xl font-bold mb-6 text-center"
+              style="color: #012c6d;"
+            >
+              Calendario Profesional
+            </h2>
+            <div class="space-y-4">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-calendar text-gray-700"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-1">Vista Personalizable</h3>
+                  <p class="text-gray-600">
+                    Visualización diaria, semanal o mensual según tus
+                    preferencias
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-clock text-gray-700"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-1">Gestión de Horarios</h3>
+                  <p class="text-gray-600">
+                    Define tu disponibilidad y bloquea períodos según necesites
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-sync text-gray-700"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-1">Sincronización Automática</h3>
+                  <p class="text-gray-600">
+                    Actualización en tiempo real de cambios y nuevas citas
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notification System -->
+      <div class="mb-20">
+        <div class="flex flex-col lg:flex-row-reverse items-center gap-12">
+          <div class="lg:w-1/2">
+            <div class="bg-[#f8f9fa] p-8 rounded-2xl shadow-lg aspect-video flex items-center justify-center">
+              <img 
+                src={notificationSystem.src} 
+                alt="Sistema de Notificaciones"
+                class="w-full h-auto max-h-[300px] object-contain rounded-lg shadow-md"
+              />
+            </div>
+          </div>
+          <div class="lg:w-1/2">
+            <h2
+              class="text-3xl font-bold mb-6 text-center"
+              style="color: #012c6d;"
+            >
+              Sistema de Notificaciones
+            </h2>
+            <div class="space-y-4">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-bell text-gray-700"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-1">Recordatorios Automáticos</h3>
+                  <p class="text-gray-600">
+                    Notificaciones programadas para ti y tus pacientes
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-envelope text-gray-700"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-1">Comunicación Efectiva</h3>
+                  <p class="text-gray-600">
+                    Avisos inmediatos sobre cambios o actualizaciones
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-cog text-gray-700"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-1">
+                    Preferencias Personalizables
+                  </h3>
+                  <p class="text-gray-600">
+                    Configura el tipo y frecuencia de las notificaciones
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="bg-[#ebfcfa] py-16">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-8" style="color: #012c6d;">
+        Optimiza tu tiempo y mejora la experiencia de tus pacientes
+      </h2>
+      <p class="text-xl mb-8 max-w-3xl mx-auto text-gray-700">
+        Descubre cómo nuestro sistema de agenda puede ayudarte a gestionar tu
+        consulta de manera más eficiente
+      </p>
+      <a
+        href="/precios"
+        class="inline-block bg-[#7ce4e1] hover:bg-[#5ad8d4] text-gray-800 font-semibold py-3 px-8 rounded-lg transition-colors"
+      >
+        Comienza ahora
+      </a>
+    </div>
+  </div>
+</Layout>
