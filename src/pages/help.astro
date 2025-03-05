@@ -5,48 +5,71 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Ayuda y Privacidad | Fisio Find">
   <div class="min-h-screen bg-gray-50">
     <!-- Hero Section -->
-    <div class="bg-cyan-600 text-white py-16">
+    <div class="text-white py-16" style="color: #012c6d;">
       <div class="container mx-auto px-4">
-        <h1 class="text-4xl font-bold text-center mb-4">Centro de Ayuda</h1>
+        <h1 class="text-4xl font-bold text-center mb-4 large-title">Centro de Ayuda</h1>
         <p class="text-center text-xl">Respuestas a tus preguntas y política de privacidad</p>
       </div>
     </div>
 
-    <!-- FAQ Section -->
+    <!-- FAQ and Privacy Section -->
     <div class="container mx-auto px-4 py-16">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-3xl font-bold mb-8">Preguntas Frecuentes</h2>
-        
-        <div class="space-y-6">
-          <div class="bg-white rounded-lg shadow-lg p-6">
-            <h3 class="text-xl font-semibold mb-2">¿Cómo funciona la teleconsulta?</h3>
-            <p class="text-gray-600">Las teleconsultas se realizan a través de nuestra plataforma segura. Programas una cita, te conectas en el horario establecido y tienes tu sesión con el fisioterapeuta mediante videollamada.</p>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-lg p-6">
-            <h3 class="text-xl font-semibold mb-2">¿Es segura la plataforma?</h3>
-            <p class="text-gray-600">Sí, utilizamos encriptación de extremo a extremo y cumplimos con todas las normativas de protección de datos y RGPD.</p>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-lg p-6">
-            <h3 class="text-xl font-semibold mb-2">¿Qué incluye la suscripción?</h3>
-            <p class="text-gray-600">La suscripción incluye acceso a teleconsultas, seguimiento personalizado, videos de ejercicios y chat directo con tu fisioterapeuta.</p>
+      <div class="flex flex-col md:flex-row gap-8">
+        <!-- FAQ Section -->
+        <div class="w-full md:w-1/2">
+          <h2 class="text-3xl font-bold mb-8">Preguntas Frecuentes</h2>
+          <div class="space-y-6">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-semibold mb-2">¿Cómo puedo registrarme en FisioFind?</h3>
+              <p class="text-gray-600">Para registrarte, haz clic en el botón de "Registrarse" en la página de inicio y completa el formulario con tus datos personales y profesionales.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-semibold mb-2">¿Cómo funciona la teleconsulta?</h3>
+              <p class="text-gray-600">Las teleconsultas se realizan a través de nuestra plataforma segura. Programas una cita, te conectas en el horario establecido y tienes tu sesión con el fisioterapeuta mediante videollamada.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-semibold mb-2">¿Cómo puedo gestionar mis citas?</h3>
+              <p class="text-gray-600">Puedes gestionar tus citas desde la sección de "Agenda" en tu perfil. Aquí puedes ver, modificar y cancelar citas según sea necesario.</p>
+              <div class="flex justify-left mt-4">
+                <a
+                  href="/agenda"
+                  class="bg-[#7ce4e1] hover:bg-[#5ad8d4] text-gray-800 font-semibold py-3 px-8 rounded-lg transition-colors"
+                >
+                  Saber más
+                </a>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-semibold mb-2">¿Qué incluye la suscripción?</h3>
+              <p class="text-gray-600">La suscripción incluye acceso a teleconsultas, seguimiento personalizado, videos de ejercicios y chat directo con tu fisioterapeuta.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-semibold mb-2">¿Cómo puedo contactar con el soporte técnico?</h3>
+              <p class="text-gray-600">Puedes contactar con nuestro equipo de soporte técnico a través del formulario de contacto en la sección "Contáctenos" o enviando un correo a info@fisiofind.com.</p>
+            </div>
           </div>
         </div>
 
         <!-- Privacy Section -->
-        <div class="mt-16">
+        <div class="w-full md:w-1/2">
           <h2 class="text-3xl font-bold mb-8">Privacidad y Seguridad</h2>
-          
-          <div class="bg-white rounded-lg shadow-lg p-6">
-            <h3 class="text-xl font-semibold mb-4">Protección de Datos</h3>
-            <p class="text-gray-600 mb-4">En FisioFind, la seguridad de tus datos es nuestra prioridad. Cumplimos con:</p>
-            <ul class="list-disc list-inside text-gray-600 space-y-2">
-              <li>Regulación General de Protección de Datos (RGPD)</li>
-              <li>Encriptación de datos sensibles</li>
-              <li>Almacenamiento seguro en servidores certificados</li>
-              <li>Acceso restringido a información personal</li>
-            </ul>
+          <div class="space-y-6">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-semibold mb-2">Cumplimiento con GDPR y LOPD</h3>
+              <p class="text-gray-600">Cumplimos con la GDPR y LOPD para la protección de todos los datos de nuestros usuarios. Esto garantiza que tus datos personales están seguros y se manejan de acuerdo con las regulaciones europeas de protección de datos.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-semibold mb-2">Encriptación y Seguridad de Datos</h3>
+              <p class="text-gray-600">Todos los datos almacenados son encriptados y asegurados. Utilizamos tecnologías avanzadas de encriptación para proteger tu información personal y garantizar que solo tú y tu fisioterapeuta tengan acceso a ella.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-semibold mb-2">Aceptación de Términos y Condiciones</h3>
+              <p class="text-gray-600">Todos los usuarios deben aceptar los términos y condiciones para poder hacer uso de la aplicación. Esto asegura que todos entienden y están de acuerdo con nuestras políticas de uso y privacidad.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h3 class="text-xl font-semibold mb-2">Pagos Seguros</h3>
+              <p class="text-gray-600">El pago de las suscripciones se lleva a cabo mediante pasarelas seguras que protegen los datos sensibles. Utilizamos proveedores de pago confiables para garantizar que tu información financiera esté siempre protegida.</p>
+            </div>
           </div>
         </div>
       </div>
