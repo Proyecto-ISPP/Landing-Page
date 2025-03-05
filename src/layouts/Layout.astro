@@ -159,15 +159,49 @@ const services = [
             class="block py-1 text-gray-600 hover:text-cyan-600"
           >
             Demo
-            <span
-              class="ml-2 inline-block bg-cyan-100 text-cyan-700 text-xs font-semibold px-1 py-0.5 rounded"
-              >¡NUEVO!</span
-            >
           </a>
           <a
             href="/precios"
             class="block py-1 text-gray-600 hover:text-cyan-600">Precios</a
           >
+          <div>
+            <button
+              id="mobile-services-btn"
+              class="w-full text-left flex justify-between items-center py-1 text-gray-600 hover:text-cyan-600"
+            >
+              <span
+                >Servicios
+                <span
+                  class="ml-2 inline-block bg-cyan-100 text-cyan-700 text-xs font-semibold px-1 py-0.5 rounded"
+                  >¡NUEVO!</span
+                >
+              </span>
+              <svg
+                class="w-4 h-4 transition-transform transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div id="mobile-services-menu" class="hidden pl-4">
+              {
+                services.map((service) => (
+                  <a
+                    href={service.href}
+                    class="block py-1 text-gray-600 hover:text-cyan-600"
+                  >
+                    {service.title}
+                  </a>
+                ))
+              }
+            </div>
+          </div>
           <a href="/about" class="block py-1 text-gray-600 hover:text-cyan-600"
             >Acerca de</a
           >
@@ -199,18 +233,29 @@ const services = [
               <li>
                 <a href="/about" class="hover:text-indigo-400">Acerca de</a>
               </li>
-              <li><a href="/about" class="hover:text-indigo-400">Acerca de</a></li>
               <li>
-                <a href="/services/teleconsulta" class="hover:text-indigo-400">Teleconsulta Virtual</a>
+                <a href="/about" class="hover:text-indigo-400">Acerca de</a>
               </li>
               <li>
-                <a href="/services/gestion-pacientes" class="hover:text-indigo-400">Gestión de Pacientes</a>
+                <a href="/services/teleconsulta" class="hover:text-indigo-400"
+                  >Teleconsulta Virtual</a
+                >
               </li>
               <li>
-                <a href="/services/toolbox" class="hover:text-indigo-400">Herramientas</a>
+                <a
+                  href="/services/gestion-pacientes"
+                  class="hover:text-indigo-400">Gestión de Pacientes</a
+                >
               </li>
               <li>
-                <a href="/services/valoraciones" class="hover:text-indigo-400">Valoraciones Online</a>
+                <a href="/services/toolbox" class="hover:text-indigo-400"
+                  >Herramientas</a
+                >
+              </li>
+              <li>
+                <a href="/services/valoraciones" class="hover:text-indigo-400"
+                  >Valoraciones Online</a
+                >
               </li>
               <li>
                 <a href="/help" class="hover:text-indigo-400">Ayuda</a>
@@ -218,7 +263,6 @@ const services = [
               <li>
                 <a href="/about" class="hover:text-indigo-400">Acerca de</a>
               </li>
-
             </ul>
           </div>
           <div>
@@ -244,10 +288,17 @@ const services = [
       document.addEventListener("DOMContentLoaded", () => {
         const menuBtn = document.getElementById("menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
-
+        const servicesBtn = document.getElementById("mobile-services-btn");
+        const servicesMenu = document.getElementById("mobile-services-menu");
+        const servicesIcon = servicesBtn.querySelector("svg");
+    
         menuBtn.addEventListener("click", () => {
-          // Alterna la clase 'hidden' para mostrar/ocultar
           mobileMenu.classList.toggle("hidden");
+        });
+    
+        servicesBtn.addEventListener("click", () => {
+          servicesMenu.classList.toggle("hidden");
+          servicesIcon.classList.toggle("rotate-180");
         });
       });
     </script>

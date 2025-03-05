@@ -85,63 +85,51 @@ import notificationSystem from "../assets/agenda/notification-system.png";
   </div>
 
   <!-- Main Features Section -->
-  <div class="py-20">
-    <div class="container mx-auto px-4">
+  <div class="py-10">
+    <div class="container mx-auto px-4 max-w-4xl">
       <!-- Booking System -->
-      <div class="mb-20">
-        <div class="flex flex-col lg:flex-row items-center gap-12">
-          <div class="lg:w-1/2">
-            <div class="bg-[#f8f9fa] p-6 rounded-2xl shadow-lg">
-              <div class="aspect-[4/3] flex items-center justify-center">
+      <div class="mb-16">
+        <div class="flex flex-col items-center">
+          <div class="w-full max-w-lg mb-6">
+            <div class="bg-[#f8f9fa] p-4 rounded-2xl shadow-lg">
+              <div class="flex items-center justify-center h-[180px]">
                 <img 
                   src={bookingSystem.src} 
                   alt="Sistema de Reservas"
-                  class="w-full h-full object-contain"
+                  class="max-h-[160px] w-auto object-contain"
                 />
               </div>
             </div>
           </div>
-          <div class="lg:w-1/2">
-            <h2
-              class="text-3xl font-bold mb-6 text-center"
-              style="color: #012c6d;"
-            >
+          <div class="w-full">
+            <h2 class="text-3xl font-bold mb-6 text-center" style="color: #012c6d;">
               Sistema de Reservas Intuitivo
             </h2>
-            <div class="space-y-4">
+            <div class="space-y-4 max-w-lg mx-auto">
               <div class="flex items-start gap-4">
-                <div
-                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
-                >
+                <div class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0">
                   <i class="fas fa-check text-gray-700"></i>
                 </div>
                 <div>
                   <h3 class="font-semibold mb-1">Selección de Especialista</h3>
                   <p class="text-gray-600">
-                    Los pacientes pueden elegir al fisioterapeuta según
-                    especialidad y valoraciones
+                    Los pacientes pueden elegir al fisioterapeuta según especialidad y valoraciones
                   </p>
                 </div>
               </div>
               <div class="flex items-start gap-4">
-                <div
-                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
-                >
+                <div class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0">
                   <i class="fas fa-calendar-alt text-gray-700"></i>
                 </div>
                 <div>
-                  <h3 class="font-semibold mb-1">
-                    Disponibilidad en Tiempo Real
-                  </h3>
+                  <h3 class="font-semibold mb-1">Disponibilidad en Tiempo Real</h3>
                   <p class="text-gray-600">
                     Calendario actualizado que muestra los horarios disponibles
                   </p>
                 </div>
               </div>
               <div class="flex items-start gap-4">
-                <div
-                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
-                >
+                <div class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0">
                   <i class="fas fa-mobile-alt text-gray-700"></i>
                 </div>
                 <div>
@@ -157,57 +145,48 @@ import notificationSystem from "../assets/agenda/notification-system.png";
       </div>
 
       <!-- Appointment Management -->
-      <div class="mb-20">
-        <div class="flex flex-col lg:flex-row-reverse items-center gap-12">
-          <div class="lg:w-1/2">
-            <div class="bg-[#f8f9fa] p-8 rounded-2xl shadow-lg aspect-video flex items-center justify-center">
-              <img 
-                src={managementSystem.src} 
-                alt="Sistema de Gestión"
-                class="w-full h-auto max-h-[300px] object-contain rounded-lg shadow-md"
-              />
+      <div class="mb-16">
+        <div class="flex flex-col items-center">
+          <div class="w-full max-w-lg mb-6">
+            <div class="bg-[#f8f9fa] p-4 rounded-2xl shadow-lg">
+              <div class="flex items-center justify-center h-[180px]">
+                <img 
+                  src={managementSystem.src} 
+                  alt="Sistema de Gestión"
+                  class="max-h-[160px] w-auto object-contain"
+                />
+              </div>
             </div>
           </div>
-          <div class="lg:w-1/2">
-            <h2
-              class="text-3xl font-bold mb-6 text-center"
-              style="color: #012c6d;"
-            >
+          <div class="w-full">
+            <h2 class="text-3xl font-bold mb-6 text-center" style="color: #012c6d;">
               Control Total de tu Agenda
             </h2>
-            <div class="space-y-4">
+            <div class="space-y-4 max-w-lg mx-auto">
               <div class="flex items-start gap-4">
-                <div
-                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
-                >
+                <div class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0">
                   <i class="fas fa-tasks text-gray-700"></i>
                 </div>
                 <div>
                   <h3 class="font-semibold mb-1">Gestión Centralizada</h3>
                   <p class="text-gray-600">
-                    Panel de control para aceptar, rechazar o modificar citas
-                    fácilmente
+                    Panel de control para aceptar, rechazar o modificar citas fácilmente
                   </p>
                 </div>
               </div>
               <div class="flex items-start gap-4">
-                <div
-                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
-                >
+                <div class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0">
                   <i class="fas fa-history text-gray-700"></i>
                 </div>
                 <div>
                   <h3 class="font-semibold mb-1">Historial Completo</h3>
                   <p class="text-gray-600">
-                    Registro detallado de todas las modificaciones y estados de
-                    citas
+                    Registro detallado de todas las modificaciones y estados de citas
                   </p>
                 </div>
               </div>
               <div class="flex items-start gap-4">
-                <div
-                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
-                >
+                <div class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0">
                   <i class="fas fa-shield-alt text-gray-700"></i>
                 </div>
                 <div>
@@ -223,43 +202,37 @@ import notificationSystem from "../assets/agenda/notification-system.png";
       </div>
 
       <!-- Calendar System -->
-      <div class="mb-20">
-        <div class="flex flex-col lg:flex-row items-center gap-12">
-          <div class="lg:w-1/2">
-            <div class="bg-[#f8f9fa] p-8 rounded-2xl shadow-lg aspect-video flex items-center justify-center">
-              <img 
-                src={calendarSystem.src} 
-                alt="Sistema de Calendario"
-                class="w-full h-auto max-h-[300px] object-contain rounded-lg shadow-md"
-              />
+      <div class="mb-16">
+        <div class="flex flex-col items-center">
+          <div class="w-full max-w-lg mb-6">
+            <div class="bg-[#f8f9fa] p-4 rounded-2xl shadow-lg">
+              <div class="flex items-center justify-center h-[180px]">
+                <img 
+                  src={calendarSystem.src} 
+                  alt="Sistema de Calendario"
+                  class="max-h-[160px] w-auto object-contain"
+                />
+              </div>
             </div>
           </div>
-          <div class="lg:w-1/2">
-            <h2
-              class="text-3xl font-bold mb-6 text-center"
-              style="color: #012c6d;"
-            >
+          <div class="w-full">
+            <h2 class="text-3xl font-bold mb-6 text-center" style="color: #012c6d;">
               Calendario Profesional
             </h2>
-            <div class="space-y-4">
+            <div class="space-y-4 max-w-lg mx-auto">
               <div class="flex items-start gap-4">
-                <div
-                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
-                >
+                <div class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0">
                   <i class="fas fa-calendar text-gray-700"></i>
                 </div>
                 <div>
                   <h3 class="font-semibold mb-1">Vista Personalizable</h3>
                   <p class="text-gray-600">
-                    Visualización diaria, semanal o mensual según tus
-                    preferencias
+                    Visualización diaria, semanal o mensual según tus preferencias
                   </p>
                 </div>
               </div>
               <div class="flex items-start gap-4">
-                <div
-                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
-                >
+                <div class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0">
                   <i class="fas fa-clock text-gray-700"></i>
                 </div>
                 <div>
@@ -270,9 +243,7 @@ import notificationSystem from "../assets/agenda/notification-system.png";
                 </div>
               </div>
               <div class="flex items-start gap-4">
-                <div
-                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
-                >
+                <div class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0">
                   <i class="fas fa-sync text-gray-700"></i>
                 </div>
                 <div>
@@ -288,29 +259,26 @@ import notificationSystem from "../assets/agenda/notification-system.png";
       </div>
 
       <!-- Notification System -->
-      <div class="mb-20">
-        <div class="flex flex-col lg:flex-row-reverse items-center gap-12">
-          <div class="lg:w-1/2">
-            <div class="bg-[#f8f9fa] p-8 rounded-2xl shadow-lg aspect-video flex items-center justify-center">
-              <img 
-                src={notificationSystem.src} 
-                alt="Sistema de Notificaciones"
-                class="w-full h-auto max-h-[300px] object-contain rounded-lg shadow-md"
-              />
+      <div class="mb-16">
+        <div class="flex flex-col items-center">
+          <div class="w-full max-w-lg mb-6">
+            <div class="bg-[#f8f9fa] p-4 rounded-2xl shadow-lg">
+              <div class="flex items-center justify-center h-[180px]">
+                <img 
+                  src={notificationSystem.src} 
+                  alt="Sistema de Notificaciones"
+                  class="max-h-[160px] w-auto object-contain"
+                />
+              </div>
             </div>
           </div>
-          <div class="lg:w-1/2">
-            <h2
-              class="text-3xl font-bold mb-6 text-center"
-              style="color: #012c6d;"
-            >
+          <div class="w-full">
+            <h2 class="text-3xl font-bold mb-6 text-center" style="color: #012c6d;">
               Sistema de Notificaciones
             </h2>
-            <div class="space-y-4">
+            <div class="space-y-4 max-w-lg mx-auto">
               <div class="flex items-start gap-4">
-                <div
-                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
-                >
+                <div class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0">
                   <i class="fas fa-bell text-gray-700"></i>
                 </div>
                 <div>
@@ -321,9 +289,7 @@ import notificationSystem from "../assets/agenda/notification-system.png";
                 </div>
               </div>
               <div class="flex items-start gap-4">
-                <div
-                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
-                >
+                <div class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0">
                   <i class="fas fa-envelope text-gray-700"></i>
                 </div>
                 <div>
@@ -334,15 +300,11 @@ import notificationSystem from "../assets/agenda/notification-system.png";
                 </div>
               </div>
               <div class="flex items-start gap-4">
-                <div
-                  class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0"
-                >
+                <div class="w-8 h-8 bg-[#cbfcfa] rounded-full flex items-center justify-center flex-shrink-0">
                   <i class="fas fa-cog text-gray-700"></i>
                 </div>
                 <div>
-                  <h3 class="font-semibold mb-1">
-                    Preferencias Personalizables
-                  </h3>
+                  <h3 class="font-semibold mb-1">Preferencias Personalizables</h3>
                   <p class="text-gray-600">
                     Configura el tipo y frecuencia de las notificaciones
                   </p>
