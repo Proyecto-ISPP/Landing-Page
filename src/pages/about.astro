@@ -17,6 +17,7 @@ import paco_transparent from "../assets/members/paco_transparent.png";
 import rubio_transparent from "../assets/members/rubio_transparent.png";
 import torto_transparent from "../assets/members/torto_transparent.png";
 import vela_transparent from "../assets/members/vela_transparent.png";
+import alberto_transparent from "../assets/members/alberto_transparent.png";
 ---
 
 <Layout title="Acerca de | Fisio Find">
@@ -42,7 +43,10 @@ import vela_transparent from "../assets/members/vela_transparent.png";
     <div class="py-16 bg-white">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold text-center mb-8" style="color: #012c6d;">
+          <h2
+            class="text-3xl font-bold text-center mb-8"
+            style="color: #012c6d;"
+          >
             Sobre nuestro negocio
           </h2>
           <p class="text-gray-600 mb-6" style="color: #012c6d;">
@@ -78,282 +82,225 @@ import vela_transparent from "../assets/members/vela_transparent.png";
         <!-- Coordinators Section -->
         <h2 class="text-3xl font-bold text-center mb-12">Coordinadores</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          <div class="text-center">
-            <div class="relative w-48 h-48 mx-auto mb-4">
-              <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+          <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+            <div class="h-64 flex items-center justify-center mb-4">
               <img
                 src={ramon_transparent.src}
                 alt="Coordinator 1"
-                class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                class="h-full w-auto object-contain rounded-lg"
               />
             </div>
-            <h3 class="text-xl font-semibold mb-2">Ramón Gavira Sánchez</h3>
-            <p class="text-gray-600"></p>
+            <h3 class="text-xl font-semibold">Ramón Gavira Sánchez</h3>
           </div>
-          <div class="text-center">
-            <div class="relative w-48 h-48 mx-auto mb-4">
-              <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+          <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+            <div class="h-64 flex items-center justify-center mb-4">
               <img
                 src={rafa_transparent.src}
-                alt="Coordinator 1"
-                class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                alt="Coordinator 2"
+                class="h-full w-auto object-contain rounded-lg"
               />
             </div>
-            <h3 class="text-xl font-semibold mb-2">Rafael Pulido Cifuentes</h3>
-            <p class="text-gray-600"></p>
+            <h3 class="text-xl font-semibold">Rafael Pulido Cifuentes</h3>
           </div>
-          <div class="text-center">
-            <div class="relative w-48 h-48 mx-auto mb-4">
-              <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+          <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+            <div class="h-64 flex items-center justify-center mb-4">
               <img
                 src={miguel_transparent.src}
-                alt="Coordinator 1"
-                class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                alt="Coordinator 3"
+                class="h-full w-auto object-contain rounded-lg"
               />
             </div>
-            <h3 class="text-xl font-semibold mb-2">Miguel Encina Martínez</h3>
-            <p class="text-gray-600"></p>
+            <h3 class="text-xl font-semibold">Miguel Encina Martínez</h3>
           </div>
         </div>
 
-        <!-- España Team -->
         <div class="mb-20">
           <h3 class="text-2xl font-bold text-center mb-8">Equipo Yeyee</h3>
           <p class="text-center text-gray-600 mb-8">Dedicación y Pasión</p>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-center">
-              <div class="relative w-48 h-48 mx-auto mb-4">
-                <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+              <div class="h-64 flex items-center justify-center mb-4">
                 <img
-                  src="path-to-member-image"
-                  alt="Member Name"
-                  class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                  src={alberto_transparent.src}
+                  alt="Alberto Carmona"
+                  class="h-full w-auto object-contain rounded-lg"
                 />
               </div>
-              <h3 class="text-xl font-semibold mb-2">Alberto Carmona Sicre</h3>
-              <p class="text-gray-600">Backend, Marketing</p>
+              <h3 class="text-xl font-semibold">Alberto Carmona Sicre</h3>
             </div>
-            <div class="text-center">
-              <div class="relative w-48 h-48 mx-auto mb-4">
-                <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+              <div class="h-64 flex items-center justify-center mb-4">
                 <img
                   src={alors_transparent.src}
-                  alt="Member Name"
-                  class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                  alt="Daniel Alors"
+                  class="h-full w-auto object-contain rounded-lg"
                 />
               </div>
-              <h3 class="text-xl font-semibold mb-2">Daniel Alors Romero</h3>
-              <p class="text-gray-600">Backend, QA</p>
+              <h3 class="text-xl font-semibold">Daniel Alors Romero</h3>
             </div>
-            <div class="text-center">
-              <div class="relative w-48 h-48 mx-auto mb-4">
-                <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+              <div class="h-64 flex items-center justify-center mb-4">
                 <img
                   src={rubio_transparent.src}
-                  alt="Member Name"
-                  class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                  alt="Daniel Fernández"
+                  class="h-full w-auto object-contain rounded-lg"
                 />
               </div>
-              <h3 class="text-xl font-semibold mb-2">
-                Daniel Fernández Caballero
-              </h3>
-              <p class="text-gray-600">Backend</p>
+              <h3 class="text-xl font-semibold">Daniel Fernández Caballero</h3>
             </div>
-            <div class="text-center">
-              <div class="relative w-48 h-48 mx-auto mb-4">
-                <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+              <div class="h-64 flex items-center justify-center mb-4">
                 <img
                   src={barba_transparent.src}
-                  alt="Member Name"
-                  class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                  alt="Daniel Ruiz"
+                  class="h-full w-auto object-contain rounded-lg"
                 />
               </div>
-              <h3 class="text-xl font-semibold mb-2">Daniel Ruiz López</h3>
-              <p class="text-gray-600">Frontend, Marketing</p>
+              <h3 class="text-xl font-semibold">Daniel Ruiz López</h3>
             </div>
-            <div class="text-center">
-              <div class="relative w-48 h-48 mx-auto mb-4">
-                <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+              <div class="h-64 flex items-center justify-center mb-4">
                 <img
                   src={pablo_transparent.src}
-                  alt="Member Name"
-                  class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                  alt="Pablo Fernández"
+                  class="h-full w-auto object-contain rounded-lg"
                 />
               </div>
-              <h3 class="text-xl font-semibold mb-2">Pablo Fernández Pérez</h3>
-              <p class="text-gray-600">FullStack</p>
+              <h3 class="text-xl font-semibold">Pablo Fernández Pérez</h3>
             </div>
-            <div class="text-center">
-              <div class="relative w-48 h-48 mx-auto mb-4">
-                <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+              <div class="h-64 flex items-center justify-center mb-4">
                 <img
                   src={rafa_transparent.src}
-                  alt="Member Name"
-                  class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                  alt="Rafael Pulido"
+                  class="h-full w-auto object-contain rounded-lg"
                 />
               </div>
-              <h3 class="text-xl font-semibold mb-2">
-                Rafael Pulido Cifuentes
-              </h3>
-              <p class="text-gray-600">Frontend, Marketing, Analista</p>
+              <h3 class="text-xl font-semibold">Rafael Pulido Cifuentes</h3>
             </div>
           </div>
         </div>
 
-        <!-- Beti Team -->
         <div class="mb-20">
           <h3 class="text-2xl font-bold text-center mb-8">Equipo Happy Meal</h3>
           <p class="text-center text-gray-600 mb-8">Esfuerzo y Compañerismo</p>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-center">
-              <div class="relative w-48 h-48 mx-auto mb-4">
-                <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+              <div class="h-64 flex items-center justify-center mb-4">
                 <img
                   src={antonio_transparent.src}
-                  alt="Member Name"
-                  class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                  alt="Antonio Macías"
+                  class="h-full w-auto object-contain rounded-lg"
                 />
               </div>
-              <h3 class="text-xl font-semibold mb-2">Antonio Macías Ferrera</h3>
-              <p class="text-gray-600">Backend, Marketing, Analista</p>
+              <h3 class="text-xl font-semibold">Antonio Macías Ferrera</h3>
             </div>
-            <div class="text-center">
-              <div class="relative w-48 h-48 mx-auto mb-4">
-                <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+              <div class="h-64 flex items-center justify-center mb-4">
                 <img
                   src={benji_transparent.src}
-                  alt="Member Name"
-                  class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                  alt="Benjamín Maureria"
+                  class="h-full w-auto object-contain rounded-lg"
                 />
               </div>
-              <h3 class="text-xl font-semibold mb-2">
-                Benjamín Ignacio Maureria Flores
-              </h3>
-              <p class="text-gray-600">Frontend, Marketing, QA</p>
+              <h3 class="text-xl font-semibold">Benjamín Ignacio Maureria Flores</h3>
             </div>
-            <div class="text-center">
-              <div class="relative w-48 h-48 mx-auto mb-4">
-                <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+              <div class="h-64 flex items-center justify-center mb-4">
                 <img
                   src={delfin_transparent.src}
-                  alt="Member Name"
-                  class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                  alt="Delfín Santana"
+                  class="h-full w-auto object-contain rounded-lg"
                 />
               </div>
-              <h3 class="text-xl font-semibold mb-2">Delfín Santana Rubio</h3>
-              <p class="text-gray-600">Backend</p>
+              <h3 class="text-xl font-semibold">Delfín Santana Rubio</h3>
             </div>
-            <div class="text-center">
-              <div class="relative w-48 h-48 mx-auto mb-4">
-                <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+              <div class="h-64 flex items-center justify-center mb-4">
                 <img
                   src={guadalupe_transparent.src}
-                  alt="Member Name"
-                  class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                  alt="Guadalupe Ridruejo"
+                  class="h-full w-auto object-contain rounded-lg"
                 />
               </div>
-              <h3 class="text-xl font-semibold mb-2">
-                Guadalupe Ridruejo Pineda
-              </h3>
-              <p class="text-gray-600">Backend, Marketing, Analista</p>
+              <h3 class="text-xl font-semibold">Guadalupe Ridruejo Pineda</h3>
             </div>
-            <div class="text-center">
-              <div class="relative w-48 h-48 mx-auto mb-4">
-                <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+              <div class="h-64 flex items-center justify-center mb-4">
                 <img
                   src={julen_transparent.src}
-                  alt="Member Name"
-                  class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                  alt="Julen Redondo"
+                  class="h-full w-auto object-contain rounded-lg"
                 />
               </div>
-              <h3 class="text-xl font-semibold mb-2">Julen Redondo Pacheco</h3>
-              <p class="text-gray-600">Frontend</p>
+              <h3 class="text-xl font-semibold">Julen Redondo Pacheco</h3>
             </div>
-            <div class="text-center">
-              <div class="relative w-48 h-48 mx-auto mb-4">
-                <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+              <div class="h-64 flex items-center justify-center mb-4">
                 <img
                   src={ramon_transparent.src}
-                  alt="Member Name"
-                  class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                  alt="Ramón Gavira"
+                  class="h-full w-auto object-contain rounded-lg"
                 />
               </div>
-              <h3 class="text-xl font-semibold mb-2">Ramón Gavira Sánchez</h3>
-              <p class="text-gray-600">FullStack, Marketing, Analista</p>
+              <h3 class="text-xl font-semibold">Ramón Gavira Sánchez</h3>
             </div>
           </div>
         </div>
 
-        <!-- Triana Team -->
         <div class="mb-20">
           <h3 class="text-2xl font-bold text-center mb-8">Equipo Piruleta</h3>
           <p class="text-center text-gray-600 mb-8">Innovación y Creatividad</p>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-center">
-              <div class="relative w-48 h-48 mx-auto mb-4">
-                <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+              <div class="h-64 flex items-center justify-center mb-4">
                 <img
                   src={torto_transparent.src}
-                  alt="Member Name"
-                  class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                  alt="Daniel Tortorici"
+                  class="h-full w-auto object-contain rounded-lg"
                 />
               </div>
-              <h3 class="text-xl font-semibold mb-2">
-                Daniel Tortorici Bartús
-              </h3>
-              <p class="text-gray-600">Frontend</p>
+              <h3 class="text-xl font-semibold">Daniel Tortorici Bartús</h3>
             </div>
-            <div class="text-center">
-              <div class="relative w-48 h-48 mx-auto mb-4">
-                <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+              <div class="h-64 flex items-center justify-center mb-4">
                 <img
                   src={vela_transparent.src}
-                  alt="Member Name"
-                  class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                  alt="Daniel Vela"
+                  class="h-full w-auto object-contain rounded-lg"
                 />
               </div>
-              <h3 class="text-xl font-semibold mb-2">Daniel Vela Camacho</h3>
-              <p class="text-gray-600">Frontend, Marketing</p>
+              <h3 class="text-xl font-semibold">Daniel Vela Camacho</h3>
             </div>
-            <div class="text-center">
-              <div class="relative w-48 h-48 mx-auto mb-4">
-                <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+              <div class="h-64 flex items-center justify-center mb-4">
                 <img
                   src={capote_transparent.src}
-                  alt="Member Name"
-                  class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                  alt="Francisco Capote"
+                  class="h-full w-auto object-contain rounded-lg"
                 />
               </div>
-              <h3 class="text-xl font-semibold mb-2">
-                Francisco Capote García
-              </h3>
-              <p class="text-gray-600">Backend, Marketing</p>
+              <h3 class="text-xl font-semibold">Francisco Capote García</h3>
             </div>
-            <div class="text-center">
-              <div class="relative w-48 h-48 mx-auto mb-4">
-                <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+              <div class="h-64 flex items-center justify-center mb-4">
                 <img
                   src={paco_transparent.src}
-                  alt="Member Name"
-                  class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                  alt="Francisco Mateos"
+                  class="h-full w-auto object-contain rounded-lg"
                 />
               </div>
-              <h3 class="text-xl font-semibold mb-2">
-                Francisco Mateos Villarejo
-              </h3>
-              <p class="text-gray-600">Backend, Marketing, QA</p>
+              <h3 class="text-xl font-semibold">Francisco Mateos Villarejo</h3>
             </div>
-            <div class="text-center">
-              <div class="relative w-48 h-48 mx-auto mb-4">
-                <div class="absolute inset-0 rounded-full bg-cyan-500"></div>
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+              <div class="h-64 flex items-center justify-center mb-4">
                 <img
                   src={miguel_transparent.src}
-                  alt="Member Name"
-                  class="relative z-10 w-full h-full rounded-full object-cover p-1"
+                  alt="Miguel Encina"
+                  class="h-full w-auto object-contain rounded-lg"
                 />
               </div>
-              <h3 class="text-xl font-semibold mb-2">Miguel Encina Martínez</h3>
-              <p class="text-gray-600">FullStack, Analista, QA</p>
+              <h3 class="text-xl font-semibold">Miguel Encina Martínez</h3>
             </div>
           </div>
         </div>
