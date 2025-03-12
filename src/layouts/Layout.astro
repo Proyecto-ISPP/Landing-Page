@@ -2,6 +2,26 @@
 import "../styles/global.css";
 import logo from "../assets/logo.png";
 
+// Importamos aquí las imágenes de "About" para poder prefetch/preload
+import etsii from "../assets/etsii.jpeg";
+import antonio_transparent from "../assets/members/antonio_transparent.png";
+import ramon_transparent from "../assets/members/ramon_transparent.png";
+import miguel_transparent from "../assets/members/miguel_transparent.png";
+import rafa_transparent from "../assets/members/rafa_transparent.png";
+import alors_transparent from "../assets/members/alors_transparent.png";
+import barba_transparent from "../assets/members/barba_transparent.png";
+import benji_transparent from "../assets/members/benji_transparent.png";
+import capote_transparent from "../assets/members/capote_transparent.png";
+import delfin_transparent from "../assets/members/delfin_transparent.png";
+import guadalupe_transparent from "../assets/members/guadalupe_transparent.png";
+import julen_transparent from "../assets/members/julen_transparent.png";
+import pablo_transparent from "../assets/members/pablo_transparent.png";
+import paco_transparent from "../assets/members/paco_transparent.png";
+import rubio_transparent from "../assets/members/rubio_transparent.png";
+import torto_transparent from "../assets/members/torto_transparent.png";
+import vela_transparent from "../assets/members/vela_transparent.png";
+import alberto_transparent from "../assets/members/alberto_transparent.png";
+
 interface Props {
   title: string;
 }
@@ -44,6 +64,30 @@ const services = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href={logo.src} />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Prefetch (o preload) de las imágenes de la página "About" -->
+    <!-- Prefetch: descarga en segundo plano cuando haya recursos libres -->
+    <!-- Preload: descarga de inmediato, pero afecta la carga inicial -->
+    <!-- Ajusta según tus necesidades: -->
+    <link rel="prefetch" href={etsii.src} as="image" />
+    <link rel="prefetch" href={antonio_transparent.src} as="image" />
+    <link rel="prefetch" href={ramon_transparent.src} as="image" />
+    <link rel="prefetch" href={miguel_transparent.src} as="image" />
+    <link rel="prefetch" href={rafa_transparent.src} as="image" />
+    <link rel="prefetch" href={alors_transparent.src} as="image" />
+    <link rel="prefetch" href={barba_transparent.src} as="image" />
+    <link rel="prefetch" href={benji_transparent.src} as="image" />
+    <link rel="prefetch" href={capote_transparent.src} as="image" />
+    <link rel="prefetch" href={delfin_transparent.src} as="image" />
+    <link rel="prefetch" href={guadalupe_transparent.src} as="image" />
+    <link rel="prefetch" href={julen_transparent.src} as="image" />
+    <link rel="prefetch" href={pablo_transparent.src} as="image" />
+    <link rel="prefetch" href={paco_transparent.src} as="image" />
+    <link rel="prefetch" href={rubio_transparent.src} as="image" />
+    <link rel="prefetch" href={torto_transparent.src} as="image" />
+    <link rel="prefetch" href={vela_transparent.src} as="image" />
+    <link rel="prefetch" href={alberto_transparent.src} as="image" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -63,21 +107,16 @@ const services = [
             </a>
           </div>
           <div class="hidden md:flex space-x-6 items-center">
-            <a href="/" rel="prefetch" class="text-gray-600 hover:text-cyan-600"
-              >Inicio</a
-            >
+            <a href="/" class="text-gray-600 hover:text-cyan-600">Inicio</a>
             <a
               href="/mockups/index.html"
-              rel="prefetch"
               class="text-gray-600 hover:text-cyan-600"
             >
               Demo
             </a>
-            <a
-              href="/precios"
-              rel="prefetch"
-              class="text-gray-600 hover:text-cyan-600">Precios</a
-            >
+            <a href="/precios" class="text-gray-600 hover:text-cyan-600">
+              Precios
+            </a>
             <!-- Services Dropdown -->
             <div class="relative group">
               <button
@@ -112,7 +151,6 @@ const services = [
                     services.map((service) => (
                       <a
                         href={service.href}
-                        rel="prefetch"
                         class="flex items-center p-3 rounded-lg hover:bg-gray-50"
                       >
                         <i class={`fas ${service.icon} text-cyan-600 w-5`} />
@@ -131,16 +169,12 @@ const services = [
               </div>
             </div>
 
-            <a
-              href="/help"
-              rel="prefetch"
-              class="text-gray-600 hover:text-cyan-600">Ayuda</a
-            >
-            <a
-              href="/about"
-              rel="prefetch"
-              class="text-gray-600 hover:text-cyan-600">Acerca de</a
-            >
+            <a href="/help" class="text-gray-600 hover:text-cyan-600">
+              Ayuda
+            </a>
+            <a href="/about" class="text-gray-600 hover:text-cyan-600">
+              Acerca de
+            </a>
           </div>
 
           <!-- Botón Hamburguesa (sólo en mobile) -->
@@ -151,7 +185,9 @@ const services = [
           >
             <!-- Icono hamburguesa -->
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path fill-rule="evenodd" d="M4 5h16v2H4zm0 6h16v2H4zm0 6h16v2H4z"
+              <path
+                fill-rule="evenodd"
+                d="M4 5h16v2H4zm0 6h16v2H4zm0 6h16v2H4z"
               ></path>
             </svg>
           </button>
@@ -163,34 +199,33 @@ const services = [
           class="md:hidden hidden flex-col space-y-2 mt-2"
           role="menu"
         >
-          <a
-            href="/"
-            rel="prefetch"
-            class="block py-1 text-gray-600 hover:text-cyan-600">Inicio</a
-          >
+          <a href="/" class="block py-1 text-gray-600 hover:text-cyan-600">
+            Inicio
+          </a>
           <a
             href="/mockups/index.html"
-            rel="prefetch"
             class="block py-1 text-gray-600 hover:text-cyan-600"
           >
             Demo
           </a>
           <a
             href="/precios"
-            rel="prefetch"
-            class="block py-1 text-gray-600 hover:text-cyan-600">Precios</a
+            class="block py-1 text-gray-600 hover:text-cyan-600"
           >
+            Precios
+          </a>
           <div>
             <button
               id="mobile-services-btn"
               class="w-full text-left flex justify-between items-center py-1 text-gray-600 hover:text-cyan-600"
             >
-              <span
-                >Servicios
+              <span>
+                Servicios
                 <span
                   class="ml-2 inline-block bg-cyan-100 text-cyan-700 text-xs font-semibold px-1 py-0.5 rounded"
-                  >¡NUEVO!</span
                 >
+                  ¡NUEVO!
+                </span>
               </span>
               <svg
                 class="w-4 h-4 transition-transform transform"
@@ -202,7 +237,8 @@ const services = [
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M19 9l-7 7-7-7"></path>
+                  d="M19 9l-7 7-7-7"
+                ></path>
               </svg>
             </button>
             <div id="mobile-services-menu" class="hidden pl-4">
@@ -210,7 +246,6 @@ const services = [
                 services.map((service) => (
                   <a
                     href={service.href}
-                    rel="prefetch"
                     class="block py-1 text-gray-600 hover:text-cyan-600"
                   >
                     {service.title}
@@ -219,16 +254,10 @@ const services = [
               }
             </div>
           </div>
-          <a
-            href="/help"
-            rel="prefetch"
-            class="text-gray-600 hover:text-cyan-600">Ayuda</a
-          >
-          <a
-            href="/about"
-            rel="prefetch"
-            class="block py-1 text-gray-600 hover:text-cyan-600">Acerca de</a
-          >
+          <a href="/help" class="text-gray-600 hover:text-cyan-600">Ayuda</a>
+          <a href="/about" class="block py-1 text-gray-600 hover:text-cyan-600">
+            Acerca de
+          </a>
         </div>
       </nav>
     </header>
@@ -251,61 +280,45 @@ const services = [
             <h3 class="text-xl font-bold mb-4">Enlaces</h3>
             <ul class="space-y-2">
               <li>
-                <a href="/" rel="prefetch" class="hover:text-indigo-400"
-                  >Inicio</a>
+                <a href="/" class="hover:text-indigo-400">Inicio</a>
               </li>
               <li>
-                <a href="/precios" rel="prefetch" class="hover:text-indigo-400"
-                  >Precios</a
-                >
+                <a href="/precios" class="hover:text-indigo-400">Precios</a>
               </li>
               <li>
-                <a href="/about" rel="prefetch" class="hover:text-indigo-400"
-                  >Acerca de</a
-                >
+                <a href="/about" class="hover:text-indigo-400">Acerca de</a>
               </li>
               <li>
-                <a href="/about" rel="prefetch" class="hover:text-indigo-400"
-                  >Acerca de</a
-                >
+                <a href="/about" class="hover:text-indigo-400">Acerca de</a>
               </li>
               <li>
-                <a
-                  href="/services/teleconsulta"
-                  rel="prefetch"
-                  class="hover:text-indigo-400">Teleconsulta Virtual</a
-                >
+                <a href="/services/teleconsulta" class="hover:text-indigo-400">
+                  Teleconsulta Virtual
+                </a>
               </li>
               <li>
                 <a
                   href="/services/gestion-pacientes"
-                  rel="prefetch"
-                  class="hover:text-indigo-400">Gestión de Pacientes</a
+                  class="hover:text-indigo-400"
                 >
+                  Gestión de Pacientes
+                </a>
               </li>
               <li>
-                <a
-                  href="/services/toolbox"
-                  rel="prefetch"
-                  class="hover:text-indigo-400">Herramientas</a
-                >
+                <a href="/services/toolbox" class="hover:text-indigo-400">
+                  Herramientas
+                </a>
               </li>
               <li>
-                <a
-                  href="/services/valoraciones"
-                  rel="prefetch"
-                  class="hover:text-indigo-400">Valoraciones Online</a
-                >
+                <a href="/services/valoraciones" class="hover:text-indigo-400">
+                  Valoraciones Online
+                </a>
               </li>
               <li>
-                <a href="/help" rel="prefetch" class="hover:text-indigo-400"
-                  >Ayuda</a
-                >
+                <a href="/help" class="hover:text-indigo-400">Ayuda</a>
               </li>
               <li>
-                <a href="/about" rel="prefetch" class="hover:text-indigo-400"
-                  >Acerca de</a
-                >
+                <a href="/about" class="hover:text-indigo-400">Acerca de</a>
               </li>
             </ul>
           </div>
