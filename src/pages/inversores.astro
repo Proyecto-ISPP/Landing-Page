@@ -1,0 +1,642 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/precios.css";
+import team from "../assets/support/collage.png";
+import global_fisio from "../assets/conexion_fisiofind.png";
+import "../styles/global.css";
+import "../styles/inversores.css";
+import blue from "../assets/blue.png";
+import gold from "../assets/gold.png";
+---
+
+<Layout title="Inversores | Fisio Find">
+  <div class="inversores-container">
+    <div class="smooth-scroll-container" id="scrollContainer">
+      <section class="scroll-section" id="section1">
+        <h1 class="text-[#333]">Sección de Inversores</h1>
+        <div class="container mx-auto px-4 py-16">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Teleconsulta -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <div class="text-cyan-600 mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-12 w-12"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Teleconsulta</h3>
+              <p class="text-gray-600">
+                Consultas online con profesionales cualificados desde la
+                comodidad de tu hogar.
+              </p>
+            </div>
+
+            <!-- Seguimiento Personalizado -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <div class="text-cyan-600 mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-12 w-12"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">
+                Seguimiento Personalizado
+              </h3>
+              <p class="text-gray-600">
+                Plan de tratamiento individualizado con seguimiento continuo de
+                tu progreso.
+              </p>
+            </div>
+
+            <!-- Ejercicios Guiados -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <div class="text-cyan-600 mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-12 w-12"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Ejercicios Guiados</h3>
+              <p class="text-gray-600">
+                Acceso a videos y guías de ejercicios personalizados para tu
+                recuperación.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Añade una segunda sección para probar el scroll -->
+      <section
+        class="scroll-section bg-gradient-to-r from-[#6BC9BE] to-[#05668D] hover:opacity-90 text-white font-semibold py-2 px-4 rounded-xl inline-flex items-center shadow-md transition-all duration-300 border-r border-white/20"
+        id="section2"
+      >
+        <div class="container mx-auto px-4 py-16">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <!-- Texto a la izquierda -->
+            <div class="text-justify">
+              <h1 class="text-3xl font-bold mb-4 text-white">Nuestra visión</h1>
+              <p class="text-lg max-w-xl">
+                En FisioFind, creemos en la importancia de conectar a los
+                pacientes con los mejores profesionales de la salud. Nuestra
+                misión es facilitar el acceso a tratamientos de calidad y
+                mejorar la experiencia del paciente en su camino hacia la
+                recuperación.
+              </p>
+            </div>
+
+            <!-- Contenedor a la derecha -->
+            <div
+              class="bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-6 h-[90vh]"
+            >
+              <img
+                src={global_fisio.src}
+                alt="Equipo"
+                class="w-full h-full object-cover rounded-lg mb-4"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tercera sección con el modal -->
+      <section class="scroll-section" id="section3">
+        <div class="container mx-auto px-4 py-16">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <!-- Tarjeta a la izquierda -->
+            <div class="flex justify-center items-center">
+              <div class="card">
+                <img
+                  src="/src/assets/logo.png"
+                  alt="FisioFind Logo"
+                  class="img"
+                />
+                <div class="textBox">
+                  <p class="text head">Inversión en FisioFind</p>
+                  <span>Oportunidad de crecimiento</span>
+                  <p class="text price text-cyan-600" id="modalTrigger">
+                    Únete ahora
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Texto a la derecha -->
+            <div class="text-right pr-8 md:pr-16 lg:pr-20">
+              <h1 class="text-3xl font-bold mb-4">Invierte en el futuro</h1>
+              <p class="text-lg ml-auto max-w-xl text-justify">
+                FisioFind está revolucionando el sector de la fisioterapia con
+                una plataforma que conecta pacientes con profesionales
+                cualificados. Nuestro crecimiento constante y modelo de negocio
+                escalable ofrece una oportunidad única para inversores que
+                buscan formar parte del futuro de la salud digital.
+              </p>
+              <ul class="mt-6 space-y-2 text-left">
+                <li class="flex items-center justify-end">
+                  <span>Crecimiento sostenido año tras año</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 ml-2 text-cyan-600"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                </li>
+                <li class="flex items-center justify-end">
+                  <span>Tecnología innovadora en el sector de la salud</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 ml-2 text-cyan-600"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                </li>
+                <li class="flex items-center justify-end">
+                  <span>Modelo de negocio probado y en expansión</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 ml-2 text-cyan-600"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Modal de formulario (inicialmente oculto) -->
+  <div
+    id="inversorModal"
+    class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 hidden transition-opacity duration-300"
+  >
+    <div
+      class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md mx-4 transform transition-transform duration-300 scale-95 opacity-0"
+      id="modalContent"
+    >
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold" style="color: #012c6d;">
+          Únete como Inversor
+        </h2>
+        <button
+          id="closeModal"
+          class="text-gray-500 hover:text-gray-700 focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <form
+        class="space-y-6"
+        action="https://formsubmit.co/spprt.fisiofind@gmail.com"
+        method="POST"
+      >
+        <!-- Customize thank you page -->
+        <input
+          type="hidden"
+          name="_next"
+          value="https://fisiofind.netlify.app/thanks"
+        />
+        <!-- Disable captcha -->
+        <input type="hidden" name="_captcha" value="false" />
+        <!-- Prevent formsubmit.co redirect -->
+        <input type="hidden" name="_template" value="table" />
+        <!-- Identificar que es un formulario de inversores -->
+        <input type="hidden" name="form_type" value="inversor_interest" />
+
+        <div>
+          <label
+            for="name"
+            class="block text-sm font-semibold text-gray-700 mb-2"
+            >Nombre y apellidos*</label
+          >
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 transition-colors duration-200"
+            placeholder="Ingresa tu nombre y apellidos"
+          />
+        </div>
+
+        <div>
+          <label
+            for="email"
+            class="block text-sm font-semibold text-gray-700 mb-2"
+            >Email *</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 transition-colors duration-200"
+            placeholder="Ingresa tu email"
+          />
+        </div>
+
+        <div>
+          <label
+            for="phone"
+            class="block text-sm font-semibold text-gray-700 mb-2"
+            >Teléfono (opcional)</label
+          >
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 transition-colors duration-200"
+            placeholder="Ingresa tu número de teléfono"
+          />
+        </div>
+
+        <div>
+          <label
+            for="message"
+            class="block text-sm font-semibold text-gray-700 mb-2"
+            >Mensaje</label
+          >
+          <textarea
+            id="message"
+            name="message"
+            rows="3"
+            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 transition-colors duration-200"
+            placeholder="¿Cómo te gustaría formar parte de FisioFind?"
+          ></textarea>
+        </div>
+
+        <div class="text-center">
+          <button
+            type="submit"
+            class="rocket-button w-full px-8 py-3 text-base font-medium rounded-lg text-white bg-cyan-600 hover:bg-cyan-700 transform transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 relative overflow-hidden flex items-center justify-center gap-2"
+          >
+            <svg
+              height="24"
+              width="24"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              class="rocket-icon"
+            >
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M5 13c0-5.088 2.903-9.436 7-11.182C16.097 3.564 19 7.912 19 13c0 .823-.076 1.626-.22 2.403l1.94 1.832a.5.5 0 0 1 .095.603l-2.495 4.575a.5.5 0 0 1-.793.114l-2.234-2.234a1 1 0 0 0-.707-.293H9.414a1 1 0 0 0-.707.293l-2.234 2.234a.5.5 0 0 1-.793-.114l-2.495-4.575a.5.5 0 0 1 .095-.603l1.94-1.832C5.077 14.626 5 13.823 5 13zm1.476 6.696l.817-.817A3 3 0 0 1 9.414 18h5.172a3 3 0 0 1 2.121.879l.817.817.982-1.8-1.1-1.04a2 2 0 0 1-.593-1.82c.124-.664.187-1.345.187-2.036 0-3.87-1.995-7.3-5-8.96C8.995 5.7 7 9.13 7 13c0 .691.063 1.372.187 2.037a2 2 0 0 1-.593 1.82l-1.1 1.039.982 1.8zM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"
+                fill="currentColor"></path>
+            </svg>
+            <span class="button-text">Enviar solicitud de inversión</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const scrollContainer = document.getElementById("scrollContainer");
+    if (!scrollContainer) return;
+    const rocketButton = document.querySelector(".rocket-button");
+    if (rocketButton) {
+      rocketButton.addEventListener("mousedown", function () {
+        // Añadir clase temporal durante la animación
+        this.classList.add("launching");
+
+        // Después de la animación, enviar el formulario
+        setTimeout(() => {
+          // La animación dura aproximadamente 1 segundo
+          // El formulario se enviará automáticamente
+          this.classList.remove("launching");
+        }, 1000);
+      });
+    }
+    let isScrollAnimating = false; // Flag para controlar si hay una animación en curso
+    let startY = 0;
+    let startScrollTop = 0;
+    let isScrolling = false; // Flag para controlar el scroll táctil
+    const maxScrollSpeed = 40; // Reducido para un control más preciso
+
+    // Función para manejar la animación del scroll suave
+    function smoothScroll(targetPosition) {
+      // Si ya hay una animación en curso, la cancelamos
+      if (isScrollAnimating) {
+        cancelAnimationFrame(window.scrollAnimation);
+      }
+
+      isScrollAnimating = true;
+      const startPosition = scrollContainer.scrollTop;
+      const distance = targetPosition - startPosition;
+      const duration = 800; // duración reducida para mayor responsividad
+      let startTime = null;
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / duration, 1);
+
+        // Función de easing para un movimiento más suave
+        const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5); // Cambiado a una función que acelera al principio
+
+        scrollContainer.scrollTop =
+          startPosition + distance * easeOutQuint(progress);
+
+        if (progress < 1) {
+          window.scrollAnimation = requestAnimationFrame(animation);
+        } else {
+          isScrollAnimating = false;
+        }
+      }
+
+      window.scrollAnimation = requestAnimationFrame(animation);
+    }
+
+    // Detector de rueda del ratón con mejora para prevenir bugs
+    scrollContainer.addEventListener(
+      "wheel",
+      (e) => {
+        e.preventDefault();
+
+        // Cancelar cualquier animación en curso cuando el usuario scrollea manualmente
+        if (isScrollAnimating) {
+          cancelAnimationFrame(window.scrollAnimation);
+          isScrollAnimating = false;
+        }
+
+        // Cancelar cualquier temporizador pendiente
+        clearTimeout(window.scrollTimer);
+
+        const delta =
+          Math.sign(e.deltaY) * Math.min(Math.abs(e.deltaY), maxScrollSpeed);
+        scrollContainer.scrollTop += delta;
+
+        // Reiniciar el temporizador para ajustar a la sección más cercana después del scroll
+        window.scrollTimer = setTimeout(() => {
+          // Solo ajustamos a la sección más cercana si no hay interacción activa
+          if (!isScrollAnimating) {
+            const sections = document.querySelectorAll(".scroll-section");
+            let closestSection = null;
+            let minDistance = Infinity;
+
+            sections.forEach((section) => {
+              const distance = Math.abs(
+                section.offsetTop - scrollContainer.scrollTop,
+              );
+              if (distance < minDistance) {
+                minDistance = distance;
+                closestSection = section;
+              }
+            });
+
+            // Solo aplicamos snap si estamos relativamente cerca de una sección
+            if (closestSection && minDistance < window.innerHeight * 0.3) {
+              smoothScroll(closestSection.offsetTop);
+            }
+          }
+        }, 200); // Tiempo ligeramente mayor para permitir múltiples eventos de scroll
+      },
+      { passive: false },
+    );
+
+    // Asegúrate de que la sección visible se marque con la clase in-view
+    function updateVisibleSections() {
+      const sections = document.querySelectorAll(".scroll-section");
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const isVisible =
+          rect.top <= window.innerHeight / 2 &&
+          rect.bottom >= window.innerHeight / 2;
+
+        if (isVisible) {
+          section.classList.add("in-view");
+        } else {
+          section.classList.remove("in-view");
+        }
+      });
+    }
+
+    // Actualiza secciones visibles cuando se hace scroll
+    scrollContainer.addEventListener("scroll", () => {
+      updateVisibleSections();
+    });
+
+    // También maneja gestos táctiles para dispositivos móviles con mejoras
+    scrollContainer.addEventListener("touchstart", (e) => {
+      // Cancelar cualquier animación en curso cuando el usuario toca la pantalla
+      if (isScrollAnimating) {
+        cancelAnimationFrame(window.scrollAnimation);
+        isScrollAnimating = false;
+      }
+
+      startY = e.touches[0].clientY;
+      startScrollTop = scrollContainer.scrollTop;
+      isScrolling = true;
+    });
+
+    scrollContainer.addEventListener(
+      "touchmove",
+      (e) => {
+        if (!isScrolling) return;
+
+        // Cancelar cualquier temporizador pendiente durante el movimiento táctil
+        clearTimeout(window.scrollTimer);
+
+        const y = e.touches[0].clientY;
+        const delta = startY - y;
+
+        scrollContainer.scrollTop = startScrollTop + delta;
+        e.preventDefault();
+      },
+      { passive: false },
+    );
+
+    scrollContainer.addEventListener("touchend", () => {
+      isScrolling = false;
+
+      // Similar al wheel, ajusta a la sección más cercana
+      clearTimeout(window.scrollTimer);
+      window.scrollTimer = setTimeout(() => {
+        if (!isScrollAnimating) {
+          const sections = document.querySelectorAll(".scroll-section");
+          let closestSection = null;
+          let minDistance = Infinity;
+
+          sections.forEach((section) => {
+            const distance = Math.abs(
+              section.offsetTop - scrollContainer.scrollTop,
+            );
+            if (distance < minDistance) {
+              minDistance = distance;
+              closestSection = section;
+            }
+          });
+
+          if (closestSection && minDistance < window.innerHeight * 0.3) {
+            smoothScroll(closestSection.offsetTop);
+          }
+        }
+      }, 200);
+    });
+
+    // Inicializa las secciones visibles
+    updateVisibleSections();
+
+    // Manejo de teclas de flecha para navegación adicional
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+        e.preventDefault();
+
+        // Cancelar cualquier animación en curso
+        if (isScrollAnimating) {
+          cancelAnimationFrame(window.scrollAnimation);
+          isScrollAnimating = false;
+        }
+
+        const sections = document.querySelectorAll(".scroll-section");
+        const currentPosition = scrollContainer.scrollTop;
+
+        // Encontrar la sección actual y la siguiente/anterior
+        let currentSectionIndex = 0;
+        let minDistance = Infinity;
+
+        sections.forEach((section, index) => {
+          const distance = Math.abs(section.offsetTop - currentPosition);
+          if (distance < minDistance) {
+            minDistance = distance;
+            currentSectionIndex = index;
+          }
+        });
+
+        // Determinar la siguiente sección basada en la tecla presionada
+        let targetIndex = currentSectionIndex;
+        if (
+          e.key === "ArrowDown" &&
+          currentSectionIndex < sections.length - 1
+        ) {
+          targetIndex = currentSectionIndex + 1;
+        } else if (e.key === "ArrowUp" && currentSectionIndex > 0) {
+          targetIndex = currentSectionIndex - 1;
+        }
+
+        // Scroll a la sección objetivo
+        if (targetIndex !== currentSectionIndex) {
+          smoothScroll(sections[targetIndex].offsetTop);
+        }
+      }
+    });
+
+    // Código para el modal
+    const modalTrigger = document.getElementById("modalTrigger");
+    const modal = document.getElementById("inversorModal");
+    const modalContent = document.getElementById("modalContent");
+    const closeModal = document.getElementById("closeModal");
+
+    if (modalTrigger && modal && closeModal && modalContent) {
+      // Abrir modal
+      modalTrigger.addEventListener("click", () => {
+        // Asegurarse de que el modal está visible pero con opacidad 0
+        modal.classList.remove("hidden");
+
+        // Pequeño retraso para que la animación funcione correctamente
+        setTimeout(() => {
+          modal.classList.add("opacity-100");
+          modalContent.classList.remove("scale-95", "opacity-0");
+          modalContent.classList.add("scale-100", "opacity-100");
+        }, 10);
+      });
+
+      // Cerrar modal con botón X
+      closeModal.addEventListener("click", closeModalFunction);
+
+      // Cerrar al hacer clic fuera del contenido
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          closeModalFunction();
+        }
+      });
+
+      // Cerrar con tecla ESC
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+          closeModalFunction();
+        }
+      });
+    }
+
+    function closeModalFunction() {
+      if (!modalContent || !modal) return;
+
+      // Primero animamos la salida
+      modalContent.classList.remove("scale-100", "opacity-100");
+      modalContent.classList.add("scale-95", "opacity-0");
+
+      // Después de la animación, ocultamos el modal
+      setTimeout(() => {
+        modal.classList.add("hidden");
+        modal.classList.remove("opacity-100");
+      }, 300);
+    }
+  });
+</script>

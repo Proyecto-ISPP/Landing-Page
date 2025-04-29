@@ -1,0 +1,314 @@
+/* Reseteo básico para asegurar comportamiento consistente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overscroll-behavior: none;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* Contenedor principal para la estructura de la página */
+.inversores-container {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #f9f9f9;
+    -webkit-overflow-scrolling: touch;
+    /* Mejora el scroll en iOS */
+}
+
+/* Contenedor de scroll principal con comportamiento suave */
+.smooth-scroll-container {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    /* Personalización de la barra de desplazamiento */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+
+    /* Prevenir comportamiento de rebote en algunos navegadores */
+    overscroll-behavior: contain;
+    will-change: transform, scroll-position;
+    /* Optimización de rendimiento */
+}
+
+/* Cada sección del scroll tendrá el alto de la pantalla */
+.scroll-section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    position: relative;
+    will-change: transform, opacity;
+    /* Optimización de rendimiento */
+}
+
+/* Alternar colores para distinguir secciones */
+.scroll-section:nth-child(even) {
+    background-color: #f0f7fa;
+}
+
+.scroll-section:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Estilización básica para encabezados en las secciones */
+.scroll-section h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Transición más rápida */
+}
+
+/* Animación para elementos cuando están en viewport */
+.scroll-section.in-view h1 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Para navegadores webkit (Chrome, Safari) */
+.smooth-scroll-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.smooth-scroll-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+}
+
+.smooth-scroll-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.smooth-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+/* Indicadores de navegación para las secciones */
+.section-indicators {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.section-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.section-indicator.active {
+    background-color: #0ea5e9;
+    transform: scale(1.3);
+}
+
+/* Optimizaciones para dispositivos táctiles */
+@media (max-width: 767px) {
+    .scroll-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .section-indicators {
+        right: 10px;
+    }
+
+    .section-indicator {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* PAQUETE DE INVERSIÓN */
+
+/* From Uiverse.io by JohnnyCSilva */
+.card {
+    width: 100%;
+    max-width: 20em;
+    height: 30em;
+    background: white;
+    border-radius: 1.25em;
+    border: 0.125em solid transparent;
+    background-image: linear-gradient(white, white),
+        linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #05668D;
+    transition: 0.2s ease-in-out;
+    box-shadow: 0 0.3em 1em rgba(0, 0, 0, 0.1);
+}
+
+.img {
+    height: 40%;
+    width: auto;
+    position: absolute;
+    transition: 0.2s ease-in-out;
+    z-index: 1;
+    opacity: 0.9;
+}
+
+.textBox {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    transition: 0.2s ease-in-out;
+    z-index: 2;
+    width: 90%;
+    padding: 1em;
+}
+
+.textBox>.text {
+    font-weight: bold;
+}
+
+.textBox>.head {
+    font-size: 1.5em;
+}
+
+.textBox>.price {
+    font-size: 1.2em;
+}
+
+.textBox>span {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.card:hover>.textBox {
+    opacity: 1;
+}
+
+.card:hover>.img {
+    height: 65%;
+    filter: blur(0.3em);
+    opacity: 0.8;
+    animation: anim 3s infinite;
+}
+
+@keyframes anim {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-1.25em);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.card:hover {
+    transform: scale(1.04) rotate(-1deg);
+}
+
+/* Estilo para el modal de contacto de inversores */
+#modalContent {
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* Agregamos estos estilos adicionales */
+.scale-100 {
+    transform: scale(1);
+}
+
+.opacity-100 {
+    opacity: 1;
+}
+
+/* Estilos para hacer que "Únete ahora" sea más interactivo */
+.text.price {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    position: relative;
+}
+
+.text.price:hover {
+    transform: translateY(-0.125em);
+    text-shadow: 0 0.125em 0.625em rgba(5, 102, 141, 0.3);
+}
+
+.text.price::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.125em;
+    width: 0;
+    height: 0.125em;
+    background-color: #0ea5e9;
+    transition: width 0.3s ease;
+}
+
+.text.price:hover::after {
+    width: 100%;
+}
+
+
+/* Estilos para el botón de cohete */
+
+.rocket-button {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 0.8em 1.3em 0.8em 0.9em;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(to right, #05668D, #6bc9be, #05668D);
+    border: none;
+    letter-spacing: 0.05em;
+    border-radius: 16px;
+}
+
+.rocket-button svg {
+    margin-right: 3px;
+    transform: rotate(30deg);
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.rocket-button span {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.rocket-button:hover svg {
+    transform: translateX(5px) rotate(90deg);
+}
+
+.rocket-button:hover span {
+    transform: translateX(7px);
+}
