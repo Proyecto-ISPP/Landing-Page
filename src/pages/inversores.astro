@@ -3,21 +3,55 @@ import Layout from "../layouts/Layout.astro";
 import "../styles/precios.css";
 import team from "../assets/support/collage.png";
 import global_fisio from "../assets/conexion_fisiofind.png";
+import curva_costes from "../assets/curva_costes.png";
+import fisio_background from "../assets/fisio_background.jpg";
 import "../styles/global.css";
 import "../styles/inversores.css";
-import blue from "../assets/blue.png";
-import gold from "../assets/gold.png";
 ---
 
 <Layout title="Inversores | Fisio Find">
   <div class="inversores-container">
     <div class="smooth-scroll-container" id="scrollContainer">
       <section class="scroll-section" id="section1">
-        <h1 class="text-[#333]">Sección de Inversores</h1>
+        <div class="pt-6">
+          <h1
+            class="text-4xl md:text-5xl font-bold text-center mb-3 relative z-10 inline-block"
+          >
+            <span
+              class="bg-gradient-to-r from-[#05668D] to-[#6BC9BE] bg-clip-text text-transparent"
+            >
+              Invierte en el futuro</span
+            >
+            <span class="text-[#333]">de la salud digital</span>
+          </h1>
+          <div class="flex justify-center mb-4">
+            <div class="inline-flex rounded-md shadow">
+              <a
+                href="#section4"
+                class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 transform hover:scale-105 transition-all duration-200"
+              >
+                Quiero invertir
+                <svg
+                  class="ml-2 -mr-1 h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
         <div class="container mx-auto px-4 py-16">
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Teleconsulta -->
-            <div class="bg-white rounded-lg shadow-lg p-6">
+            <!-- Conoce a nuestro equipo -->
+            <div
+              class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform border-l-4 border-cyan-600"
+            >
               <div class="text-cyan-600 mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -30,46 +64,142 @@ import gold from "../assets/gold.png";
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
                   ></path>
                 </svg>
               </div>
-              <h3 class="text-xl font-semibold mb-2">Teleconsulta</h3>
-              <p class="text-gray-600">
-                Consultas online con profesionales cualificados desde la
-                comodidad de tu hogar.
-              </p>
-            </div>
 
-            <!-- Seguimiento Personalizado -->
-            <div class="bg-white rounded-lg shadow-lg p-6">
-              <div class="text-cyan-600 mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-12 w-12"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                  ></path>
-                </svg>
-              </div>
               <h3 class="text-xl font-semibold mb-2">
-                Seguimiento Personalizado
+                Conoce a nuestro equipo
               </h3>
-              <p class="text-gray-600">
-                Plan de tratamiento individualizado con seguimiento continuo de
-                tu progreso.
+
+              <p class="text-gray-600 mb-4">
+                Detrás de FisioFind hay un equipo comprometido de apasionados
+                por transformar la fisioterapia digital.
               </p>
+
+              <div class="mt-4 pt-3 border-t border-gray-100">
+                <div class="flex items-center space-x-3">
+                  <span
+                    class="inline-flex h-8 w-8 rounded-full overflow-hidden bg-cyan-100"
+                  >
+                    <img
+                      src="/src/assets/members/miguel_transparent.png"
+                      alt="Team member"
+                      class="h-full w-full object-cover"
+                    />
+                  </span>
+                  <span
+                    class="inline-flex h-8 w-8 -ml-2 rounded-full overflow-hidden bg-cyan-100"
+                  >
+                    <img
+                      src="/src/assets/members/ramon_transparent.png"
+                      alt="Team member"
+                      class="h-full w-full object-cover"
+                    />
+                  </span>
+                  <span
+                    class="inline-flex h-8 w-8 -ml-2 rounded-full overflow-hidden bg-cyan-100"
+                  >
+                    <img
+                      src="/src/assets/members/rafa_transparent.png"
+                      alt="Team member"
+                      class="h-full w-full object-cover"
+                    />
+                  </span>
+                  <span
+                    class="inline-flex h-8 w-8 -ml-2 rounded-full overflow-hidden bg-cyan-100 flex items-center justify-center text-xs font-medium text-cyan-800"
+                  >
+                    +14
+                  </span>
+                </div>
+              </div>
+
+              <a
+                href="/about"
+                class="mt-4 inline-flex items-center text-cyan-600 hover:text-cyan-700 group transition-all duration-200"
+              >
+                Conocer más sobre nuestro equipo
+                <svg
+                  class="ml-2 h-4 w-4 transform transition-transform group-hover:translate-x-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </a>
             </div>
 
-            <!-- Ejercicios Guiados -->
-            <div class="bg-white rounded-lg shadow-lg p-6">
+            <!-- Rentabilidad Excepcional -->
+            <div
+              class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform border-l-4 border-cyan-600"
+            >
+              <div class="text-cyan-600 mb-4 flex justify-between items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-12 w-12"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+                <span
+                  class="bg-cyan-100 text-cyan-800 text-xs font-semibold py-1 px-2 rounded-full"
+                  >+42.7% ROI</span
+                >
+              </div>
+
+              <h3
+                class="text-xl font-semibold mb-2 text-cyan-700 flex items-center"
+              >
+                Rentabilidad Excepcional
+                <span class="ml-2 inline-block animate-bounce">
+                  <svg
+                    class="w-5 h-5 text-yellow-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.799-2.034c-.784-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    ></path>
+                  </svg>
+                </span>
+              </h3>
+
+              <p class="text-gray-700 mb-3">
+                Invierta hoy con retornos comprobados. Nuestros inversores verán
+                un <span class="font-bold text-cyan-700"
+                  >beneficio del 42.7%</span
+                > en 24 meses, basado en proyecciones verificadas.
+              </p>
+
+              <div class="mt-4 pt-3 border-t border-gray-100">
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-gray-500">Inversión inicial</span>
+                  <span class="font-semibold">10,000€</span>
+                </div>
+                <div class="flex items-center justify-between text-sm mt-2">
+                  <span class="text-gray-500">Retorno esperado</span>
+                  <span class="font-semibold text-green-600">+37,947.42€</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Expansión Internacional -->
+            <div
+              class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform border-l-4 border-cyan-600"
+            >
               <div class="text-cyan-600 mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -82,60 +212,259 @@ import gold from "../assets/gold.png";
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                   ></path>
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
               </div>
-              <h3 class="text-xl font-semibold mb-2">Ejercicios Guiados</h3>
-              <p class="text-gray-600">
-                Acceso a videos y guías de ejercicios personalizados para tu
-                recuperación.
+
+              <h3 class="text-xl font-semibold mb-2">
+                Expansión Internacional
+              </h3>
+
+              <p class="text-gray-700 mb-3">
+                FisioFind ya ha <span class="font-bold text-cyan-700"
+                  >conectado a cientos</span
+                > de fisioterapeutas españoles con pacientes. Nuestro próximo objetivo:
+                <span
+                  class="underline decoration-cyan-500 decoration-2 underline-offset-2"
+                  >expandirnos a toda Europa</span
+                >.
               </p>
+
+              <div class="mt-4 pt-3 border-t border-gray-100">
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-gray-500">España</span>
+                  <span class="font-semibold text-green-600">Ya operando</span>
+                </div>
+                <div class="flex items-center justify-between text-sm mt-2">
+                  <span class="text-gray-500">Europa</span>
+                  <span class="font-semibold text-amber-600">2025-2026</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Añade una segunda sección para probar el scroll -->
       <section
-        class="scroll-section bg-gradient-to-r from-[#6BC9BE] to-[#05668D] hover:opacity-90 text-white font-semibold py-2 px-4 rounded-xl inline-flex items-center shadow-md transition-all duration-300 border-r border-white/20"
+        class="scroll-section bg-gradient-to-r from-[#6BC9BE] to-[#05668D] text-white w-full h-full py-2 px-4 shadow-md"
         id="section2"
       >
         <div class="container mx-auto px-4 py-16">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <!-- Texto a la izquierda -->
-            <div class="text-justify">
-              <h1 class="text-3xl font-bold mb-4 text-white">Nuestra visión</h1>
-              <p class="text-lg max-w-xl">
-                En FisioFind, creemos en la importancia de conectar a los
-                pacientes con los mejores profesionales de la salud. Nuestra
-                misión es facilitar el acceso a tratamientos de calidad y
-                mejorar la experiencia del paciente en su camino hacia la
-                recuperación.
-              </p>
+            <div class="text-justify relative z-10 overflow-visible pt-10">
+              <h1 class="text-3xl font-bold mb-6 text-white flex items-center">
+                Nuestra visión
+                <span
+                  class="ml-2 bg-white bg-opacity-20 text-xs font-semibold py-1 px-3 rounded-full"
+                >
+                  FisioFind Global
+                </span>
+              </h1>
+
+              <div
+                class="bg-white bg-opacity-10 p-4 rounded-lg backdrop-filter backdrop-blur-sm border border-white border-opacity-20 mb-6"
+              >
+                <p class="text-lg leading-relaxed">
+                  En FisioFind, estamos <span class="text-white font-semibold"
+                    >transformando la fisioterapia</span
+                  > mediante tecnología avanzada que
+                  <span
+                    class="text-cyan-800 font-medium underline decoration-2 underline-offset-2"
+                    >elimina barreras geográficas</span
+                  > entre pacientes y especialistas.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-6">
+                <div
+                  class="bg-white bg-opacity-10 p-4 rounded-lg backdrop-filter backdrop-blur-sm border border-white border-opacity-20"
+                >
+                  <h3 class="text-white font-semibold mb-2 flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5 mr-2"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    Misión
+                  </h3>
+                  <p>
+                    Facilitar el <span class="text-white font-semibold"
+                      >acceso</span
+                    > a tratamientos de <span class="text-cyan-800 font-medium"
+                      >calidad</span
+                    > y mejorar la
+                    <span class="text-white font-semibold"
+                      >experiencia del paciente</span
+                    > en su camino hacia la recuperación.
+                  </p>
+                </div>
+
+                <div class="bg-white bg-opacity-10 p-4 rounded-lg backdrop-filter backdrop-blur-sm border border-white border-opacity-20">
+                  <h3 class="text-white font-semibold mb-2 flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5 mr-2"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                      <path
+                        fill-rule="evenodd"
+                        d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    Valores
+                  </h3>
+                  <p class="flex flex-wrap gap-1">
+                    <span class="inline-block bg-cyan-800 bg-opacity-30 px-2 py-1 rounded text-sm">Innovación</span>
+                    <span class="inline-block bg-cyan-800 bg-opacity-30 px-2 py-1 rounded text-sm">Profesionalidad</span>
+                    <span class="inline-block bg-cyan-800 bg-opacity-30 px-2 py-1 rounded text-sm">Calidad</span>
+                    <span class="inline-block bg-cyan-800 bg-opacity-30 px-2 py-1 rounded text-sm">Accesibilidad</span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="mt-6 flex items-center">
+                <span
+                  class="text-lg font-medium text-white mr-4 hidden md:block"
+                  >Descubre cómo funciona</span
+                >
+                <a
+                  href="/about"
+                  class="inline-flex items-center px-4 py-2 bg-white text-cyan-700 rounded-full hover:bg-opacity-90 transition-all"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 mr-2"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  Conoce más
+                </a>
+              </div>
             </div>
 
             <!-- Contenedor a la derecha -->
-            <div
-              class="bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-6 h-[90vh]"
-            >
+            <div class="rounded-lg p-6 flex items-center justify-center">
               <img
                 src={global_fisio.src}
-                alt="Equipo"
-                class="w-full h-full object-cover rounded-lg mb-4"
+                alt="FisioFind Global"
+                class="max-w-[70vh] object-contain max-h-[70vh] rounded-lg shadow-lg border border-gray-70"
+                style="border-radius: 1rem;"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Tercera sección con el modal -->
       <section class="scroll-section" id="section3">
+        <div class="container mx-auto px-4 py-16">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <!-- Texto a la izquierda -->
+            <div class="text-justify">
+              <h1
+                class="text-10xl font-bold mb-4 bg-gradient-to-r from-[#05668D] to-[#6BC9BE] bg-clip-text text-transparent"
+              >
+                Rentabilidad Asegurada
+              </h1>
+
+              <div class="flex items-center mb-4">
+                <span class="text-2xl font-bold text-cyan-700 mr-2">42.7%</span>
+                <span
+                  class="bg-cyan-100 text-cyan-800 text-xs font-semibold py-1 px-2 rounded-full"
+                  >ROI en 24 meses</span
+                >
+              </div>
+
+              <p class="text-lg max-w-xl leading-relaxed">
+                En <span class="font-semibold text-cyan-700">FisioFind</span> ofrecemos
+                una
+                <span
+                  class="underline decoration-cyan-500 decoration-2 underline-offset-2"
+                  >oportunidad de inversión única</span
+                >
+                en el sector de la salud digital. Con un <span
+                  class="font-semibold">modelo escalable</span
+                >
+                respaldado por datos, nuestros inversores obtienen retornos significativos.
+              </p>
+
+              <ul class="mt-4 space-y-2">
+                <li class="flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-cyan-600 mr-2"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span>650+ fisioterapeutas registrados en 24 meses</span>
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-cyan-600 mr-2"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span
+                    >Retorno de <b>37,947.42€</b> por cada 10,000€ invertidos</span
+                  >
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-cyan-600 mr-2"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span>Crecimiento sostenido del mercado de salud digital</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Contenedor a la derecha -->
+            <div class="rounded-lg p-6 flex items-center justify-center h-auto">
+              <img
+                src={curva_costes.src}
+                alt="Curva de Costes"
+                class="w-full object-contain max-h-[70vh] rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cuarta sección con el modal -->
+      <section class="scroll-section" id="section4">
         <div class="container mx-auto px-4 py-16">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <!-- Tarjeta a la izquierda -->
@@ -147,8 +476,14 @@ import gold from "../assets/gold.png";
                   class="img"
                 />
                 <div class="textBox">
-                  <p class="text head">Inversión en FisioFind</p>
-                  <span>Oportunidad de crecimiento</span>
+                  <p class="text head mx-auto py-2 whitespace-nowrap">
+                    Invierte en FisioFind
+                  </p>
+                  <span
+                    class="text-lg font-medium mx-auto py-2 px-4 text-center block"
+                  >
+                    Conviértete en parte de la revolución digital en salud
+                  </span>
                   <p class="text price text-cyan-600" id="modalTrigger">
                     Únete ahora
                   </p>
@@ -160,11 +495,20 @@ import gold from "../assets/gold.png";
             <div class="text-right pr-8 md:pr-16 lg:pr-20">
               <h1 class="text-3xl font-bold mb-4">Invierte en el futuro</h1>
               <p class="text-lg ml-auto max-w-xl text-justify">
-                FisioFind está revolucionando el sector de la fisioterapia con
-                una plataforma que conecta pacientes con profesionales
-                cualificados. Nuestro crecimiento constante y modelo de negocio
-                escalable ofrece una oportunidad única para inversores que
-                buscan formar parte del futuro de la salud digital.
+                FisioFind <span class="font-semibold text-cyan-700"
+                  >revoluciona</span
+                > el sector de la fisioterapia conectando pacientes con profesionales
+                cualificados a través de nuestra
+                <span
+                  class="underline decoration-cyan-500 decoration-2 underline-offset-2"
+                  >plataforma digital innovadora</span
+                >. Con un <span class="font-semibold"
+                  >crecimiento constante</span
+                > y un modelo de negocio escalable, ofrecemos una <span
+                  class="font-semibold text-cyan-700">oportunidad única</span
+                >
+                para inversores visionarios que quieren formar parte del futuro de
+                la salud digital.
               </p>
               <ul class="mt-6 space-y-2 text-left">
                 <li class="flex items-center justify-end">
@@ -373,6 +717,7 @@ import gold from "../assets/gold.png";
         }, 1000);
       });
     }
+
     let isScrollAnimating = false; // Flag para controlar si hay una animación en curso
     let startY = 0;
     let startScrollTop = 0;
@@ -381,7 +726,6 @@ import gold from "../assets/gold.png";
 
     // Función para manejar la animación del scroll suave
     function smoothScroll(targetPosition) {
-      // Si ya hay una animación en curso, la cancelamos
       if (isScrollAnimating) {
         cancelAnimationFrame(window.scrollAnimation);
       }
@@ -389,7 +733,7 @@ import gold from "../assets/gold.png";
       isScrollAnimating = true;
       const startPosition = scrollContainer.scrollTop;
       const distance = targetPosition - startPosition;
-      const duration = 800; // duración reducida para mayor responsividad
+      const duration = 800; // Duración razonable (800ms)
       let startTime = null;
 
       function animation(currentTime) {
@@ -397,16 +741,22 @@ import gold from "../assets/gold.png";
         const elapsedTime = currentTime - startTime;
         const progress = Math.min(elapsedTime / duration, 1);
 
-        // Función de easing para un movimiento más suave
-        const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5); // Cambiado a una función que acelera al principio
+        // Función de easing para un movimiento suave
+        const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
 
         scrollContainer.scrollTop =
-          startPosition + distance * easeOutQuint(progress);
+          startPosition + distance * easeOutCubic(progress);
 
         if (progress < 1) {
           window.scrollAnimation = requestAnimationFrame(animation);
         } else {
           isScrollAnimating = false;
+
+          // Asegurar que llegamos exactamente al destino, especialmente importante para el inicio
+          scrollContainer.scrollTop = targetPosition;
+
+          // Actualizar las secciones visibles después del scroll
+          updateVisibleSections();
         }
       }
 
@@ -419,22 +769,23 @@ import gold from "../assets/gold.png";
       (e) => {
         e.preventDefault();
 
-        // Cancelar cualquier animación en curso cuando el usuario scrollea manualmente
         if (isScrollAnimating) {
           cancelAnimationFrame(window.scrollAnimation);
           isScrollAnimating = false;
         }
 
-        // Cancelar cualquier temporizador pendiente
         clearTimeout(window.scrollTimer);
 
+        // Reducir velocidad a un nivel profesional (no tan lento)
+        const slowScrollFactor = 0.6; // Un valor intermedio más profesional
+
         const delta =
-          Math.sign(e.deltaY) * Math.min(Math.abs(e.deltaY), maxScrollSpeed);
+          Math.sign(e.deltaY) *
+          Math.min(Math.abs(e.deltaY), maxScrollSpeed) *
+          slowScrollFactor;
         scrollContainer.scrollTop += delta;
 
-        // Reiniciar el temporizador para ajustar a la sección más cercana después del scroll
         window.scrollTimer = setTimeout(() => {
-          // Solo ajustamos a la sección más cercana si no hay interacción activa
           if (!isScrollAnimating) {
             const sections = document.querySelectorAll(".scroll-section");
             let closestSection = null;
@@ -450,29 +801,53 @@ import gold from "../assets/gold.png";
               }
             });
 
-            // Solo aplicamos snap si estamos relativamente cerca de una sección
             if (closestSection && minDistance < window.innerHeight * 0.3) {
               smoothScroll(closestSection.offsetTop);
             }
           }
-        }, 200); // Tiempo ligeramente mayor para permitir múltiples eventos de scroll
+        }, 150); // Tiempo razonable para detectar final de scroll
       },
       { passive: false },
     );
 
     // Asegúrate de que la sección visible se marque con la clase in-view
+    // Asegúrate de que la sección visible se marque con la clase in-view
     function updateVisibleSections() {
       const sections = document.querySelectorAll(".scroll-section");
       sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
+        // Una sección se considera visible cuando está principalmente en la pantalla
         const isVisible =
           rect.top <= window.innerHeight / 2 &&
           rect.bottom >= window.innerHeight / 2;
 
         if (isVisible) {
-          section.classList.add("in-view");
+          // Si la sección no tiene ya la clase in-view, agrégala
+          if (!section.classList.contains("in-view")) {
+            section.classList.add("in-view");
+
+            // Activar elementos dentro de la sección
+            const animatedElements = section.querySelectorAll(".animate-fade");
+            animatedElements.forEach((el, index) => {
+              setTimeout(
+                () => {
+                  el.classList.add("visible");
+                },
+                50 + index * 30,
+              );
+            });
+          }
         } else {
-          section.classList.remove("in-view");
+          // Cuando la sección ya no es visible, quitar ambas clases
+          if (section.classList.contains("in-view")) {
+            section.classList.remove("in-view");
+
+            // Quitar clase visible de los elementos para que se animen nuevamente al volver
+            const animatedElements = section.querySelectorAll(".animate-fade");
+            animatedElements.forEach((el) => {
+              el.classList.remove("visible");
+            });
+          }
         }
       });
     }
@@ -506,7 +881,9 @@ import gold from "../assets/gold.png";
         const y = e.touches[0].clientY;
         const delta = startY - y;
 
-        scrollContainer.scrollTop = startScrollTop + delta;
+        // Aplicar un factor de reducción más natural
+        const touchSlowFactor = 0.8;
+        scrollContainer.scrollTop = startScrollTop + delta * touchSlowFactor;
         e.preventDefault();
       },
       { passive: false },
@@ -537,11 +914,8 @@ import gold from "../assets/gold.png";
             smoothScroll(closestSection.offsetTop);
           }
         }
-      }, 200);
+      }, 150); // Ajustado a 150ms para mejor respuesta
     });
-
-    // Inicializa las secciones visibles
-    updateVisibleSections();
 
     // Manejo de teclas de flecha para navegación adicional
     document.addEventListener("keydown", (e) => {
@@ -584,6 +958,53 @@ import gold from "../assets/gold.png";
         if (targetIndex !== currentSectionIndex) {
           smoothScroll(sections[targetIndex].offsetTop);
         }
+      }
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute("href").substring(1);
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+          // Cancelar cualquier animación en curso
+          if (isScrollAnimating) {
+            cancelAnimationFrame(window.scrollAnimation);
+            isScrollAnimating = false;
+          }
+
+          // Usar nuestra función de scroll suave personalizada
+          smoothScroll(targetSection.offsetTop);
+        }
+      });
+    });
+
+    // Añadir un botón para volver arriba que sea discreto pero útil
+    const topButton = document.createElement("button");
+    topButton.innerHTML = `
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+  </svg>
+`;
+    topButton.className =
+      "fixed bottom-8 right-8 p-3 bg-cyan-600 text-white rounded-full shadow-lg opacity-0 transition-opacity duration-300 z-50";
+    topButton.style.display = "none";
+    document.body.appendChild(topButton);
+
+    topButton.addEventListener("click", () => {
+      smoothScroll(0);
+    });
+
+    // Mostrar/ocultar el botón según la posición de scroll
+    scrollContainer.addEventListener("scroll", () => {
+      if (scrollContainer.scrollTop > window.innerHeight) {
+        topButton.style.display = "block";
+        setTimeout(() => (topButton.style.opacity = "1"), 10);
+      } else {
+        topButton.style.opacity = "0";
+        setTimeout(() => (topButton.style.display = "none"), 300);
       }
     });
 
@@ -638,5 +1059,130 @@ import gold from "../assets/gold.png";
         modal.classList.remove("opacity-100");
       }, 300);
     }
+
+    // Sistema de desvanecimiento para las secciones
+    function setupFadeEffects() {
+      // Marcar elementos para animación
+      const sections = document.querySelectorAll(".scroll-section");
+
+      // Primero vamos a marcar los elementos que queremos animar
+      sections.forEach((section) => {
+        // Marcar headings
+        const headings = section.querySelectorAll("h1, h2, h3");
+        headings.forEach((el, i) => {
+          el.classList.add("animate-fade", `delay-${(i + 1) * 100}`);
+        });
+
+        // Marcar párrafos
+        const paragraphs = section.querySelectorAll("p:not(.text)");
+        paragraphs.forEach((el, i) => {
+          el.classList.add("animate-fade", `delay-${(i + 2) * 100}`);
+        });
+
+        // Marcar tarjetas y elementos destacados
+        const cards = section.querySelectorAll(".card, .bg-white");
+        cards.forEach((el, i) => {
+          el.classList.add("animate-fade", `delay-${(i + 1) * 100}`);
+        });
+
+        // Marcar imágenes
+        const images = section.querySelectorAll("img:not(.img)");
+        images.forEach((el, i) => {
+          el.classList.add("animate-fade", `delay-${(i + 2) * 100}`);
+        });
+      });
+
+      // Configurar observador de intersección para animar elementos
+      const observerOptions = {
+        root: null,
+        rootMargin: "-10% 0px", // Ajustar para activar un poco antes
+        threshold: [0.1, 0.2, 0.3],
+      };
+
+      // Modifica el observador para que reaccione correctamente en ambas direcciones
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Activar la sección cuando entra al viewport
+            entry.target.classList.add("in-view");
+
+            // Activar elementos dentro de la sección con efecto escalonado
+            const animatedElements =
+              entry.target.querySelectorAll(".animate-fade");
+            animatedElements.forEach((el, index) => {
+              setTimeout(
+                () => {
+                  el.classList.add("visible");
+                },
+                50 + index * 50,
+              );
+            });
+          } else {
+            // Asegurarse de que las clases se eliminan cuando la sección sale del viewport
+            entry.target.classList.remove("in-view");
+
+            // Eliminar las clases de visibilidad inmediatamente para que estén listas
+            // para la próxima vez que la sección entre en el viewport
+            const animatedElements =
+              entry.target.querySelectorAll(".animate-fade");
+            animatedElements.forEach((el) => {
+              el.classList.remove("visible");
+            });
+          }
+        });
+      }, observerOptions);
+
+      // Observar todas las secciones
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+
+      // Hacer inmediatamente visible la primera sección
+      if (sections[0]) {
+        setTimeout(() => {
+          sections[0].classList.add("in-view");
+          const firstSectionElements =
+            sections[0].querySelectorAll(".animate-fade");
+          firstSectionElements.forEach((el, index) => {
+            setTimeout(() => {
+              el.classList.add("visible");
+            }, index * 100);
+          });
+        }, 100);
+      }
+
+      // Aplicar estilos directamente a los elementos para asegurar la visibilidad
+      // Solución de respaldo por si las clases no funcionan correctamente
+      document.head.insertAdjacentHTML(
+        "beforeend",
+        `<style>
+          .scroll-section.in-view { opacity: 1; transform: translateY(0); }
+          .animate-fade.visible { opacity: 1; transform: translateY(0); }
+        </style>`,
+      );
+    }
+
+    // Inicializa las secciones visibles
+    updateVisibleSections();
+
+    // Inicializar efectos de desvanecimiento
+    setupFadeEffects();
+
+    // Forzar visibilidad después de un tiempo por si algo falla
+    // Forzar visibilidad después de un tiempo por si algo falla
+    // Este código se mantendría pero con un timeout más largo y solo para la primera carga
+    setTimeout(() => {
+      // Solo forzar visibilidad en la sección visible actualmente
+      const visibleSection = document.querySelector(".scroll-section.in-view");
+      if (visibleSection) {
+        visibleSection.style.opacity = "1";
+        visibleSection.style.transform = "translateY(0)";
+
+        visibleSection.querySelectorAll(".animate-fade").forEach((el) => {
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+        });
+      }
+    }, 2000); // Timeout más largo solo para asegurar la primera carga
   });
 </script>

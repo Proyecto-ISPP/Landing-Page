@@ -8,36 +8,41 @@
 html,
 body {
     overscroll-behavior: none;
-    overflow: hidden;
+    overflow: hidden; /* Mantiene el overflow hidden en el body */
     height: 100%;
+    width: 100%; /* Asegura que ocupe todo el ancho */
 }
 
 /* Contenedor principal para la estructura de la página */
 .inversores-container {
     height: 100vh;
     width: 100%;
-    overflow: hidden;
+    overflow: hidden; /* Mantiene overflow hidden en el contenedor principal */
     position: relative;
     background-color: #f9f9f9;
-    -webkit-overflow-scrolling: touch;
-    /* Mejora el scroll en iOS */
+    -webkit-overflow-scrolling: touch; /* Mejora el scroll en iOS */
 }
 
 /* Contenedor de scroll principal con comportamiento suave */
 .smooth-scroll-container {
     height: 100%;
     width: 100%;
-    overflow-y: auto;
+    overflow-y: auto; /* Permitimos scroll vertical */
     overflow-x: hidden;
-
-    /* Personalización de la barra de desplazamiento */
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
-
-    /* Prevenir comportamiento de rebote en algunos navegadores */
-    overscroll-behavior: contain;
-    will-change: transform, scroll-position;
+    
+    /* Ocultamos las barras de scroll en todos los navegadores */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    
     /* Optimización de rendimiento */
+    will-change: transform, scroll-position;
+    overscroll-behavior: contain; /* Prevenir comportamiento de rebote */
+}
+
+/* Ocultar scrollbar para WebKit (Chrome, Safari) */
+.smooth-scroll-container::-webkit-scrollbar {
+    display: none;
+    width: 0;
 }
 
 /* Cada sección del scroll tendrá el alto de la pantalla */
@@ -52,16 +57,36 @@ body {
     box-sizing: border-box;
     position: relative;
     will-change: transform, opacity;
-    /* Optimización de rendimiento */
+    /* No establecer overflow: hidden aquí para evitar scrollbars adicionales */
+}
+
+.container {
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    max-width: 100%; /* Limita el ancho máximo */
+    overflow: visible; /* Cambiamos a visible para evitar barras de desplazamiento en contenedores internos */
+}
+
+.h-\[90vh\] {
+    height: auto !important;
+    max-height: 75vh;
+    overflow: visible; /* Cambiamos a visible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Alternar colores para distinguir secciones */
 .scroll-section:nth-child(even) {
-    background-color: #f0f7fa;
+    background-color: #ffffff;
+}
+
+.grid {
+    max-width: 100%;
+    overflow: visible; /* Cambiamos a visible */
 }
 
 .scroll-section:nth-child(odd) {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
 }
 
 /* Estilización básica para encabezados en las secciones */
@@ -71,33 +96,12 @@ body {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
-    /* Transición más rápida */
 }
 
 /* Animación para elementos cuando están en viewport */
 .scroll-section.in-view h1 {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Para navegadores webkit (Chrome, Safari) */
-.smooth-scroll-container::-webkit-scrollbar {
-    width: 6px;
-}
-
-.smooth-scroll-container::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.03);
-    border-radius: 10px;
-}
-
-.smooth-scroll-container::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-    transition: background 0.3s ease;
-}
-
-.smooth-scroll-container::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.25);
 }
 
 /* Indicadores de navegación para las secciones */
@@ -126,19 +130,54 @@ body {
     transform: scale(1.3);
 }
 
-/* Optimizaciones para dispositivos táctiles */
+#section1 {
+    background-image: url('../assets/fisio_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+
+    /* Add blur effect */
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: blur(4px);
+        z-index: -1;
+    }
+
+    /* Add overlay to improve contrast with content */
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.2);
+        z-index: -1;
+    }
+}
+
+#section3 img {
+    max-width: 100%;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+}
+
 @media (max-width: 767px) {
-    .scroll-section h1 {
-        font-size: 2.5rem;
-    }
-
-    .section-indicators {
-        right: 10px;
-    }
-
-    .section-indicator {
-        width: 8px;
-        height: 8px;
+    .container {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
     }
 }
 
@@ -147,7 +186,7 @@ body {
 /* From Uiverse.io by JohnnyCSilva */
 .card {
     width: 100%;
-    max-width: 20em;
+    max-width: 25em;
     height: 30em;
     background: white;
     border-radius: 1.25em;
@@ -165,6 +204,32 @@ body {
     box-shadow: 0 0.3em 1em rgba(0, 0, 0, 0.1);
 }
 
+.card .textBox .head {
+    transition: transform 0.3s ease, margin-top 0.3s ease;
+}
+
+.card .textBox .price {
+    transition: transform 0.3s ease, margin-top 0.3s ease;
+}
+
+/* Cuando se hace hover, mover el título hacia arriba */
+.card:hover .textBox .head {
+    transform: translateY(-50px);
+    margin-top: -10px;
+}
+
+/* Cuando se hace hover, mover el botón "Únete ahora" hacia abajo */
+.card:hover .textBox .price {
+    transform: translateY(20px);
+    margin-top: 15px;
+}
+
+/* Ajuste opcional para dar más espacio entre elementos */
+.card:hover .textBox span {
+    margin-bottom: 15px;
+    display: block;
+}
+
 .img {
     height: 40%;
     width: auto;
@@ -180,11 +245,11 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1em;
+    gap: 3em;
     transition: 0.2s ease-in-out;
     z-index: 2;
-    width: 90%;
-    padding: 1em;
+    width: 100%;
+    padding: 2em;
 }
 
 .textBox>.text {
@@ -192,7 +257,7 @@ body {
 }
 
 .textBox>.head {
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 
 .textBox>.price {
@@ -311,4 +376,96 @@ body {
 
 .rocket-button:hover span {
     transform: translateX(7px);
+}
+
+/* Optimizaciones de rendimiento para animaciones */
+.scroll-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    will-change: transform, opacity;
+}
+
+.scroll-section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-fade {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    transition-delay: var(--delay, 0s);
+    will-change: transform, opacity;
+}
+
+.animate-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delays escalonados para elementos */
+.delay-100 {
+    --delay: 0.1s;
+}
+
+.delay-200 {
+    --delay: 0.2s;
+}
+
+.delay-300 {
+    --delay: 0.3s;
+}
+
+.delay-400 {
+    --delay: 0.4s;
+}
+
+.delay-500 {
+    --delay: 0.5s;
+}
+
+
+/* CSS adicional para asegurar que la imagen de fondo se muestre con blur */
+.bg-section {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    /* Importante para contener el blur */
+}
+
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    /* Para Safari */
+    z-index: 1;
+}
+
+.content-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
