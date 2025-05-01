@@ -705,61 +705,85 @@ import "../styles/inversores.css";
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+    // Detección del tipo de dispositivo para optimizaciones específicas
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // Elementos DOM principales
     const scrollContainer = document.getElementById("scrollContainer");
     if (!scrollContainer) return;
+
     const rocketButton = document.querySelector(".rocket-button");
+    const modalTrigger = document.getElementById("modalTrigger");
+    const modal = document.getElementById("inversorModal");
+    const modalContent = document.getElementById("modalContent");
+    const closeModal = document.getElementById("closeModal");
+
+    // Variables de control para el scroll
+    let isScrollAnimating = false;
+    let startY = 0;
+    let startScrollTop = 0;
+    let isScrolling = false;
+    let lastScrollTime = Date.now();
+    let scrollTimeout = null;
+    
+    // Variables adicionales para inercia de scroll
+    let wheelMomentum = 0;
+    let lastWheelDirection = 0;
+    let momentumTimer = null;
+    const momentumDecay = 0.96; // Factor de reducción (menor = se detiene más rápido)
+    const momentumThreshold = 0.2; // Umbral para detener el momentum
+    
+    // Configuración de velocidad de scroll optimizada para dispositivo
+    const maxScrollSpeed = isMobile ? 20 : 40;
+    const scrollFactor = isMobile ? 1.0 : 0.6;
+    
+    // Inicialización del botón de cohete
     if (rocketButton) {
       rocketButton.addEventListener("mousedown", function () {
-        // Añadir clase temporal durante la animación
         this.classList.add("launching");
-
-        // Después de la animación, enviar el formulario
         setTimeout(() => {
-          // La animación dura aproximadamente 1 segundo
-          // El formulario se enviará automáticamente
           this.classList.remove("launching");
         }, 1000);
       });
     }
 
-    let isScrollAnimating = false; // Flag para controlar si hay una animación en curso
-    let startY = 0;
-    let startScrollTop = 0;
-    let isScrolling = false; // Flag para controlar el scroll táctil
-    const maxScrollSpeed = 40; // Reducido para un control más preciso
-
-    // Función para manejar la animación del scroll suave
-    function smoothScroll(targetPosition) {
+    // ===== FUNCIÓN MEJORADA DE SCROLL SUAVE =====
+    function smoothScroll(targetPosition, duration = 800) {
+      // Cancelar cualquier animación previa
       if (isScrollAnimating) {
         cancelAnimationFrame(window.scrollAnimation);
+      }
+      
+      // Cancelar cualquier inercia en progreso
+      clearInterval(momentumTimer);
+
+      // En móviles, usar scroll nativo más rápido
+      if (isMobile) {
+        const distance = Math.abs(targetPosition - scrollContainer.scrollTop);
+        // Ajustar duración basada en distancia para móviles
+        duration = Math.min(800, Math.max(400, distance / 2));
       }
 
       isScrollAnimating = true;
       const startPosition = scrollContainer.scrollTop;
       const distance = targetPosition - startPosition;
-      const duration = 800; // Duración razonable (800ms)
-      let startTime = null;
+      const startTime = performance.now();
 
       function animation(currentTime) {
-        if (startTime === null) startTime = currentTime;
         const elapsedTime = currentTime - startTime;
         const progress = Math.min(elapsedTime / duration, 1);
-
-        // Función de easing para un movimiento suave
+        
+        // Función de easing mejorada para scroll más natural
         const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
-
-        scrollContainer.scrollTop =
-          startPosition + distance * easeOutCubic(progress);
+        const scrollPosition = startPosition + distance * easeOutCubic(progress);
+        
+        scrollContainer.scrollTop = scrollPosition;
 
         if (progress < 1) {
           window.scrollAnimation = requestAnimationFrame(animation);
         } else {
           isScrollAnimating = false;
-
-          // Asegurar que llegamos exactamente al destino, especialmente importante para el inicio
-          scrollContainer.scrollTop = targetPosition;
-
-          // Actualizar las secciones visibles después del scroll
+          scrollContainer.scrollTop = targetPosition; // Asegurar precisión
           updateVisibleSections();
         }
       }
@@ -767,178 +791,252 @@ import "../styles/inversores.css";
       window.scrollAnimation = requestAnimationFrame(animation);
     }
 
-    // Detector de rueda del ratón con mejora para prevenir bugs
-    scrollContainer.addEventListener(
-      "wheel",
-      (e) => {
-        e.preventDefault();
-
-        if (isScrollAnimating) {
-          cancelAnimationFrame(window.scrollAnimation);
-          isScrollAnimating = false;
-        }
-
-        clearTimeout(window.scrollTimer);
-
-        // Reducir velocidad a un nivel profesional (no tan lento)
-        const slowScrollFactor = 0.6; // Un valor intermedio más profesional
-
-        const delta =
-          Math.sign(e.deltaY) *
-          Math.min(Math.abs(e.deltaY), maxScrollSpeed) *
-          slowScrollFactor;
-        scrollContainer.scrollTop += delta;
-
-        window.scrollTimer = setTimeout(() => {
-          if (!isScrollAnimating) {
-            const sections = document.querySelectorAll(".scroll-section");
-            let closestSection = null;
-            let minDistance = Infinity;
-
-            sections.forEach((section) => {
-              const distance = Math.abs(
-                section.offsetTop - scrollContainer.scrollTop,
-              );
-              if (distance < minDistance) {
-                minDistance = distance;
-                closestSection = section;
-              }
-            });
-
-            if (closestSection && minDistance < window.innerHeight * 0.3) {
-              smoothScroll(closestSection.offsetTop);
-            }
-          }
-        }, 150); // Tiempo razonable para detectar final de scroll
-      },
-      { passive: false },
-    );
-
-    // Asegúrate de que la sección visible se marque con la clase in-view
-    // Asegúrate de que la sección visible se marque con la clase in-view
-    function updateVisibleSections() {
-      const sections = document.querySelectorAll(".scroll-section");
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        // Una sección se considera visible cuando está principalmente en la pantalla
-        const isVisible =
-          rect.top <= window.innerHeight / 2 &&
-          rect.bottom >= window.innerHeight / 2;
-
-        if (isVisible) {
-          // Si la sección no tiene ya la clase in-view, agrégala
-          if (!section.classList.contains("in-view")) {
-            section.classList.add("in-view");
-
-            // Activar elementos dentro de la sección
-            const animatedElements = section.querySelectorAll(".animate-fade");
-            animatedElements.forEach((el, index) => {
-              setTimeout(
-                () => {
-                  el.classList.add("visible");
-                },
-                50 + index * 30,
-              );
-            });
-          }
-        } else {
-          // Cuando la sección ya no es visible, quitar ambas clases
-          if (section.classList.contains("in-view")) {
-            section.classList.remove("in-view");
-
-            // Quitar clase visible de los elementos para que se animen nuevamente al volver
-            const animatedElements = section.querySelectorAll(".animate-fade");
-            animatedElements.forEach((el) => {
-              el.classList.remove("visible");
-            });
-          }
-        }
-      });
-    }
-
-    // Actualiza secciones visibles cuando se hace scroll
-    scrollContainer.addEventListener("scroll", () => {
-      updateVisibleSections();
-    });
-
-    // También maneja gestos táctiles para dispositivos móviles con mejoras
-    scrollContainer.addEventListener("touchstart", (e) => {
-      // Cancelar cualquier animación en curso cuando el usuario toca la pantalla
+    // ===== DETECTOR DE RUEDA DEL RATÓN MEJORADO CON INERCIA =====
+    function handleWheelEvent(e) {
+      e.preventDefault();
+      
+      // Calcular tiempo desde último evento de scroll
+      const now = Date.now();
+      const timeSinceLastScroll = now - lastScrollTime;
+      lastScrollTime = now;
+      
+      // Cancelar animación en curso
       if (isScrollAnimating) {
         cancelAnimationFrame(window.scrollAnimation);
         isScrollAnimating = false;
       }
+      
+      // Cancelar temporizadores previos
+      clearTimeout(scrollTimeout);
+      clearInterval(momentumTimer);
+      
+      // Determinar dirección del scroll (1 o -1)
+      const direction = Math.sign(e.deltaY);
+      
+      // Acumular momentum basado en la velocidad del scroll
+      // Eventos rápidos aumentan más el momentum
+      const speedFactor = timeSinceLastScroll < 50 ? 1.5 : 1.0;
+      
+      // Si cambió la dirección, resetear el momentum
+      if (lastWheelDirection !== 0 && lastWheelDirection !== direction) {
+        wheelMomentum = 0;
+      }
+      
+      // Actualizar dirección y momentum
+      lastWheelDirection = direction;
+      wheelMomentum = Math.min(
+        Math.max(wheelMomentum, 8), // Mínimo inicial
+        25 // Máximo
+      ) + (speedFactor * 3); // Incremento por cada evento
+      
+      // Aplicar scroll inmediato para feedback instantáneo
+      const delta = direction * 
+                    Math.min(Math.abs(e.deltaY), maxScrollSpeed) * 
+                    scrollFactor;
+      
+      scrollContainer.scrollTop += delta;
+      
+      // Aplicar efecto de inercia (continuar scroll después de soltar)
+      momentumTimer = setInterval(() => {
+        // Reducir gradualmente la velocidad
+        wheelMomentum *= momentumDecay;
+        
+        // Aplicar momentum al scroll
+        const momentumDelta = direction * wheelMomentum;
+        scrollContainer.scrollTop += momentumDelta;
+        
+        // Detener cuando el momentum es demasiado pequeño
+        if (Math.abs(wheelMomentum) < momentumThreshold) {
+          clearInterval(momentumTimer);
+          
+          // Una vez que se detiene la inercia, ajustar a la sección más cercana
+          snapToNearestSection();
+        }
+      }, 16); // ~60fps
+      
+      // Cancelar el snap si el usuario hace scroll de nuevo en 300ms
+      scrollTimeout = setTimeout(snapToNearestSection, 300);
+    }
+    
+    // Función para hacer snap a la sección más cercana
+    function snapToNearestSection() {
+      clearInterval(momentumTimer);
+      
+      if (!isScrollAnimating) {
+        const sections = document.querySelectorAll(".scroll-section");
+        let closestSection = null;
+        let minDistance = Infinity;
+        
+        // Encontrar la sección más cercana
+        sections.forEach((section) => {
+          const distance = Math.abs(section.offsetTop - scrollContainer.scrollTop);
+          if (distance < minDistance) {
+            minDistance = distance;
+            closestSection = section;
+          }
+        });
+        
+        // Solo hacer snap si estamos relativamente cerca
+        const snapThreshold = isMobile ? window.innerHeight * 0.2 : window.innerHeight * 0.3;
+        if (closestSection && minDistance < snapThreshold) {
+          smoothScroll(closestSection.offsetTop);
+        }
+      }
+    }
 
+    // ===== MEJORA DEL SCROLL TÁCTIL =====
+    function handleTouchStart(e) {
+      // Prevenir comportamiento predeterminado solo si es necesario
+      if (isScrollAnimating) {
+        cancelAnimationFrame(window.scrollAnimation);
+        isScrollAnimating = false;
+      }
+      
+      // Detener cualquier inercia en curso
+      clearInterval(momentumTimer);
+      
       startY = e.touches[0].clientY;
       startScrollTop = scrollContainer.scrollTop;
       isScrolling = true;
-    });
-
-    scrollContainer.addEventListener(
-      "touchmove",
-      (e) => {
-        if (!isScrolling) return;
-
-        // Cancelar cualquier temporizador pendiente durante el movimiento táctil
-        clearTimeout(window.scrollTimer);
-
-        const y = e.touches[0].clientY;
-        const delta = startY - y;
-
-        // Aplicar un factor de reducción más natural
-        const touchSlowFactor = 0.8;
-        scrollContainer.scrollTop = startScrollTop + delta * touchSlowFactor;
+      lastScrollTime = Date.now();
+    }
+    
+    function handleTouchMove(e) {
+      if (!isScrolling) return;
+      
+      // Actualizar tiempo desde último movimiento
+      const now = Date.now();
+      const timeSinceLastScroll = now - lastScrollTime;
+      lastScrollTime = now;
+      
+      // Cancelar temporizadores previos
+      clearTimeout(scrollTimeout);
+      
+      const y = e.touches[0].clientY;
+      const delta = startY - y;
+      
+      // Factor de ajuste dinámico - más sensible con movimientos rápidos
+      const dynamicFactor = timeSinceLastScroll < 30 ? 1.2 : (isMobile ? 1.0 : 0.8);
+      
+      // Aplicar scroll inmediato
+      scrollContainer.scrollTop = startScrollTop + delta * dynamicFactor;
+      
+      // Prevenir comportamiento nativo solo si hay scroll significativo
+      if (Math.abs(delta) > 10) {
         e.preventDefault();
-      },
-      { passive: false },
-    );
-
-    scrollContainer.addEventListener("touchend", () => {
+      }
+    }
+    
+    function handleTouchEnd(e) {
+      if (!isScrolling) return;
       isScrolling = false;
-
-      // Similar al wheel, ajusta a la sección más cercana
-      clearTimeout(window.scrollTimer);
-      window.scrollTimer = setTimeout(() => {
+      
+      // Cancelar temporizadores previos
+      clearTimeout(scrollTimeout);
+      
+      // Esperar un momento y luego intentar ajustar a la sección más cercana
+      scrollTimeout = setTimeout(() => {
         if (!isScrollAnimating) {
           const sections = document.querySelectorAll(".scroll-section");
           let closestSection = null;
           let minDistance = Infinity;
-
+          
           sections.forEach((section) => {
-            const distance = Math.abs(
-              section.offsetTop - scrollContainer.scrollTop,
-            );
+            const distance = Math.abs(section.offsetTop - scrollContainer.scrollTop);
             if (distance < minDistance) {
               minDistance = distance;
               closestSection = section;
             }
           });
-
-          if (closestSection && minDistance < window.innerHeight * 0.3) {
+          
+          // Usar un umbral más pequeño para móviles
+          if (closestSection && minDistance < window.innerHeight * 0.25) {
             smoothScroll(closestSection.offsetTop);
           }
         }
-      }, 150); // Ajustado a 150ms para mejor respuesta
+      }, 100);
+    }
+
+    // ===== ACTUALIZACIÓN DE SECCIONES VISIBLES =====
+    function updateVisibleSections() {
+      const sections = document.querySelectorAll(".scroll-section");
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        // Una sección se considera visible cuando está principalmente en la pantalla
+        const isVisible = rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
+        
+        if (isVisible && !section.classList.contains("in-view")) {
+          section.classList.add("in-view");
+          
+          // Activar elementos dentro de la sección
+          const animatedElements = section.querySelectorAll(".animate-fade");
+          animatedElements.forEach((el, index) => {
+            setTimeout(() => {
+              el.classList.add("visible");
+            }, 50 + index * 30);
+          });
+        } else if (!isVisible && section.classList.contains("in-view")) {
+          section.classList.remove("in-view");
+          
+          // Quitar clase visible de los elementos
+          section.querySelectorAll(".animate-fade").forEach((el) => {
+            el.classList.remove("visible");
+          });
+        }
+      });
+    }
+
+    // ===== CONFIGURACIÓN DE EVENTOS =====
+    
+    // Evento de rueda - crucial para el scroll con ratón
+    scrollContainer.addEventListener("wheel", handleWheelEvent, { passive: false });
+    
+    // Eventos táctiles mejorados
+    scrollContainer.addEventListener("touchstart", handleTouchStart);
+    scrollContainer.addEventListener("touchmove", handleTouchMove, { passive: false });
+    scrollContainer.addEventListener("touchend", handleTouchEnd);
+    
+    // Evento de scroll nativo - para actualizar secciones visibles
+    scrollContainer.addEventListener("scroll", () => {
+      // Debounce para mejor rendimiento
+      clearTimeout(window.scrollUpdateTimer);
+      window.scrollUpdateTimer = setTimeout(() => {
+        updateVisibleSections();
+        
+        // Actualizar visibilidad del botón para volver arriba
+        if (topButton) {
+          if (scrollContainer.scrollTop > window.innerHeight) {
+            topButton.style.display = "block";
+            setTimeout(() => (topButton.style.opacity = "1"), 10);
+          } else {
+            topButton.style.opacity = "0";
+            setTimeout(() => (topButton.style.display = "none"), 300);
+          }
+        }
+      }, 10);
     });
 
-    // Manejo de teclas de flecha para navegación adicional
+    // ===== NAVEGACIÓN CON TECLADO =====
     document.addEventListener("keydown", (e) => {
       if (e.key === "ArrowUp" || e.key === "ArrowDown") {
         e.preventDefault();
-
-        // Cancelar cualquier animación en curso
+        
+        // Cancelar animación en curso
         if (isScrollAnimating) {
           cancelAnimationFrame(window.scrollAnimation);
           isScrollAnimating = false;
         }
-
+        
+        // Detener cualquier inercia en curso
+        clearInterval(momentumTimer);
+        
         const sections = document.querySelectorAll(".scroll-section");
         const currentPosition = scrollContainer.scrollTop;
-
-        // Encontrar la sección actual y la siguiente/anterior
+        
+        // Encontrar sección actual
         let currentSectionIndex = 0;
         let minDistance = Infinity;
-
+        
         sections.forEach((section, index) => {
           const distance = Math.abs(section.offsetTop - currentPosition);
           if (distance < minDistance) {
@@ -946,102 +1044,86 @@ import "../styles/inversores.css";
             currentSectionIndex = index;
           }
         });
-
-        // Determinar la siguiente sección basada en la tecla presionada
+        
+        // Determinar sección objetivo
         let targetIndex = currentSectionIndex;
-        if (
-          e.key === "ArrowDown" &&
-          currentSectionIndex < sections.length - 1
-        ) {
+        if (e.key === "ArrowDown" && currentSectionIndex < sections.length - 1) {
           targetIndex = currentSectionIndex + 1;
         } else if (e.key === "ArrowUp" && currentSectionIndex > 0) {
           targetIndex = currentSectionIndex - 1;
         }
-
-        // Scroll a la sección objetivo
+        
+        // Scroll a sección objetivo
         if (targetIndex !== currentSectionIndex) {
           smoothScroll(sections[targetIndex].offsetTop);
         }
       }
     });
 
+    // ===== NAVEGACIÓN POR ENLACES INTERNOS =====
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
+      anchor.addEventListener("click", function(e) {
         e.preventDefault();
-
+        
         const targetId = this.getAttribute("href").substring(1);
         const targetSection = document.getElementById(targetId);
-
+        
         if (targetSection) {
-          // Cancelar cualquier animación en curso
+          // Cancelar animación en curso
           if (isScrollAnimating) {
             cancelAnimationFrame(window.scrollAnimation);
             isScrollAnimating = false;
           }
-
-          // Usar nuestra función de scroll suave personalizada
+          
+          // Detener cualquier inercia en curso
+          clearInterval(momentumTimer);
+          
+          // Usar la función de scroll suave
           smoothScroll(targetSection.offsetTop);
         }
       });
     });
 
-    // Añadir un botón para volver arriba que sea discreto pero útil
+    // ===== BOTÓN PARA VOLVER ARRIBA =====
     const topButton = document.createElement("button");
     topButton.innerHTML = `
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-  </svg>
-`;
-    topButton.className =
-      "fixed bottom-8 right-8 p-3 bg-cyan-600 text-white rounded-full shadow-lg opacity-0 transition-opacity duration-300 z-50";
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+      </svg>
+    `;
+    topButton.className = "fixed bottom-8 right-8 p-3 bg-cyan-600 text-white rounded-full shadow-lg opacity-0 transition-opacity duration-300 z-50";
     topButton.style.display = "none";
     document.body.appendChild(topButton);
-
+    
     topButton.addEventListener("click", () => {
+      // Detener cualquier inercia en curso
+      clearInterval(momentumTimer);
       smoothScroll(0);
     });
 
-    // Mostrar/ocultar el botón según la posición de scroll
-    scrollContainer.addEventListener("scroll", () => {
-      if (scrollContainer.scrollTop > window.innerHeight) {
-        topButton.style.display = "block";
-        setTimeout(() => (topButton.style.opacity = "1"), 10);
-      } else {
-        topButton.style.opacity = "0";
-        setTimeout(() => (topButton.style.display = "none"), 300);
-      }
-    });
-
-    // Código para el modal
-    const modalTrigger = document.getElementById("modalTrigger");
-    const modal = document.getElementById("inversorModal");
-    const modalContent = document.getElementById("modalContent");
-    const closeModal = document.getElementById("closeModal");
-
+    // ===== FUNCIONALIDAD DEL MODAL =====
     if (modalTrigger && modal && closeModal && modalContent) {
       // Abrir modal
       modalTrigger.addEventListener("click", () => {
-        // Asegurarse de que el modal está visible pero con opacidad 0
         modal.classList.remove("hidden");
-
-        // Pequeño retraso para que la animación funcione correctamente
+        
         setTimeout(() => {
           modal.classList.add("opacity-100");
           modalContent.classList.remove("scale-95", "opacity-0");
           modalContent.classList.add("scale-100", "opacity-100");
         }, 10);
       });
-
+      
       // Cerrar modal con botón X
       closeModal.addEventListener("click", closeModalFunction);
-
-      // Cerrar al hacer clic fuera del contenido
+      
+      // Cerrar al hacer clic fuera
       modal.addEventListener("click", (e) => {
         if (e.target === modal) {
           closeModalFunction();
         }
       });
-
+      
       // Cerrar con tecla ESC
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && !modal.classList.contains("hidden")) {
@@ -1049,144 +1131,119 @@ import "../styles/inversores.css";
         }
       });
     }
-
+    
     function closeModalFunction() {
       if (!modalContent || !modal) return;
-
-      // Primero animamos la salida
+      
       modalContent.classList.remove("scale-100", "opacity-100");
       modalContent.classList.add("scale-95", "opacity-0");
-
-      // Después de la animación, ocultamos el modal
+      
       setTimeout(() => {
         modal.classList.add("hidden");
         modal.classList.remove("opacity-100");
       }, 300);
     }
 
-    // Sistema de desvanecimiento para las secciones
+    // ===== EFECTOS DE DESVANECIMIENTO =====
     function setupFadeEffects() {
-      // Marcar elementos para animación
       const sections = document.querySelectorAll(".scroll-section");
-
-      // Primero vamos a marcar los elementos que queremos animar
+      
+      // Marcar elementos para animación
       sections.forEach((section) => {
-        // Marcar headings
-        const headings = section.querySelectorAll("h1, h2, h3");
-        headings.forEach((el, i) => {
+        // Headings
+        section.querySelectorAll("h1, h2, h3").forEach((el, i) => {
           el.classList.add("animate-fade", `delay-${(i + 1) * 100}`);
         });
-
-        // Marcar párrafos
-        const paragraphs = section.querySelectorAll("p:not(.text)");
-        paragraphs.forEach((el, i) => {
+        
+        // Párrafos
+        section.querySelectorAll("p:not(.text)").forEach((el, i) => {
           el.classList.add("animate-fade", `delay-${(i + 2) * 100}`);
         });
-
-        // Marcar tarjetas y elementos destacados
-        const cards = section.querySelectorAll(".card, .bg-white");
-        cards.forEach((el, i) => {
+        
+        // Tarjetas y elementos destacados
+        section.querySelectorAll(".card, .bg-white").forEach((el, i) => {
           el.classList.add("animate-fade", `delay-${(i + 1) * 100}`);
         });
-
-        // Marcar imágenes
-        const images = section.querySelectorAll("img:not(.img)");
-        images.forEach((el, i) => {
+        
+        // Imágenes
+        section.querySelectorAll("img:not(.img)").forEach((el, i) => {
           el.classList.add("animate-fade", `delay-${(i + 2) * 100}`);
         });
       });
-
-      // Configurar observador de intersección para animar elementos
+      
+      // Configurar observador de intersección
       const observerOptions = {
         root: null,
-        rootMargin: "-10% 0px", // Ajustar para activar un poco antes
+        rootMargin: "-10% 0px",
         threshold: [0.1, 0.2, 0.3],
       };
-
-      // Modifica el observador para que reaccione correctamente en ambas direcciones
+      
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Activar la sección cuando entra al viewport
             entry.target.classList.add("in-view");
-
-            // Activar elementos dentro de la sección con efecto escalonado
-            const animatedElements =
-              entry.target.querySelectorAll(".animate-fade");
-            animatedElements.forEach((el, index) => {
-              setTimeout(
-                () => {
-                  el.classList.add("visible");
-                },
-                50 + index * 50,
-              );
+            
+            entry.target.querySelectorAll(".animate-fade").forEach((el, index) => {
+              setTimeout(() => {
+                el.classList.add("visible");
+              }, 50 + index * 50);
             });
           } else {
-            // Asegurarse de que las clases se eliminan cuando la sección sale del viewport
             entry.target.classList.remove("in-view");
-
-            // Eliminar las clases de visibilidad inmediatamente para que estén listas
-            // para la próxima vez que la sección entre en el viewport
-            const animatedElements =
-              entry.target.querySelectorAll(".animate-fade");
-            animatedElements.forEach((el) => {
+            
+            entry.target.querySelectorAll(".animate-fade").forEach((el) => {
               el.classList.remove("visible");
             });
           }
         });
       }, observerOptions);
-
+      
       // Observar todas las secciones
       sections.forEach((section) => {
         observer.observe(section);
       });
-
-      // Hacer inmediatamente visible la primera sección
+      
+      // Hacer visible inmediatamente la primera sección
       if (sections[0]) {
         setTimeout(() => {
           sections[0].classList.add("in-view");
-          const firstSectionElements =
-            sections[0].querySelectorAll(".animate-fade");
-          firstSectionElements.forEach((el, index) => {
+          
+          sections[0].querySelectorAll(".animate-fade").forEach((el, index) => {
             setTimeout(() => {
               el.classList.add("visible");
             }, index * 100);
           });
         }, 100);
       }
-
-      // Aplicar estilos directamente a los elementos para asegurar la visibilidad
-      // Solución de respaldo por si las clases no funcionan correctamente
+      
+      // Estilos de respaldo
       document.head.insertAdjacentHTML(
         "beforeend",
         `<style>
           .scroll-section.in-view { opacity: 1; transform: translateY(0); }
           .animate-fade.visible { opacity: 1; transform: translateY(0); }
-        </style>`,
+        </style>`
       );
     }
 
-    // Inicializa las secciones visibles
+    // ===== INICIALIZACIÓN =====
+    
+    // Inicializar visibilidad y efectos
     updateVisibleSections();
-
-    // Inicializar efectos de desvanecimiento
     setupFadeEffects();
-
-    // Forzar visibilidad después de un tiempo por si algo falla
-    // Forzar visibilidad después de un tiempo por si algo falla
-    // Este código se mantendría pero con un timeout más largo y solo para la primera carga
+    
+    // Fallback para asegurar visibilidad
     setTimeout(() => {
-      // Solo forzar visibilidad en la sección visible actualmente
       const visibleSection = document.querySelector(".scroll-section.in-view");
       if (visibleSection) {
         visibleSection.style.opacity = "1";
         visibleSection.style.transform = "translateY(0)";
-
+        
         visibleSection.querySelectorAll(".animate-fade").forEach((el) => {
           el.style.opacity = "1";
           el.style.transform = "translateY(0)";
         });
       }
-    }, 2000); // Timeout más largo solo para asegurar la primera carga
+    }, 2000);
   });
 </script>
